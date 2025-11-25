@@ -1,0 +1,31 @@
+Day 3: Functions & Lambda + Shape Calculator
+Learning Focus: Functions as objects, lambda, inheritance
+Morning Study (1.5 hours):
+
+Fluent Python: Chapter 3 & 7 (Dictionaries/Functions as Objects)
+Coursera: Inheritance and Polymorphism module
+Key concepts: Lambda functions, inheritance, super(), method overriding
+
+Afternoon Project (2 hours):
+Build: Shape Calculator
+File structure:
+- shapes/
+  - __init__.py
+  - base.py (Shape base class)
+  - circle.py
+  - rectangle.py
+  - triangle.py
+- main.py
+
+Features:
+- Base Shape class with color, name
+- Child classes override calculate_area(), calculate_perimeter()
+- Use lambda for simple calculations where appropriate
+- Dictionary to store shape instances
+Evening Portfolio (30 min):
+
+Repo: "shape-calculator-inheritance"
+Organize into modules (separate files)
+Document inheritance hierarchy in README
+
+Daily Goal: Understand inheritance and code organization

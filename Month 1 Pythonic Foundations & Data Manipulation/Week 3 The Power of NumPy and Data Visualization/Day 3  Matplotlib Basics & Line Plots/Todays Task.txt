@@ -1,0 +1,18 @@
+Day 3: Matplotlib Basics & Line Plots
+Focus: Creating your first plots and customization
+Learning Goals:
+
+Basic plotting with plt.plot()
+Customizing colors, labels, titles
+Working with subplots
+
+Projects:
+
+Sine Wave Plotter - Generate and plot trigonometric functions
+Stock Price Visualizer - Time series with moving averages
+
+Practice Tasks:
+
+Create figures and axes: fig, ax = plt.subplots()
+Add legends, grids, and annotations
+Save plots with plt.savefig()

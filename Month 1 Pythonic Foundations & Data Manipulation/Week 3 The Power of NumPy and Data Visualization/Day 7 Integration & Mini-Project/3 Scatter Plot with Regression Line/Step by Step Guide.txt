@@ -1,0 +1,60 @@
+Step-by-Step Guide
+Step 1: Understanding the Components
+
+Scatter plot: Shows the relationship between two numerical variables
+Regression line: Shows the trend/best-fit line through the data points
+Seaborn: Makes this easy with the regplot() or lmplot() functions
+
+Step 2: Import Libraries
+pythonimport seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+Step 3: Prepare Sample Data
+Let's create some sample data to work with:
+python# Create sample data
+np.random.seed(42)
+x = np.random.randn(100)
+y = 2 * x + np.random.randn(100) * 0.5  # Linear relationship with noise
+Step 4: Create the Plot
+Method 1: Using regplot() (simpler)
+pythonplt.figure(figsize=(10, 6))
+sns.regplot(x=x, y=y, scatter_kws={'alpha':0.6}, line_kws={'color':'red'})
+plt.title('Scatter Plot with Regression Line')
+plt.xlabel('X Variable')
+plt.ylabel('Y Variable')
+plt.show()
+Method 2: Using DataFrame (more flexible)
+python# Create a DataFrame
+df = pd.DataFrame({'X': x, 'Y': y})
+
+plt.figure(figsize=(10, 6))
+sns.regplot(data=df, x='X', y='Y', scatter_kws={'alpha':0.6}, line_kws={'color':'red'})
+plt.title('Scatter Plot with Regression Line')
+plt.show()
+Key Parameters to Remember:
+For regplot():
+
+x, y: Your variables (can be array-like or column names if using data)
+data: DataFrame (optional but recommended)
+scatter_kws: Dictionary to customize scatter points (alpha, color, size)
+line_kws: Dictionary to customize regression line (color, linewidth, linestyle)
+ci: Confidence interval (default 95, set to None to remove)
+
+For lmplot() (alternative):
+
+Similar to regplot but creates a FacetGrid (better for categorical grouping)
+hue: Add a categorical variable to color points differently
+
+Common Customizations:
+python# Make points transparent
+scatter_kws={'alpha': 0.5}
+
+# Change marker size
+scatter_kws={'s': 100}
+
+# Change line color
+line_kws={'color': 'red'}
+
+# Remove confidence interval
+ci=None

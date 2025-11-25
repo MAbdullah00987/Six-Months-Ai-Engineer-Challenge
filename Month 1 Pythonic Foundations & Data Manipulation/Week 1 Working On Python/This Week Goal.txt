@@ -1,0 +1,32 @@
+Week 1: Setting Up for Success - Python, Git, and Environment
+Weekly Objective: Establish a professional development environment and master Python's basic syntax and data structures.
+
+Core Concepts: Python installation (Anaconda), IDE setup (VS Code), Git and GitHub basics, Python syntax, variables, control flow, functions, and basic data structures (lists, tuples, dictionaries).
+
+Primary Resources:
+
+Course: University of Michigan's "Python for Everybody" on Coursera (Modules 1-4).   
+
+Book: Automate the Boring Stuff with Python by Al Sweigart (Chapters 1-6).   
+
+Weekly Project Ideas:
+
+Simple Calculator: A command-line program that performs basic arithmetic.
+
+Number Guessing Game: A game where the computer picks a number and the user guesses it.
+
+Text-Based Adventure Game: A simple story with user choices that affect the outcome.
+
+Contact Book: A program to store and retrieve names and phone numbers in a dictionary.
+
+Password Generator: A script that creates random, strong passwords.
+
+Unit Converter: A tool to convert units (e.g., Celsius to Fahrenheit, kilometers to miles).
+
+FizzBuzz: Implement the classic FizzBuzz programming challenge.
+
+File Organizer: A script that sorts files in a directory into subfolders based on file type.
+
+Simple To-Do List: A command-line application to add, view, and delete tasks.
+
+Word Counter: A program that reads a text file and counts the frequency of each word.

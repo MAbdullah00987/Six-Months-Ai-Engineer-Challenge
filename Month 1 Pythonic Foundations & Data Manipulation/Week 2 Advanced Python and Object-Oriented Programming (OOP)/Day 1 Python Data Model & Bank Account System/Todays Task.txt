@@ -1,0 +1,24 @@
+Day 1: Python Data Model & Bank Account System
+Learning Focus: Classes fundamentals, special methods, Pythonic code
+Morning Study (1.5 hours):
+
+Fluent Python: Chapter 1 (Python Data Model)
+Coursera: Start Week 1 - Classes and Objects basics
+Key concepts: __init__, __str__, __repr__, instance vs class attributes
+
+Afternoon Project (2 hours):
+Build: Bank Account System
+Features to implement:
+- BankAccount class with account_number, holder_name, balance
+- Methods: deposit(), withdraw(), get_balance()
+- Special methods: __str__(), __repr__()
+- Input validation (no negative withdrawals)
+- Transaction history tracking
+Evening Portfolio (30 min):
+
+Create GitHub repo: "bank-account-oop"
+Write README with project description
+Commit: "Initial commit: Bank account class with basic operations"
+Add .gitignore for Python
+
+Daily Goal: Understand how Python objects work under the hood

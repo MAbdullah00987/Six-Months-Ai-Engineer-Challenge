@@ -1,0 +1,71 @@
+Basic E-commerce Cart: Create Product and ShoppingCart classes to simulate adding items to a cart.
+How Python Works in This Project
+1. Object-Oriented Programming (OOP)
+
+Classes are blueprints for creating objects
+Objects are instances of classes (like creating a specific product)
+Methods are functions inside classes that operate on the data
+
+2. Key Python Concepts Used
+__init__ Method (Constructor)
+pythondef __init__(self, name, price):
+    self.name = name
+    self.price = price
+
+Automatically called when creating a new object
+Sets up initial values (attributes)
+
+self Keyword
+
+Refers to the current instance of the class
+Used to access attributes and methods
+
+Dictionary Data Structure
+pythonself.items = {}  # {product: quantity}
+
+Stores key-value pairs
+Perfect for tracking products and their quantities
+
+String Formatting
+pythonf"${price:.2f}"  # Formats to 2 decimal places
+Special Methods
+
+__str__: Controls how object appears when printed
+__repr__: For debugging representation
+
+3. How the Cart Works
+Adding Items:
+pythoncart.add_item(laptop, 1)
+
+Checks if product exists in dictionary
+If yes: increases quantity
+If no: adds new entry
+
+Calculating Total:
+pythonfor product, quantity in self.items.items():
+    total += product.price * quantity
+
+Loops through all products
+Multiplies price × quantity
+Sums everything up
+
+
+How to Use This Code
+Installation Requirements
+
+Python 3.6 or higher
+No external libraries needed (uses only built-in Python)
+
+Running the Code
+
+Save the code to a file named shopping_cart.py
+Run it:
+
+bashpython shopping_cart.py
+
+Create your own products:
+
+pythonphone = Product("iPhone", 799.99, "Latest model")
+cart = ShoppingCart()
+cart.add_item(phone, 1)
+cart.display_cart()

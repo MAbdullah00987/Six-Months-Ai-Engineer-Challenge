@@ -1,0 +1,25 @@
+Project Ideas:
+
+1: Madlibs
+
+2:Guess the number
+
+3: Bank Account System: Use classes to model bank accounts with methods for deposit, withdrawal, and balance inquiry.
+
+4: Basic E-commerce Cart: Create Product and ShoppingCart classes to simulate adding items to a cart.
+
+5: Shape Calculator: Define a base Shape class and inherit from it to create Circle, Rectangle, etc., with methods to calculate area and perimeter.
+
+6: Custom Data Structure: Implement a Stack or Queue using a Python class.
+
+7: Simple API Wrapper: Write a class that makes it easier to interact with a public API (e.g., OpenWeatherMap).
+
+8: Web Scraper Class: Encapsulate web scraping logic into a reusable class.
+
+9: Personal Library Catalog: Use OOP to model Book and Library objects to manage a collection of books.
+
+10: Quiz Application: Create Question and Quiz classes to build a command-line quiz.
+
+11: Employee Management System: Design classes for Employee and Department to manage company data.
+
+12:Refactor a Previous Project: Take a script from Week 1 and refactor it to use classes and objects.

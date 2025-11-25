@@ -1,0 +1,18 @@
+Day 4: Statistical Visualization & Seaborn
+Focus: Distributions and statistical relationships
+Learning Goals:
+
+Seaborn's high-level interface
+Distribution plots and regression
+Statistical visualizations
+
+Projects:
+
+Scatter Plot with Regression Line - Explore relationships between variables
+Heatmap of Correlation Matrix - Visualize data correlations
+
+Practice Tasks:
+
+Use sns.set_style() for themes
+Create pairplots with sns.pairplot()
+Customize color palettes

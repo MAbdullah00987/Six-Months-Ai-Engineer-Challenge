@@ -1,0 +1,37 @@
+6 months of my AI Engineer Journey 
+Week 2: Advanced Python & OOP (Day 2 Update)
+
+Continuing my 6-month AI Engineer journey, I’ve now entered Week 2, where I’m exploring Advanced Python and Object-Oriented Programming (OOP) — essential for writing clean, scalable, and efficient code.
+
+I was a bit late covering Day 1, so I’m posting two updates today to stay consistent and keep better track of my learning progress. 💪
+
+🎯 Day 2 Focus: Sequences & E-commerce Cart
+
+🧠 Learning Focus:
+
+Deepening understanding of list comprehensions and data structures
+
+Practicing encapsulation, private attributes (_variable), and getters/setters
+
+Strengthening my ability to write modular and Pythonic code
+
+📚 Study Resources:
+
+Fluent Python – Chapter 2 (Sequences) by Luciano Ramalho
+
+Coursera – Python 3 Programming Specialization (University of Michigan): Classes & Encapsulation module
+
+💻 Hands-on Project: Basic E-commerce Cart 🛒
+Built a class-based shopping cart system featuring:
+
+Product Class: name, price, stock quantity, category
+
+ShoppingCart Class: items list, add_item() and remove_item() methods
+
+Core methods: calculate_subtotal(), calculate_tax(), and apply_discount()
+
+Implemented list comprehensions for efficient filtering and searching of products
+
+Even though I’m catching up, what matters most is consistency and steady growth. Each concept I learn brings me closer to my goal of becoming a skilled AI Engineer — one step at a time. 🚀
+
+#AIEngineer #Python #OOP #FluentPython #Programming #LearningJourney #Consistency #CodeNewbie #PythonDeveloper #SoftwareEngineering #LearningInPublic

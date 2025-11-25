@@ -1,0 +1,146 @@
+Shape Calculator Project
+Shape Calculator: Define a base Shape class and inherit from it to create Circle, Rectangle, etc., with methods to calculate area and perimeter.
+
+Step-by-Step Explanation
+Step 1: Understanding the Concept
+This project demonstrates inheritance - one of the four pillars of OOP:
+
+We create a base class (Shape) that defines common properties
+Child classes (Circle, Rectangle, etc.) inherit from Shape and implement specific calculations
+Each shape has its own way to calculate area and perimeter
+
+Step 2: How Python Works in This Project
+Key Python Concepts Used:
+
+Classes and Objects
+
+A class is a blueprint for creating objects
+Objects are instances of classes
+
+
+Inheritance
+
+Child classes inherit properties and methods from parent classes
+Syntax: class Child(Parent):
+
+
+Method Overriding
+
+Child classes can override parent methods with their own implementation
+
+
+Abstract Methods (Optional)
+
+Forces child classes to implement certain methods
+
+
+The self Parameter
+
+Refers to the instance of the class
+Must be the first parameter in instance methods
+
+
+
+Step 3: Project Structure
+Shape (Base Class)
+├── Circle (inherits from Shape)
+├── Rectangle (inherits from Shape)
+├── Square (inherits from Shape)
+└── Triangle (inherits from Shape)
+
+Detailed Breakdown of How Python Works Here
+1. Import Statements
+pythonimport math
+from abc import ABC, abstractmethod
+
+math: Provides mathematical functions like pi, sqrt
+ABC: Abstract Base Class - prevents direct instantiation
+abstractmethod: Decorator to mark methods that MUST be implemented
+
+2. The Base Class (Shape)
+pythonclass Shape(ABC):
+    def __init__(self, name):
+        self.name = name
+How it works:
+
+ABC makes Shape abstract - you can't create a Shape object directly
+__init__ is the constructor - runs when creating an object
+self.name is an instance variable - each object has its own name
+
+3. Abstract Methods
+python@abstractmethod
+def area(self):
+    pass
+Why abstract methods?
+
+Forces every child class to implement area() and perimeter()
+If a child class doesn't implement these, Python raises an error
+Ensures consistency across all shapes
+
+4. Inheritance Syntax
+pythonclass Circle(Shape):
+    def __init__(self, radius):
+        super().__init__("Circle")
+        self.radius = radius
+How it works:
+
+Circle(Shape) means Circle inherits from Shape
+super().__init__("Circle") calls the parent's constructor
+Circle gets all methods from Shape plus its own
+
+5. Method Overriding
+pythondef area(self):
+    return math.pi * self.radius ** 2
+How it works:
+
+Circle provides its own implementation of area()
+Overrides the abstract method from Shape
+Each shape has different formulas
+
+6. Object Creation and Usage
+pythoncircle = Circle(radius=5)
+circle.display_info()
+```
+
+**What happens:**
+1. `Circle(radius=5)` calls `__init__`, creates object
+2. Object stored in variable `circle`
+3. `circle.display_info()` calls the inherited method
+4. Inside `display_info()`, `self.area()` calls Circle's area method
+
+## **Key Concepts Visualized**
+
+### **Inheritance Flow:**
+```
+Shape (Parent)
+  ├── name attribute
+  ├── area() [abstract]
+  ├── perimeter() [abstract]
+  └── display_info() [concrete]
+       ↓
+Circle (Child) inherits everything above
+  ├── radius attribute [new]
+  ├── area() [implemented]
+  ├── perimeter() [implemented]
+  └── diameter() [new method]
+Method Resolution Order (MRO):
+When you call circle.display_info():
+
+Python looks in Circle class - not found
+Python looks in Shape class - found!
+Executes Shape's display_info()
+Inside it, calls self.area() - Python looks in Circle first, finds it!
+
+How to Run the Project
+Option 1: Run Complete Program
+bashpython shape_calculator.py
+
+Shows demonstrations
+Provides interactive menu
+
+Option 2: Use Individual Classes
+python# In Python interactive shell or your own script
+from shape_calculator import Circle, Rectangle
+
+my_circle = Circle(10)
+print(my_circle.area())  # Output: 314.159...

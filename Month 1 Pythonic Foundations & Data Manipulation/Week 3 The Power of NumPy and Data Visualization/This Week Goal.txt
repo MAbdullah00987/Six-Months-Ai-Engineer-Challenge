@@ -1,0 +1,133 @@
+Week 3: The Power of NumPy and Data Visualization
+
+Day 1: NumPy Fundamentals & Performance
+Focus: Array basics, vectorization, and understanding NumPy's speed advantage
+Learning Goals:
+
+Create and manipulate NumPy arrays
+Understand vectorization vs loops
+Basic array operations and indexing
+
+Projects:
+
+Performance Comparison - Compare loop vs vectorized operations
+Histogram of Normal Distribution - Generate random data and visualize
+
+Practice Tasks:
+
+Create arrays using np.array(), np.arange(), np.linspace()
+Practice array slicing: arr[start:stop:step]
+Calculate mean, median, std using NumPy functions
+
+
+Day 2: Array Operations & Image Manipulation
+Focus: Advanced indexing, array reshaping, and practical applications
+Learning Goals:
+
+2D array manipulation
+Boolean indexing and fancy indexing
+Working with image data as arrays
+
+Projects:
+
+Image Manipulator - Load, manipulate, and transform images
+
+Practice Tasks:
+
+Reshape arrays with .reshape() and .transpose()
+Use boolean masks: arr[arr > 5]
+Stack arrays with np.vstack(), np.hstack()
+
+
+Day 3: Matplotlib Basics & Line Plots
+Focus: Creating your first plots and customization
+Learning Goals:
+
+Basic plotting with plt.plot()
+Customizing colors, labels, titles
+Working with subplots
+
+Projects:
+
+Sine Wave Plotter - Generate and plot trigonometric functions
+Stock Price Visualizer - Time series with moving averages
+
+Practice Tasks:
+
+Create figures and axes: fig, ax = plt.subplots()
+Add legends, grids, and annotations
+Save plots with plt.savefig()
+
+
+Day 4: Statistical Visualization & Seaborn
+Focus: Distributions and statistical relationships
+Learning Goals:
+
+Seaborn's high-level interface
+Distribution plots and regression
+Statistical visualizations
+
+Projects:
+
+Scatter Plot with Regression Line - Explore relationships between variables
+Heatmap of Correlation Matrix - Visualize data correlations
+
+Practice Tasks:
+
+Use sns.set_style() for themes
+Create pairplots with sns.pairplot()
+Customize color palettes
+
+
+Day 5: Advanced Plotting Techniques
+Focus: Multiple visualizations and complex layouts
+Learning Goals:
+
+Creating subplot grids
+Combining different chart types
+Dashboard-style layouts
+
+Projects:
+
+Multi-Panel Dashboard - Combine line, bar, and scatter plots
+
+Practice Tasks:
+
+Use plt.subplot() and plt.subplots()
+Adjust spacing with plt.tight_layout()
+Share axes between subplots
+
+
+Day 6: 3D Visualization & Simulations
+Focus: Three-dimensional plotting and random simulations
+Learning Goals:
+
+3D plotting with mplot3d
+Random number generation with NumPy
+Simulation visualization
+
+Projects:
+
+3D Surface Plot - Visualize mathematical functions in 3D
+Monte Carlo Pi Simulation - Estimate π using random sampling
+
+Practice Tasks:
+
+Use np.meshgrid() for 3D surfaces
+Generate random numbers: np.random.rand(), np.random.randn()
+Create animations (bonus)
+
+
+Day 7: Integration & Mini-Project
+Focus: Review and combine all skills
+Learning Goals:
+
+Integrate NumPy and visualization skills
+Create a complete data analysis workflow
+Best practices and optimization
+
+Mini-Project Options:
+
+Weather Data Analyzer: Load weather data, calculate statistics, create multi-panel visualization
+Sales Dashboard: Simulate sales data, analyze trends, create interactive dashboard
+Scientific Calculator Visualizer: Plot multiple mathematical functions with controls

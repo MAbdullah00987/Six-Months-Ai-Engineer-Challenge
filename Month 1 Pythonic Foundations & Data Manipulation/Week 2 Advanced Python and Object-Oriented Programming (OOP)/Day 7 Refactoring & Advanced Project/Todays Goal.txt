@@ -1,0 +1,19 @@
+Day 7: Refactoring & Advanced Project
+Learning Focus: Code quality, best practices, portfolio polish
+Morning Project (2 hours):
+Build: Employee Management System
+File structure:
+- employee_system/
+  - models/
+    - employee.py (Employee class)
+    - department.py (Department class)
+  - utils/
+    - validators.py
+  - main.py
+
+Features:
+- Employee: name, id, salary, department, hire_date
+- Department: name, employees, budget, add_employee()
+- Calculate total payroll, department averages
+- Generate reports (use f-strings and formatting)
+- Save/load data from JSON

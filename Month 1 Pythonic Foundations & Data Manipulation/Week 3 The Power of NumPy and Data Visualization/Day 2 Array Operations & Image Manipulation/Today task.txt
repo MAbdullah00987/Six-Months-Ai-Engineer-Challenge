@@ -1,0 +1,17 @@
+Day 2: Array Operations & Image Manipulation
+Focus: Advanced indexing, array reshaping, and practical applications
+Learning Goals:
+
+2D array manipulation
+Boolean indexing and fancy indexing
+Working with image data as arrays
+
+Projects:
+
+Image Manipulator - Load, manipulate, and transform images
+
+Practice Tasks:
+
+Reshape arrays with .reshape() and .transpose()
+Use boolean masks: arr[arr > 5]
+Stack arrays with np.vstack(), np.hstack()

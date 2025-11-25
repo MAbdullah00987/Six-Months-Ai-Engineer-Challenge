@@ -1,0 +1,71 @@
+Stack and Queue Data Structures in Python - Complete Guide
+I'll explain these fundamental data structures step by step and create implementations for you.
+What are Stacks and Queues?
+Stack (LIFO - Last In, First Out)
+Think of a stack of plates - you add plates on top and remove from the top.
+
+Real-world examples: Browser back button, undo/redo functionality, function call stack
+Operations: Push (add), Pop (remove), Peek (view top)
+
+Queue (FIFO - First In, First Out)
+Think of a line at a store - first person in line gets served first.
+
+Real-world examples: Print queue, customer service lines, task scheduling
+Operations: Enqueue (add to back), Dequeue (remove from front), Peek (view front)
+
+How Python Works in This Project
+Key Python Concepts Used:
+
+Classes and Objects - Blueprint for creating data structures
+Lists - Python's built-in dynamic array (we'll use it internally)
+Methods - Functions inside a class that operate on the data
+self keyword - Refers to the instance of the class
+Exception Handling - Managing errors (like removing from empty stack)
+Magic Methods - __str__, __len__, __repr__ for better object representation
+
+Step-by-Step Breakdown
+How Python Works Here:
+1. Class Definition
+pythonclass Stack:
+    def __init__(self):
+        self.items = []
+
+class creates a blueprint for Stack objects
+__init__ is the constructor - runs when you create a new Stack
+self.items is an instance variable that stores the stack's data
+
+2. Methods (Functions Inside Class)
+pythondef push(self, item):
+    self.items.append(item)
+
+self refers to the specific instance of the Stack
+Each method can access self.items to modify the stack
+
+3. Python List as Internal Storage
+
+We use Python's built-in list to store items
+append() adds to end: O(1) time
+pop() removes from end: O(1) time
+pop(0) removes from front: O(n) time (slower for queue)
+
+4. Magic Methods
+pythondef __str__(self):  # Makes print(stack) work
+def __len__(self):  # Makes len(stack) work
+Time Complexity Analysis
+Operation       Stack    Queue(list)    Queue(deque)
+Push/Enqueue     O(1)     O(1)           O(1)
+Pop/Dequeue      O(1)     O(n)           O(1)
+Peek             O(1)     O(1)           O(1)
+How to Use This Code:
+1. Run the complete demo:
+python# Just run the file - it will show all examples
+2. Create your own Stack:
+pythonmy_stack = Stack()
+my_stack.push("item1")
+my_stack.push("item2")
+top = my_stack.pop()  # Returns "item2"
+3. Create your own Queue:
+pythonmy_queue = Queue()
+my_queue.enqueue("first")
+my_queue.enqueue("second")
+first = my_queue.dequeue()  # Returns "first"

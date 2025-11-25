@@ -1,0 +1,139 @@
+Quiz Application Project
+Project Overview
+You'll build a quiz app with two main classes:
+
+Question class - Represents individual quiz questions
+Quiz class - Manages the entire quiz (questions, scoring, flow)
+
+
+Step-by-Step Explanation
+Step 1: Understanding the Question Class
+The Question class stores:
+
+The question text
+Multiple answer choices
+The correct answer
+
+Why we need it: Each question is an object with its own data. This makes it easy to create, store, and check questions.
+Step 2: Understanding the Quiz Class
+The Quiz class manages:
+
+A list of Question objects
+The current score
+Adding questions
+Asking questions
+Checking answers
+Displaying results
+
+Why we need it: It controls the entire quiz flow and keeps track of everything.
+Step 3: How Python Works in This Project
+Key Python Concepts Used:
+
+Classes and Objects (OOP)
+
+Classes are blueprints for creating objects
+Objects are instances with their own data
+
+
+Methods
+
+Functions inside classes that operate on object data
+Use self to access object attributes
+
+
+Lists
+
+Store multiple questions
+Store answer choices
+
+Input/Output
+
+input() gets user responses
+print() displays questions and results
+
+Control Flow
+if/else for checking answers
+for loops for iterating through questions
+How Python Works in This Project - Detailed Breakdown
+1. Object-Oriented Programming (OOP)
+class Question:
+    def __init__(self, question_text, choices, correct_answer):
+        self.question_text = question_text  # Instance variable
+
+Classes define the structure
+__init__ is the constructor (runs when creating an object)
+self refers to the current object instance
+Instance variables store data unique to each object
+
+2. Creating Objects
+q1 = Question("What is Python?", ["A", "B"], "B")
+
+Creates a new Question object
+Passes arguments to __init__
+q1 now holds a Question with its own data
+
+3. Methods (Functions in Classes)
+def check_answer(self, user_answer):
+    return user_answer.lower() == self.correct_answer.lower()
+
+Methods operate on object data
+Access instance variables using self
+Can return values
+
+4. Lists and Loops
+for i, question in enumerate(self.questions, 1):
+    question.display_question()
+
+Lists store multiple Question objects
+enumerate() gives both index and item
+for loop iterates through each question
+
+5. User Input and Validation
+user_input = input("\nYour answer: ")
+if user_input.isdigit():
+    # Handle numeric input
+
+input() gets user text
+.isdigit() checks if input is a number
+Validation ensures correct input format
+How to Run the Project
+Method 1: Run the Sample Quiz
+python quiz_app.py
+This runs the pre-made Python quiz with 5 questions.
+Method 2: Create Your Own Quiz
+After the sample quiz, you'll be asked if you want to create a custom quiz. Say "yes" and follow the prompts.
+Method 3: Modify the Code
+Add your own questions in the create_sample_quiz() function:
+q6 = Question(
+    "Your question here?",
+    ["Option 1", "Option 2", "Option 3", "Option 4"],
+    "Correct answer here"
+)
+quiz.add_question(q6)
+
+Key Features Explained
+✓ Multiple Input Methods
+Users can enter:
+
+The number (1, 2, 3, 4)
+The actual answer text
+
+Instant Feedback
+Shows whether each answer is correct/wrong immediately
+Final Grading
+Displays score, percentage, and letter grade at the end
+Extensible Design
+Easy to add more questions or create entirely new quizzes
+
+Python Concepts You'll Learn
+
+Classes and Objects - Blueprint and instances
+Encapsulation - Bundling data and methods
+Methods - Functions that belong to classes
+Lists - Storing collections
+Loops - Iterating through data
+Conditionals - Making decisions
+String Methods - .lower(), .strip()
+Type Checking - .isdigit()
+Exception Handling - try/except
+String Formatting - f-strings

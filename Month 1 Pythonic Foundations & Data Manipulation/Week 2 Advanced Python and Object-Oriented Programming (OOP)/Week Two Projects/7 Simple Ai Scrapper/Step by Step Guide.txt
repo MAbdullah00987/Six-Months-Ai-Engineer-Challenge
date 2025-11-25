@@ -1,0 +1,36 @@
+Simple API Wrapper Project - Complete Guide
+Here How everything works Step by step
+1. Complete Working Code (First artifact)
+
+A fully functional WeatherAPI class
+Methods to get current weather, forecasts, and weather by coordinates
+Error handling and clean data formatting
+Ready-to-use examples
+
+2. Complete Guide Document (Second artifact)
+
+Step-by-step explanations of every concept
+How Python works in this project
+Setup instructions
+Requirements and troubleshooting
+Advanced concepts to explore
+
+Quick Start:
+
+Install Python (if you haven't)
+Install requests library:
+
+bash   pip install requests
+
+Get a free API key from OpenWeatherMap.org
+Copy the code from the first artifact
+Replace "your_api_key_here" with your actual key
+Run it!
+
+Key Python Concepts Used:
+
+Classes & Objects: Organizing code into reusable blueprints
+HTTP Requests: Communicating with external APIs
+Error Handling: Gracefully managing failures
+Type Hints: Making code more readable
+Data Formatting: Converting raw API data into clean dictionaries

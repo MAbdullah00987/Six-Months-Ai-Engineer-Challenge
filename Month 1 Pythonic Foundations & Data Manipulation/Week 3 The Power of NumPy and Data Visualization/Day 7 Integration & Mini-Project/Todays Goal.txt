@@ -1,0 +1,8 @@
+Day 7: Integration & Mini-Project
+Focus: Review and combine all skills
+
+1:Image Manipulator: Load an image into a NumPy array and perform operations like grayscale conversion, cropping, and flipping.
+2:Sine Wave Plotter: Generate and plot a sine wave using NumPy and Matplotlib.
+3:Scatter Plot with Regression Line: Create a scatter plot of two variables and add a linear regression line using Seaborn.
+4:Multi-Panel Dashboard: Create a single figure with multiple subplots (e.g., a line chart, a bar chart, and a scatter plot) using Matplotlib.
+

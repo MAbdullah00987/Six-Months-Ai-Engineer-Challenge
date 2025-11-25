@@ -1,0 +1,19 @@
+Day 6: Integration Day - Two Complex Projects
+Learning Focus: Combining all concepts, multi-class systems
+Morning Project (2 hours):
+Build: Personal Library Catalog
+Classes:
+- Book: title, author, isbn, available, borrowed_by
+- Member: name, member_id, borrowed_books list
+- Library: books collection, members collection
+- Methods: add_book(), borrow_book(), return_book(), search()
+- Use dictionary for fast ISBN lookups
+- Implement __contains__ for "if book in library"
+Afternoon Project (2 hours):
+Build: Quiz Application
+Classes:
+- Question: text, options, correct_answer, difficulty
+- Quiz: questions list, score, add_question()
+- Methods: run_quiz(), grade(), show_results()
+- Load questions from JSON/CSV file
+- Track timing for each question

@@ -1,0 +1,16 @@
+Day 4: Object References & Custom Data Structures
+Learning Focus: Memory management, data structures, special methods
+Morning Study (1.5 hours):
+
+Fluent Python: Chapter 6 (Object References, Mutability)
+Coursera: Advanced class features
+Key concepts: Mutable vs immutable, __len__, __getitem__, copies
+
+Afternoon Project (2 hours):
+Build: Custom Stack AND Queue
+Implement both data structures:
+- Stack class: push(), pop(), peek(), is_empty(), size()
+- Queue class: enqueue(), dequeue(), peek(), is_empty(), size()
+- Add __len__, __str__ special methods
+- Comprehensive error handling (EmptyStackError, etc.)
+- Unit tests for edge cases

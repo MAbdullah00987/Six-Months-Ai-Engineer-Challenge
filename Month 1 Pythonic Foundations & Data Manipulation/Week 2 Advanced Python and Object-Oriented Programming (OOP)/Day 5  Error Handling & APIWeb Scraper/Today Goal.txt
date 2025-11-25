@@ -1,0 +1,17 @@
+Day 5: Error Handling & API/Web Scraper
+Learning Focus: Exception handling, working with external libraries
+Morning Study (1.5 hours):
+
+Fluent Python: Chapter 8 (Type Hints - overview)
+Coursera: Exception handling module
+Review: try/except/finally, custom exceptions, context managers
+
+Afternoon Project (2.5 hours):
+Choose ONE (or both if time permits):
+Option A: Simple API Wrapper
+WeatherAPI class:
+- __init__(api_key)
+- get_current_weather(city)
+- get_forecast(city, days)
+- Error handling for network issues, invalid API key
+- Cache recent requests to avoid rate limits

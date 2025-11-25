@@ -1,0 +1,13 @@
+Day 1: NumPy Fundamentals & Performance
+Focus: Array basics, vectorization, and understanding NumPy's speed advantage
+Learning Goals:
+
+Create and manipulate NumPy arrays
+Understand vectorization vs loops
+Basic array operations and indexing
+
+Practice Tasks:
+
+Create arrays using np.array(), np.arange(), np.linspace()
+Practice array slicing: arr[start:stop:step]
+Calculate mean, median, std using NumPy functions

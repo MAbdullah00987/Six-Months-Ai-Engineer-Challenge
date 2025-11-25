@@ -1,0 +1,38 @@
+Week 2: Advanced Python and Object-Oriented Programming (OOP)
+Weekly Objective: Write more efficient, reusable, and "Pythonic" code by mastering OOP and advanced language features.
+
+Core Concepts: Classes, objects, inheritance, polymorphism, modules, packages, list comprehensions, lambda functions, error handling.
+
+Primary Resources:
+
+Book: Fluent Python, 2nd Edition by Luciano Ramalho (Chapters 1-8).   
+
+Course: University of Michigan's "Python 3 Programming" on Coursera (Specialization).   
+
+Weekly Project Ideas:
+
+Bank Account System: Use classes to model bank accounts with methods for deposit, withdrawal, and balance inquiry.
+
+Basic E-commerce Cart: Create Product and ShoppingCart classes to simulate adding items to a cart.
+
+Shape Calculator: Define a base Shape class and inherit from it to create Circle, Rectangle, etc., with methods to calculate area and perimeter.
+
+Custom Data Structure: Implement a Stack or Queue using a Python class.
+
+Simple API Wrapper: Write a class that makes it easier to interact with a public API (e.g., OpenWeatherMap).
+
+Web Scraper Class: Encapsulate web scraping logic into a reusable class.
+
+Personal Library Catalog: Use OOP to model Book and Library objects to manage a collection of books.
+
+Quiz Application: Create Question and Quiz classes to build a command-line quiz.
+
+Employee Management System: Design classes for Employee and Department to manage company data.
+
+Refactor a Previous Project: Take a script from Week 1 and refactor it to use classes and objects.
+
+Portfolio & Brand Building:
+
+GitHub: Push your OOP projects to new repositories. Practice writing clear commit messages. Organize your code into modules (.py files) instead of just one large script.
+
+LinkedIn: Add "Object-Oriented Programming (OOP)" and "Python" to your skills section.

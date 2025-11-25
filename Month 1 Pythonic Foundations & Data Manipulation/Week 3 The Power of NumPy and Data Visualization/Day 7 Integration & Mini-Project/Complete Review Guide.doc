@@ -1,0 +1,368 @@
+
+NumPy & Matplotlib Mastery: Complete Review Guide
+==================================================
+
+DAY 1: NUMPY FUNDAMENTALS & PERFORMANCE
+========================================
+
+What is NumPy?
+--------------
+NumPy (Numerical Python) is a library for efficient numerical computation using multi-dimensional arrays. It's 10-100x faster than Python lists due to:
+• Vectorization: Operations on entire arrays without explicit loops
+• Contiguous memory: Data stored efficiently in RAM
+• Compiled C code: Core operations run in optimized C
+
+Array Creation Methods
+----------------------
+
+1. np.array() - Convert lists to arrays
+Example:
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5])
+print(arr)  # [1 2 3 4 5]
+
+matrix = np.array([[1, 2, 3], [4, 5, 6]])
+print(matrix.shape)  # (2, 3) - 2 rows, 3 columns
+
+2. np.arange() - Like Python's range()
+Example:
+arr = np.arange(0, 10, 2)  # [0 2 4 6 8]
+arr = np.arange(5)         # [0 1 2 3 4]
+
+3. np.linspace() - Evenly spaced numbers
+Example:
+arr = np.linspace(0, 1, 5)  # [0. 0.25 0.5 0.75 1.]
+
+Vectorization vs Loops
+----------------------
+Loop-based (SLOW):
+numbers = list(range(1000000))
+total = 0
+for n in numbers:
+    total += n ** 2
+
+Vectorized (FAST):
+arr = np.arange(1000000)
+total = np.sum(arr ** 2)  # 100x faster!
+
+Array Slicing
+-------------
+arr = np.array([10, 20, 30, 40, 50, 60])
+print(arr[1:4])      # [20 30 40]
+print(arr[::2])      # [10 30 50]
+print(arr[::-1])     # [60 50 40 30 20 10]
+
+2D Slicing:
+matrix = np.array([[1,2,3], [4,5,6], [7,8,9]])
+print(matrix[0:2, 1:3])
+# Output: [[2 3]
+#          [5 6]]
+
+Statistical Functions
+---------------------
+data = np.array([2, 4, 4, 4, 5, 5, 7, 9])
+mean = np.mean(data)      # 5.0 - average
+median = np.median(data)  # 4.5 - middle value
+std = np.std(data)        # 2.0 - spread of data
+
+
+DAY 2: ARRAY OPERATIONS & IMAGE MANIPULATION
+=============================================
+
+Reshaping Arrays
+----------------
+arr = np.arange(12)
+matrix = arr.reshape(3, 4)
+# [[ 0  1  2  3]
+#  [ 4  5  6  7]
+#  [ 8  9 10 11]]
+
+Transpose:
+matrix = np.array([[1, 2, 3], [4, 5, 6]])
+print(matrix.T)
+# [[1 4]
+#  [2 5]
+#  [3 6]]
+
+Boolean Indexing (Filtering)
+-----------------------------
+arr = np.array([1, 5, 3, 8, 2, 9])
+filtered = arr[arr > 4]  # [5 8 9]
+
+Multiple conditions:
+result = arr[(arr > 2) & (arr < 8)]  # [5 3]
+
+Fancy Indexing
+--------------
+arr = np.array([10, 20, 30, 40, 50])
+indices = [0, 2, 4]
+print(arr[indices])  # [10 30 50]
+
+Array Stacking
+--------------
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+Vertical stack:
+v = np.vstack([arr1, arr2])
+# [[1 2 3]
+#  [4 5 6]]
+
+Horizontal stack:
+h = np.hstack([arr1, arr2])
+# [1 2 3 4 5 6]
+
+Image Manipulation
+------------------
+Images are 3D arrays: (height, width, RGB)
+from PIL import Image
+img_array = np.array(Image.open('photo.jpg'))
+
+Grayscale:
+gray = img_array.mean(axis=2)
+
+Flip horizontally:
+flipped = img_array[:, ::-1, :]
+
+
+DAY 3: MATPLOTLIB BASICS & LINE PLOTS
+======================================
+
+Basic Plotting
+--------------
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+plt.plot(x, y)
+plt.xlabel('X axis')
+plt.ylabel('Y axis')
+plt.title('Sine Wave')
+plt.grid(True)
+plt.show()
+
+Customization
+-------------
+plt.plot(x, np.sin(x), 'r-', label='sin(x)', linewidth=2)
+plt.plot(x, np.cos(x), 'b--', label='cos(x)', linewidth=2)
+
+Colors: 'r'=red, 'b'=blue, 'g'=green, 'k'=black
+Styles: '-'=solid, '--'=dashed, ':'=dotted, 'o'=circles
+
+plt.legend()
+plt.savefig('plot.png', dpi=300)
+
+Figure and Axes (OOP Approach)
+-------------------------------
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.plot(x, y)
+ax.set_xlabel('Time')
+ax.set_ylabel('Amplitude')
+
+Annotations:
+ax.annotate('Peak', xy=(np.pi/2, 1), xytext=(2, 0.5),
+            arrowprops=dict(arrowstyle='->'))
+
+Subplots
+--------
+fig, axes = plt.subplots(2, 2, figsize=(10, 8))
+axes[0, 0].plot(x, np.sin(x))
+axes[0, 1].plot(x, np.cos(x))
+plt.tight_layout()
+
+
+DAY 4: STATISTICAL VISUALIZATION & SEABORN
+===========================================
+
+Why Seaborn?
+------------
+Built on Matplotlib, provides beautiful statistical plots with less code.
+
+import seaborn as sns
+sns.set_style('darkgrid')
+sns.set_palette('husl')
+
+Scatter Plot with Regression
+-----------------------------
+df = pd.DataFrame({
+    'height': np.random.normal(170, 10, 100),
+    'weight': np.random.normal(70, 15, 100)
+})
+
+sns.regplot(data=df, x='height', y='weight')
+plt.title('Height vs Weight')
+
+Correlation Heatmap
+-------------------
+corr = df.corr()
+sns.heatmap(corr, annot=True, cmap='coolwarm', center=0)
+plt.title('Correlation Matrix')
+
+Distribution Plots
+------------------
+data = np.random.normal(0, 1, 1000)
+sns.histplot(data, kde=True, bins=30)
+
+Pairplot:
+iris = sns.load_dataset('iris')
+sns.pairplot(iris, hue='species')
+
+
+DAY 5: ADVANCED PLOTTING TECHNIQUES
+====================================
+
+Complex Subplot Layouts
+------------------------
+fig = plt.figure(figsize=(12, 8))
+ax1 = plt.subplot(2, 2, 1)
+ax2 = plt.subplot(2, 2, 2)
+ax3 = plt.subplot(2, 1, 2)
+
+Shared Axes
+-----------
+fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True)
+ax1.plot(x, np.sin(x))
+ax2.plot(x, np.cos(x))
+
+Dashboard Example
+-----------------
+fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+axes[0, 0].plot(x, np.sin(x))
+axes[0, 1].hist(np.random.randn(1000), bins=30)
+axes[0, 2].scatter(x, np.random.randn(len(x)))
+plt.tight_layout()
+
+
+DAY 6: 3D VISUALIZATION & SIMULATIONS
+======================================
+
+3D Surface Plot
+---------------
+from mpl_toolkits.mplot3d import Axes3D
+
+x = np.linspace(-5, 5, 100)
+y = np.linspace(-5, 5, 100)
+X, Y = np.meshgrid(x, y)
+Z = np.sin(np.sqrt(X**2 + Y**2))
+
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, Z, cmap='viridis')
+
+Understanding np.meshgrid()
+----------------------------
+x = np.array([1, 2, 3])
+y = np.array([4, 5])
+X, Y = np.meshgrid(x, y)
+# Creates coordinate matrices for plotting
+
+Random Number Generation
+-------------------------
+uniform = np.random.rand(5)           # [0, 1)
+normal = np.random.randn(5)           # mean=0, std=1
+integers = np.random.randint(1, 10, size=5)
+np.random.seed(42)                    # Reproducibility
+
+Monte Carlo Pi Estimation
+--------------------------
+n = 1000000
+x = np.random.rand(n)
+y = np.random.rand(n)
+inside = (x**2 + y**2) <= 1
+pi_estimate = 4 * np.sum(inside) / n
+
+
+QUICK REFERENCE CARD
+====================
+
+NumPy Essentials
+----------------
+np.array([1,2,3])         # Create array
+np.arange(0, 10, 2)       # [0, 2, 4, 6, 8]
+np.linspace(0, 1, 5)      # 5 evenly spaced points
+arr.reshape(3, 4)         # Change dimensions
+arr[arr > 5]              # Boolean filtering
+np.vstack([a1, a2])       # Stack vertically
+np.mean(), .median(), .std()  # Statistics
+
+Matplotlib Essentials
+---------------------
+plt.plot(x, y, 'r--')     # Line plot
+plt.scatter(x, y)         # Scatter plot
+plt.bar(x, y)             # Bar chart
+plt.hist(data, bins=30)   # Histogram
+plt.xlabel(), .ylabel(), .title()  # Labels
+plt.legend()              # Show legend
+plt.savefig('plot.png')   # Save figure
+
+Seaborn Essentials
+------------------
+sns.regplot(x, y)         # Scatter + regression
+sns.heatmap(corr)         # Correlation matrix
+sns.histplot(data, kde=True)  # Histogram + density
+sns.pairplot(df)          # All variable pairs
+
+
+PROJECT IDEAS
+=============
+
+Day 1 Projects:
+1. Performance Comparison - Compare loop vs vectorized operations
+2. Histogram of Normal Distribution - Generate random data and visualize
+
+Day 2 Projects:
+1. Image Manipulator - Load, manipulate, and transform images
+
+Day 3 Projects:
+1. Sine Wave Plotter - Generate and plot trigonometric functions
+2. Stock Price Visualizer - Time series with moving averages
+
+Day 4 Projects:
+1. Scatter Plot with Regression Line - Explore relationships
+2. Heatmap of Correlation Matrix - Visualize data correlations
+
+Day 5 Projects:
+1. Multi-Panel Dashboard - Combine line, bar, and scatter plots
+
+Day 6 Projects:
+1. 3D Surface Plot - Visualize mathematical functions in 3D
+2. Monte Carlo Pi Simulation - Estimate π using random sampling
+
+
+PRACTICE CHECKLIST
+==================
+
+Day 1:
+☐ Create arrays using np.array(), np.arange(), np.linspace()
+☐ Practice array slicing: arr[start:stop:step]
+☐ Calculate mean, median, std using NumPy functions
+
+Day 2:
+☐ Reshape arrays with .reshape() and .transpose()
+☐ Use boolean masks: arr[arr > 5]
+☐ Stack arrays with np.vstack(), np.hstack()
+
+Day 3:
+☐ Create figures and axes: fig, ax = plt.subplots()
+☐ Add legends, grids, and annotations
+☐ Save plots with plt.savefig()
+
+Day 4:
+☐ Use sns.set_style() for themes
+☐ Create pairplots with sns.pairplot()
+☐ Customize color palettes
+
+Day 5:
+☐ Use plt.subplot() and plt.subplots()
+☐ Adjust spacing with plt.tight_layout()
+☐ Share axes between subplots
+
+Day 6:
+☐ Use np.meshgrid() for 3D surfaces
+☐ Generate random numbers: np.random.rand(), np.random.randn()
+☐ Create animations (bonus)
+
+
+END OF GUIDE
+============
