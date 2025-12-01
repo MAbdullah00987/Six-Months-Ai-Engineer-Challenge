@@ -1,0 +1,216 @@
+Week 4: Data Wrangling with Pandas 
+7-Day Study Plan
+Day 1: Introduction to Pandas & Series
+Daily Objective: Understand Pandas fundamentals and master Series operations
+Topics to Cover:
+What is Pandas and why use it?
+Installing and importing Pandas
+Pandas Series: creation, attributes, and basic operations
+Indexing and slicing Series
+Series methods (.head(), .tail(), .describe())
+
+Study Materials:
+Book: Python for Data Analysis, Chapter 5 (Introduction to Pandas, Series basics)
+Tutorial: W3Schools Pandas Intro and Pandas Series
+
+Practical Exercises:
+Create Series from lists, dictionaries, and NumPy arrays
+Perform arithmetic operations on Series
+Filter Series based on conditions
+Practice indexing with labels and positions
+Calculate statistics (mean, median, std) on Series data
+
+Deliverable:
+Build a small program that creates a Series of daily temperatures for a week, calculates average temperature, and identifies days above/below average.
+
+Day 2: DataFrames Fundamentals
+Daily Objective: Master DataFrame creation, structure, and basic operations
+
+Topics to Cover:
+Creating DataFrames from dictionaries, lists, and arrays
+DataFrame attributes (.shape, .columns, .index, .dtypes)
+Viewing data (.head(), .tail(), .info(), .describe())
+Basic DataFrame operations
+Adding and deleting columns
+
+Study Materials:
+Book: Python for Data Analysis, Chapter 5 (DataFrame basics)
+Tutorial: W3Schools Pandas DataFrames
+
+Practical Exercises:
+Create DataFrames using multiple methods
+Inspect DataFrame structure and metadata
+Add calculated columns (e.g., total from sum of other columns)
+Delete unnecessary columns
+Rename columns for clarity
+Sort DataFrames by different columns
+
+Deliverable:
+Create a student grades DataFrame with subjects as columns, calculate total and average scores, and identify top performers.
+
+Day 3: Reading/Writing Data & Basic Indexing
+Daily Objective: Learn to import/export data and select specific data from DataFrames
+
+Topics to Cover:
+Reading CSV files (.read_csv())
+Reading Excel files (.read_excel())
+Writing data to CSV and Excel
+Basic column selection
+Introduction to .loc[] and .iloc[]
+Boolean indexing
+
+Study Materials:
+Book: Python for Data Analysis, Chapters 6-7 (Data Loading and Selection)
+Tutorial: W3Schools Pandas Read CSV/Excel
+
+Practical Exercises:
+Download sample CSV/Excel datasets online
+Load data with different parameters (headers, delimiters)
+Export processed data to new files
+Select specific rows and columns using .loc[] and .iloc[]
+Filter data using boolean conditions
+Extract subsets of data based on multiple criteria
+
+Deliverable:
+Load a real-world dataset (e.g., from Kaggle), explore it, filter for specific conditions, and save the filtered data to a new CSV file.
+
+Day 4: Advanced Indexing & Handling Missing Data
+Daily Objective: Master data selection techniques and learn to handle missing values
+
+Topics to Cover:
+Advanced .loc[] and .iloc[] usage
+Multi-indexing basics
+Setting and resetting index
+Detecting missing data (.isnull(), .notnull())
+Handling missing data (.dropna(), .fillna())
+Interpolation methods
+
+Study Materials:
+Book: Python for Data Analysis, Chapter 7 (Advanced indexing, missing data)
+Tutorial: W3Schools Pandas Cleaning Data
+
+Practical Exercises:
+Practice complex slicing with .loc[] (row and column combinations)
+Use .iloc[] for position-based selection
+Identify missing values in datasets
+Drop rows/columns with missing data
+Fill missing values with mean, median, or forward-fill methods
+Compare different strategies for handling missing data
+
+Deliverable:
+Work with a dataset containing missing values, analyze the extent of missing data, apply multiple cleaning strategies, and compare results.
+
+Day 5: Data Aggregation & GroupBy Operations
+Daily Objective: Learn to group and aggregate data for analysis
+
+Topics to Cover:
+The .groupby() method
+Aggregation functions (.sum(), .mean(), .count(), .max(), .min())
+Multiple aggregations with .agg()
+Grouping by multiple columns
+Transformation and filtering in groups
+Pivot tables basics
+
+Study Materials:
+Book: Python for Data Analysis, Chapter 10 (Data Aggregation and Group Operations)
+Tutorial: W3Schools (practice aggregation examples)
+
+Practical Exercises:
+Group data by categorical variables
+Calculate group statistics (average sales by region, total by category)
+Apply multiple aggregation functions simultaneously
+Use .agg() with custom functions
+Filter groups based on aggregate conditions
+Create simple pivot tables
+
+Deliverable:
+Analyze a sales dataset: group by product category and region, calculate total sales and average prices, identify top-performing categories.
+
+Day 6: Merging, Joining & Concatenating DataFrames
+Daily Objective: Combine multiple DataFrames using various methods
+Topics to Cover:
+
+Concatenating DataFrames (.concat())
+Merging DataFrames (.merge())
+Join types: inner, outer, left, right
+Joining on indexes vs. columns
+Handling overlapping column names
+Combining data from multiple sources
+
+Study Materials:
+Book: Python for Data Analysis, Chapters 8-9 (Data Wrangling: Combine and Reshape)
+Tutorial: Review W3Schools examples on combining data
+
+Practical Exercises:
+Concatenate DataFrames vertically and horizontally
+Merge two DataFrames on a common key
+Practice all join types (inner, outer, left, right)
+Merge on multiple columns
+Handle duplicate column names after merging
+Combine data from multiple CSV files
+
+Deliverable:
+Work with two related datasets (e.g., customers and orders), merge them using different join types, and analyze the combined data to extract insights.
+
+Day 7: Comprehensive Review & Mini-Project
+Daily Objective: Consolidate all Week 4 concepts through review and practical application
+Review Activities:
+
+Concept Review (2 hours)
+
+Revisit notes from Days 1-6
+Review challenging topics
+Create a summary cheat sheet of key Pandas operations
+
+
+Quick Practice (1 hour)
+
+Solve 5-10 quick problems covering each day's topics
+Focus on areas where you felt less confident
+
+
+Mini-Project (3-4 hours): Complete Data Analysis Pipeline
+Project Goal: Analyze a real-world dataset end-to-end
+Suggested Dataset: E-commerce sales data or similar multi-table dataset
+Requirements:
+
+Load data from multiple CSV files
+Clean the data (handle missing values, correct data types)
+Merge/join datasets appropriately
+Perform groupby operations to calculate key metrics
+Apply filtering and advanced indexing
+Export final results and summary statistics
+Document your process with comments
+
+Example Analysis:
+
+Load customer, product, and order data
+Clean missing values and incorrect entries
+Merge datasets to create comprehensive view
+Calculate total sales by category, region, and time period
+Identify top customers and products
+Export summary reports
+
+
+Self-Assessment
+
+Can you confidently load and explore a new dataset?
+Are you comfortable with .loc[], .iloc[], and boolean indexing?
+Can you handle missing data appropriately?
+Do you understand when to use merge vs. concat?
+Can you perform groupby operations and aggregations?
+
+Weekend Goals:
+Complete the mini-project
+Identify any weak areas for additional practice
+Prepare questions for further study
+Preview Week 5 materials
+
+Tips for Success:
+Practice Daily: Spend at least 2-3 hours each day on hands-on coding
+Use Real Data: Work with datasets from Kaggle, UCI ML Repository, or government data portals
+Code Along: Type out examples from the book rather than just reading
+Experiment: Modify examples to see how changes affect results
+Document: Keep a Jupyter Notebook with your daily exercises and notes
+Ask Questions: Use Stack Overflow or Pandas documentation when stuck
+Good luck with Week 4! Pandas proficiency is crucial for data analysis work.

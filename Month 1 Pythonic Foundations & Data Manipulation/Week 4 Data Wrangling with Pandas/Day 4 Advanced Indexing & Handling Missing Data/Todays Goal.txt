@@ -1,0 +1,27 @@
+Day 4: Advanced Indexing & Handling Missing Data
+Daily Objective: Master data selection techniques and learn to handle missing values
+Topics to Cover:
+
+Advanced .loc[] and .iloc[] usage
+Multi-indexing basics
+Setting and resetting index
+Detecting missing data (.isnull(), .notnull())
+Handling missing data (.dropna(), .fillna())
+Interpolation methods
+
+Study Materials:
+
+Book: Python for Data Analysis, Chapter 7 (Advanced indexing, missing data)
+Tutorial: W3Schools Pandas Cleaning Data
+
+Practical Exercises:
+
+Practice complex slicing with .loc[] (row and column combinations)
+Use .iloc[] for position-based selection
+Identify missing values in datasets
+Drop rows/columns with missing data
+Fill missing values with mean, median, or forward-fill methods
+Compare different strategies for handling missing data
+
+Deliverable:
+Work with a dataset containing missing values, analyze the extent of missing data, apply multiple cleaning strategies, and compare results.

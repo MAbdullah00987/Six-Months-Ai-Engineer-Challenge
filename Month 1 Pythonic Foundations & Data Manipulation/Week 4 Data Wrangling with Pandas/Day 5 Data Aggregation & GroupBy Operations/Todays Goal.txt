@@ -1,0 +1,26 @@
+Daily Objective: Learn to group and aggregate data for analysis
+Topics to Cover:
+
+The .groupby() method
+Aggregation functions (.sum(), .mean(), .count(), .max(), .min())
+Multiple aggregations with .agg()
+Grouping by multiple columns
+Transformation and filtering in groups
+Pivot tables basics
+
+Study Materials:
+
+Book: Python for Data Analysis, Chapter 10 (Data Aggregation and Group Operations)
+Tutorial: W3Schools (practice aggregation examples)
+
+Practical Exercises:
+
+Group data by categorical variables
+Calculate group statistics (average sales by region, total by category)
+Apply multiple aggregation functions simultaneously
+Use .agg() with custom functions
+Filter groups based on aggregate conditions
+Create simple pivot tables
+
+Deliverable:
+Analyze a sales dataset: group by product category and region, calculate total sales and average prices, identify top-performing categories.

@@ -1,0 +1,146 @@
+# Python for Data Analysis by Wes McKinney (Chapters 5-10)
+# Chapter 5: Getting Started with pandas
+
+import numpy as np
+import pandas as pd
+from pandas import Series, DataFrame
+
+# 5.1 Introduction to pandas Data Structures
+
+# Series
+
+obj = pd.Series([4, 5, 7, 8, -9])
+print("obj values:")
+print(obj.values)
+# Out[15]: array([ 4, 5, 7, 8, -9])
+
+# Note: The original text has inconsistent outputs for obj.array in In[16] vs obj definition in In[14].
+# We will follow the code execution.
+print("obj array:")
+print(obj.array) 
+
+print("obj index:")
+print(obj.index)
+
+obj2 = pd.Series([4, 7, -5, 3], index=["d", "b", "a", "c"])
+print("obj2:")
+print(obj2)
+print("obj2 index:")
+print(obj2.index)
+
+# Compared with NumPy arrays, you can use labels in the index when selecting single
+# values or a set of values:
+
+print("obj2['a']:", obj2["a"])
+obj2["d"] = 6
+print("obj2[['c', 'a', 'd']]:")
+print(obj2[["c", "a", "d"]])
+
+# Filtering and math operations
+
+print("obj2[obj2 > 0]:")
+print(obj2[obj2 > 0])
+print("obj2 * 2:")
+print(obj2 * 2)
+print("np.exp(obj2):")
+print(np.exp(obj2))
+
+# Dictionary-like usage
+print("'b' in obj2:", "b" in obj2)
+print("'e' in obj2:", "e" in obj2)
+
+# Creating Series from dictionary
+
+sdata = {"Ohio": 35000, "Texas": 71000, "Oregon": 16000, "Utah": 5000}
+obj3 = pd.Series(sdata)
+print("obj3:")
+print(obj3)
+
+print("obj3.to_dict():", obj3.to_dict())
+
+states = ["California", "Ohio", "Oregon", "Texas"]
+obj4 = pd.Series(sdata, index=states)
+print("obj4:")
+print(obj4)
+
+# Missing data handling
+
+print("pd.isna(obj4):")
+print(pd.isna(obj4))
+print("pd.notna(obj4):")
+print(pd.notna(obj4))
+print("obj4.isna():")
+print(obj4.isna())
+
+# Arithmetic alignment
+
+print("obj3 + obj4:")
+print(obj3 + obj4)
+
+# Name attributes
+obj4.name = "population"
+obj4.index.name = "state"
+print("obj4 with names:")
+print(obj4)
+
+# Index modification
+# Note: The text implies obj is now [4, 7, -5, 3] (4 elements) in In[46], 
+# but it was defined as 5 elements in In[14]. 
+# We redefine it here to match the expected output and avoid length mismatch error.
+obj = pd.Series([4, 7, -5, 3]) 
+print("obj (redefined):")
+print(obj)
+
+obj.index = ["Bob", "Steve", "Jeff", "Ryan"]
+print("obj with new index:")
+print(obj)
+
+# DataFrame
+
+data = {"state": ["Ohio", "Ohio", "Ohio", "Nevada", "Nevada", "Nevada"],
+        "year": [2000, 2001, 2002, 2001, 2002, 2003],
+        "pop": [1.5, 1.7, 3.6, 2.4, 2.9, 3.2]}
+frame = pd.DataFrame(data)
+print("frame:")
+print(frame)
+
+print("frame.head():")
+print(frame.head())
+print("frame.tail():")
+print(frame.tail())
+
+print("DataFrame with specified columns:")
+print(pd.DataFrame(data, columns=["year", "state", "pop"]))
+
+frame2 = pd.DataFrame(data, columns=["year", "state", "pop", "debt"])
+print("frame2:")
+print(frame2)
+print("frame2.columns:", frame2.columns)
+
+print("frame2['state']:")
+print(frame2["state"])
+print("frame2.year:")
+print(frame2.year)
+
+print("frame2.loc[1]:")
+print(frame2.loc[1])
+print("frame2.iloc[2]:")
+print(frame2.iloc[2])
+
+# Column modification
+frame2["debt"] = 16.5
+print("frame2 with debt=16.5:")
+print(frame2)
+
+frame2["debt"] = np.arange(6.)
+print("frame2 with debt=arange(6):")
+print(frame2)
+
+val = pd.Series([-1.2, -1.5, -1.7], index=["two", "four", "five"])
+frame2["debt"] = val
+print("frame2 with debt from Series (misaligned):")
+print(frame2)
+
+frame2["eastern"] = frame2["state"] == "Ohio"
+print("frame2 with eastern column:")
+print(frame2)

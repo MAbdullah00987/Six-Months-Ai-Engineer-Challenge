@@ -1,0 +1,25 @@
+Day 1: Introduction to Pandas & Series
+Daily Objective: Understand Pandas fundamentals and master Series operations
+Topics to Cover:
+
+What is Pandas and why use it?
+Installing and importing Pandas
+Pandas Series: creation, attributes, and basic operations
+Indexing and slicing Series
+Series methods (.head(), .tail(), .describe())
+
+Study Materials:
+
+Book: Python for Data Analysis, Chapter 5 (Introduction to Pandas, Series basics)
+Tutorial: W3Schools Pandas Intro and Pandas Series
+
+Practical Exercises:
+
+Create Series from lists, dictionaries, and NumPy arrays
+Perform arithmetic operations on Series
+Filter Series based on conditions
+Practice indexing with labels and positions
+Calculate statistics (mean, median, std) on Series data
+
+Deliverable:
+Build a small program that creates a Series of daily temperatures for a week, calculates average temperature, and identifies days above/below average.

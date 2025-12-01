@@ -1,0 +1,26 @@
+Day 2: DataFrames Fundamentals
+Daily Objective: Master DataFrame creation, structure, and basic operations
+Topics to Cover:
+
+Creating DataFrames from dictionaries, lists, and arrays
+DataFrame attributes (.shape, .columns, .index, .dtypes)
+Viewing data (.head(), .tail(), .info(), .describe())
+Basic DataFrame operations
+Adding and deleting columns
+
+Study Materials:
+
+Book: Python for Data Analysis, Chapter 5 (DataFrame basics)
+Tutorial: W3Schools Pandas DataFrames
+
+Practical Exercises:
+
+Create DataFrames using multiple methods
+Inspect DataFrame structure and metadata
+Add calculated columns (e.g., total from sum of other columns)
+Delete unnecessary columns
+Rename columns for clarity
+Sort DataFrames by different columns
+
+Deliverable:
+Create a student grades DataFrame with subjects as columns, calculate total and average scores, and identify top performers.
