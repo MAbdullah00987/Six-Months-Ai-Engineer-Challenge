@@ -1,0 +1,11 @@
+customer_id,name,region,Total_Spent,Order_Count,Avg_Order_Value
+62,Customer_62,East,8207.09,8,1025.89
+99,Customer_99,South,8012.93,10,801.29
+24,Customer_24,West,6140.94,10,614.09
+52,Customer_52,South,6032.38,8,754.05
+1,Customer_1,East,5924.48,6,987.41
+58,Customer_58,North,5771.17,11,524.65
+33,Customer_33,West,5705.59,10,570.56
+9,Customer_9,East,5558.03,5,1111.61
+48,Customer_48,East,5288.81,8,661.1
+2,Customer_2,West,5263.79,7,751.97

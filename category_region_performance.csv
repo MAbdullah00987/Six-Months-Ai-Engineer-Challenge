@@ -1,0 +1,17 @@
+region,category,Total_Sales,Avg_Order,Order_Count
+East,Books,23428.49,669.39,35
+East,Clothing,11378.42,758.56,15
+East,Electronics,23157.07,723.66,32
+East,Home,18270.56,961.61,19
+North,Books,17534.14,584.47,30
+North,Clothing,13924.57,819.09,17
+North,Electronics,11187.96,430.31,26
+North,Home,10541.36,585.63,18
+South,Books,19692.65,532.23,37
+South,Clothing,11627.8,447.22,26
+South,Electronics,17770.18,555.32,32
+South,Home,16932.33,627.12,27
+West,Books,21342.06,533.55,40
+West,Clothing,17206.86,573.56,30
+West,Electronics,22852.36,519.37,44
+West,Home,13210.7,695.3,19

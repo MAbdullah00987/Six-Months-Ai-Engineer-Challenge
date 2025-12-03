@@ -1,0 +1,11 @@
+product_id,product_name,category,Total_Revenue,Units_Sold,Times_Ordered,Avg_Price
+6,Product_6,Clothing,16450.96,38,14,432.92
+47,Product_47,Home,15717.8,35,14,449.08
+33,Product_33,Electronics,12167.04,32,11,380.22
+1,Product_1,Home,11383.51,31,11,367.21
+30,Product_30,Books,10913.04,24,12,454.71
+13,Product_13,Books,10639.2,33,10,322.4
+38,Product_38,Electronics,9776.55,21,12,465.55
+17,Product_17,Electronics,8987.25,25,10,359.49
+2,Product_2,Clothing,8922.16,23,9,387.92
+41,Product_41,Books,8740.4,20,8,437.02
