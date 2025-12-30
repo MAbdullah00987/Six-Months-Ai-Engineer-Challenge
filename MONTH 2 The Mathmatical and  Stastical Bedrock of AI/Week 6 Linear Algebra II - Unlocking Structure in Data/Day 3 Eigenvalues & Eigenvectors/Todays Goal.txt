@@ -1,0 +1,18 @@
+Day 3: Eigenvalues & Eigenvectors
+Goal: Understand the special vectors that only get scaled by matrix transformations.
+Study (2-3 hours)
+
+Mathematics for Machine Learning, Chapter 4: Sections on eigenvalues and eigenvectors
+BITS Pilani Course: Lectures on eigendecomposition
+
+Practice Projects (2-3 hours)
+
+Eigenvector Visualizer: For a given 2×2 matrix, calculate and plot its eigenvectors. Show how they represent directions of pure stretch/compression. Animate the transformation.
+Change of Basis: Write a script to transform vector coordinates from one basis to another, using eigenvectors as the new basis.
+
+Key Concepts to Master
+
+Computing eigenvalues (characteristic polynomial)
+Finding eigenvectors
+Geometric interpretation
+Diagonalization

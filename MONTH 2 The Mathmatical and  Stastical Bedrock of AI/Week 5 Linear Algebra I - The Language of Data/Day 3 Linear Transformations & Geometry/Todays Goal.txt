@@ -1,0 +1,29 @@
+Day 3: Linear Transformations & Geometry
+Theory (2-3 hours):
+
+Read: Mathematics for ML Chapter 2 (Section 2.7) - Linear mappings
+Watch: Coursera Week 2-3 - Linear transformations
+Focus: How matrices transform space, determinants, special matrices
+
+Practice (3-4 hours):
+
+Project 1: Geometric Transformations
+
+Create rotation matrix: R(θ) = [[cos θ, -sin θ], [sin θ, cos θ]]
+Create scaling matrix: S = [[sx, 0], [0, sy]]
+Create shearing matrix
+Apply to a square/triangle and plot before/after
+
+
+Project 2: Linear Transformation Visualizer
+
+Build interactive visualization showing grid transformation
+Display eigenvectors if time permits
+Show effect of different 2×2 matrices
+
+
+
+Exercise Set:
+
+Apply 5 different transformations to unit square
+Calculate determinants and interpret geometric meaning

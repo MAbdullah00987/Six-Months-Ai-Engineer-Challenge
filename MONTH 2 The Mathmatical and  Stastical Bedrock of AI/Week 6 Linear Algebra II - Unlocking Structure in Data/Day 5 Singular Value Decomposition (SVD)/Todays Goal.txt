@@ -1,0 +1,18 @@
+Day 5: Singular Value Decomposition (SVD)
+Goal: Master SVD, one of the most powerful matrix factorizations in ML.
+
+Mathematics for Machine Learning, Chapter 4: Section on SVD
+BITS Pilani Course: SVD lectures
+Understand the relationship between SVD and eigendecomposition
+
+Practice Projects
+
+Image Compression with SVD: Use SVD to compress an image by keeping only the top k singular values. Show reconstructions with k = 5, 20, 50, 100 and compare file sizes.
+Recommender System with SVD: Implement a basic movie recommender system using SVD on a user-item rating matrix (use MovieLens or create synthetic data).
+
+Key Concepts to Master
+
+SVD decomposition: U, Σ, V^T
+Singular values vs eigenvalues
+Low-rank approximation
+Applications: compression, denoising, collaborative filtering

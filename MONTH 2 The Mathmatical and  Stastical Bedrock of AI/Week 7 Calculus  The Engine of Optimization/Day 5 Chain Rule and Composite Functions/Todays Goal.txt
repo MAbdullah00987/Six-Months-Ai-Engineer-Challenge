@@ -1,0 +1,30 @@
+Day 5: Chain Rule and Composite Functions
+Focus: Understanding backpropagation's mathematical foundation
+Learning Activities (3 hours)
+
+Read: Mathematics for Machine Learning - Chain rule sections
+Watch: Coursera lectures on chain rule for single and multivariable functions
+Study: Connection between chain rule and neural network backpropagation
+
+Projects (3-4 hours)
+Project 1: Chain Rule by Hand (1.5 hours)
+
+Manually calculate derivatives of composite functions:
+
+f(g(x)) where f(u) = u³, g(x) = 2x + 1
+h(x) = sin(x²)
+y(x) = e^(cos(x))
+
+
+Verify with SymPy
+Document the step-by-step process
+
+Project 2: Jacobian Matrix (1.5 hours)
+
+For vector-valued function F: ℝ² → ℝ²
+Example: F(x,y) = [x² + y, xy]
+Compute the Jacobian matrix manually
+Verify with code
+Visualize the transformation
+
+Deliverable: Jupyter notebook with hand calculations and symbolic verification

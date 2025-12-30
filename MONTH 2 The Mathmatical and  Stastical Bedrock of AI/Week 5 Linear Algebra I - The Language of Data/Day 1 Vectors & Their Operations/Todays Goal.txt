@@ -1,0 +1,29 @@
+Day 1: Vectors & Their Operations
+Theory (2-3 hours):
+
+Read: Mathematics for ML Chapter 2 (Sections 2.1-2.3) - Vectors, norms, inner products
+Watch: Coursera Imperial College LA Course - Week 1 Videos (Vectors introduction)
+Focus: Understanding vectors as data points, geometric vs algebraic view, dot products
+
+Practice (2-3 hours):
+
+Project 1: Vector Operations from Scratch
+
+Implement: vector_add(), scalar_multiply(), dot_product()
+Test with various vector sizes
+Compare results with NumPy for verification
+
+
+Project 9 (Part 1): Data Representation
+
+Load a simple dataset (e.g., Iris with 3-4 samples)
+Represent each data point as a vector
+Visualize vectors in 2D/3D space
+
+
+
+Exercise Set:
+
+Calculate magnitudes and unit vectors for 5 different vectors
+Compute angles between vector pairs using dot product
+Practice: 10 problems from Chapter 2 exercises

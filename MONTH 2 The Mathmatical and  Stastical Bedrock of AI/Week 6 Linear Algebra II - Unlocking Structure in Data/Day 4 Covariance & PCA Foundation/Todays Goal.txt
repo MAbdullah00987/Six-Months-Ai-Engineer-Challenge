@@ -1,0 +1,17 @@
+Day 4: Covariance & PCA Foundation
+Goal: Connect linear algebra to statistics and prepare for dimensionality reduction.
+
+Mathematics for Machine Learning, Chapter 4: Section on covariance matrices
+BITS Pilani Course: PCA introduction
+Review how eigendecomposition applies to covariance matrices
+
+
+Covariance Matrix: Calculate and interpret the covariance matrix for a dataset (e.g., iris dataset). Visualize the correlation between features.
+Principal Component Analysis (PCA) from Scratch: Implement PCA using NumPy's eigenvalue decomposition. Apply it to a dataset and visualize the first two principal components.
+
+Key Concepts to Master
+
+Covariance and correlation
+Eigendecomposition of covariance matrices
+Variance explained by principal components
+Dimensionality reduction intuition

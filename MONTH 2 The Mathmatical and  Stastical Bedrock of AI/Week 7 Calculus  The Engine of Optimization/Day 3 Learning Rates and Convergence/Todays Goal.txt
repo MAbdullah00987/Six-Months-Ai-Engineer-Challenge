@@ -1,0 +1,23 @@
+Day 3: Learning Rates and Convergence
+Focus: Understanding how hyperparameters affect optimization
+Learning Activities (2-3 hours)
+
+Read: Study convergence criteria and learning rate selection
+Review: Revisit gradient descent theory with focus on step size
+Research: Read about adaptive learning rates (brief overview)
+
+Project: Learning Rate Explorer (3-4 hours)
+Experiment with different learning rates in gradient descent
+
+Test learning rates: [0.001, 0.01, 0.1, 0.5, 0.9, 1.1]
+Use function: f(x) = x² + 5sin(x)
+Create subplots showing:
+
+Convergence paths for each learning rate
+Number of iterations to converge
+Cases of divergence (learning rate too high)
+Cases of slow convergence (learning rate too low)
+
+
+
+Deliverable: Comprehensive visualization comparing different learning rates with analysis

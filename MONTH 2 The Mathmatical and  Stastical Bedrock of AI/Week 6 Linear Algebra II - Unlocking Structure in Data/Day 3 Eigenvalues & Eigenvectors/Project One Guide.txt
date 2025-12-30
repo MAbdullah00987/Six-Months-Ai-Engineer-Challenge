@@ -1,0 +1,42 @@
+Check for Orthogonality:
+Write a function that checks if the columns of a matrix are orthogonal (using dot products). Visualize orthogonal vs non-orthogonal vectors.
+
+Key Features:
+check_orthogonality(matrix, tolerance) - Main function that:
+Calculates the Gram matrix (dot products of all column pairs)
+Checks if columns are orthogonal
+Returns detailed results
+
+
+Visualization Functions:
+visualize_vectors_2d() - Plots 2D vectors with dot products
+visualize_gram_matrix() - Creates heatmap of dot products
+create_comparison_plot() - Side-by-side comparison of orthogonal vs non-orthogonal vectors
+
+
+Three Complete Examples:
+
+Orthogonal matrix (Identity matrix)
+Non-orthogonal matrix
+Orthonormal matrix (Rotation matrix)
+
+
+
+What You'll Get:
+
+Console output showing orthogonality checks
+4 visualization images saved:
+
+orthogonal_comparison.png - Side-by-side comparison
+orthogonal_vectors.png - Example of orthogonal vectors
+non_orthogonal_vectors.png - Example of non-orthogonal vectors
+gram_matrices.png - Heatmaps showing dot products
+
+
+
+How to Use:
+Simply run the code! You can also use the functions with your own matrices:
+pythonmy_matrix = np.array([[1, 0], [0, 1]])
+results = check_orthogonality(my_matrix)
+print(results['is_orthogonal'])
+The code uses all the libraries you requested: NumPy, Pandas, Matplotlib, and Seaborn.

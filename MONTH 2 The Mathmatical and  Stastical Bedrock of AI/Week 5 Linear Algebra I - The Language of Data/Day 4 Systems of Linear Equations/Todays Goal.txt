@@ -1,0 +1,23 @@
+Day 4: Systems of Linear Equations
+
+Read: Mathematics for ML Chapter 2 (Section 2.3) - Solving linear systems
+Watch: Coursera Week 3 - Gaussian elimination, matrix inverses
+Focus: Row reduction, rank, linear independence
+
+
+Project 1: Solving Linear Equations
+Set up 3-4 real-world problems as Ax = b
+Solve using np.linalg.solve()
+Verify solutions by substitution
+Handle singular matrices (discuss why no solution exists)
+
+
+Project 2: Network Flow Model
+Model a 4-intersection traffic network
+Set up conservation equations: flow in = flow out
+Solve for unknown flows
+Visualize network with node/edge diagram
+
+Exercise Set:
+Solve 10 systems by hand using Gaussian elimination
+Identify inconsistent and underdetermined systems

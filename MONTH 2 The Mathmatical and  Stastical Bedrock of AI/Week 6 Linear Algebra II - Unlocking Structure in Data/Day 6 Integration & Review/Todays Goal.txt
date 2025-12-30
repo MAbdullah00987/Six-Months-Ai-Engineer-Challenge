@@ -1,0 +1,19 @@
+Day 6: Integration & Review
+Goal: Consolidate all Week 6 concepts and see the big picture.
+
+Review all notes from Days 1-5
+Create a concept map connecting: determinants → invertibility → eigenvalues → PCA → SVD
+Work through practice problems from the textbook
+
+Afternoon: Comprehensive Project (3-4 hours)
+Build a "Linear Algebra Toolkit" - Create a single Jupyter notebook or web app that includes:
+
+All 10 mini-projects from the week
+Interactive widgets to adjust parameters
+Visualizations for each concept
+Written explanations connecting theory to code
+
+Write a summary of what you learned
+Test yourself: Can you explain each concept to someone else?
+Identify any weak areas to revisit
+Preview Week 7 materials

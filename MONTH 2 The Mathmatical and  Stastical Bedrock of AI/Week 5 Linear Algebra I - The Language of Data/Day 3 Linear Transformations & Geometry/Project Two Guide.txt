@@ -1,0 +1,54 @@
+Project Two: Linear Transformation Visualizer
+Features:
+
+Interactive Grid Visualization
+
+Left panel: Original grid with standard basis vectors
+Right panel: Transformed grid showing the effect of the 2×2 matrix
+
+
+Interactive Sliders
+
+Four sliders to adjust each element of the 2×2 matrix (a₁₁, a₁₂, a₂₁, a₂₂)
+Range from -3.0 to 3.0 for each element
+
+
+Eigenvector Display
+
+Purple and orange dashed arrows show eigenvectors (when they're real)
+Labeled with their corresponding eigenvalues
+Only displays for real eigenvalues
+
+
+Matrix Information Panel
+
+Shows the current transformation matrix
+Displays determinant and trace
+Shows eigenvalues (or notes if they're complex)
+
+
+Preset Transformations
+
+Rotation: 45-degree rotation
+Scaling: Stretches and compresses
+Shear: Horizontal shear transformation
+Reflection: Reflection across x-axis
+
+
+Visual Elements
+
+Red arrow: First basis vector (e₁) and its transformation
+Green arrow: Second basis vector (e₂) and its transformation
+Blue grid lines: Show how the coordinate grid deforms
+Eigenvectors: Purple and orange (when real eigenvalues exist)
+
+
+
+How to Use:
+
+Run the script
+Adjust sliders to see how different matrix values transform the grid
+Click preset buttons to see common transformations
+Watch how eigenvectors align with stretching directions
+
+The visualization updates in real-time as you adjust the sliders!

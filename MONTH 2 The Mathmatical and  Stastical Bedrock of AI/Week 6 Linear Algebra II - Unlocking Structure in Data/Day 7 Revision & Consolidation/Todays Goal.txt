@@ -1,0 +1,21 @@
+Day 7: Revision & Consolidation
+
+1: Eigenvector Visualizer: For a given 2x2 matrix, calculate and plot its eigenvectors to see the directions of pure stretch/compression.
+
+2: Principal Component Analysis (PCA) from Scratch: Implement PCA using NumPy's eigenvalue decomposition to perform dimensionality reduction on a dataset.
+
+3: Image Compression with SVD: Use SVD to compress an image by keeping only the top 'k' singular values and reconstructing the image.
+
+4 Matrix Inverse Calculator: Write a script that checks if a matrix is invertible and calculates its inverse if it is.
+
+5: Determinant and Area: Show visually how the determinant of a 2x2 matrix relates to the change in area of a transformed shape.
+
+6:Recommender System with SVD: Implement a basic movie recommender system using SVD on a user-item rating matrix.
+
+7:Covariance Matrix: Calculate and interpret the covariance matrix for a dataset.
+
+8: Check for Orthogonality: Write a function to check if the columns of a matrix are orthogonal.
+
+9: Linear Independence Check: Use matrix rank to determine if a set of vectors is linearly independent.
+
+10: Change of Basis: Write a script to transform the coordinates of a vector from one basis to another.

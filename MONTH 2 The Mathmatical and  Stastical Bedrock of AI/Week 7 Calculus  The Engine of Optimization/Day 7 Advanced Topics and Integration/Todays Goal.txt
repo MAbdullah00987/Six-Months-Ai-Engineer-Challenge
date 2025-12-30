@@ -1,0 +1,47 @@
+Day 7: Advanced Topics and Integration
+Focus: Local vs. global optimization and comprehensive review
+Learning Activities (2 hours)
+
+Review: Week's key concepts
+Study: Optimization challenges (local minima, saddle points)
+Read: Brief introduction to second-order methods
+
+Projects (4-5 hours)
+Project 1: Local vs. Global Minima (2 hours)
+Create a function with multiple minima: f(x) = sin(x) + sin(1.5x) + 0.1x
+
+Run gradient descent from different starting points
+Show how algorithm gets stuck in local minima
+Create visualization showing:
+
+Function with multiple minima
+Different convergence paths
+Final solutions from different initializations
+
+
+Discuss implications for neural networks
+
+Project 2: Visualizing Optimization (2 hours)
+Create an animated visualization of gradient descent
+
+Use 2D function: f(x,y) = (x-2)² + (y+1)²
+Generate animation showing:
+
+Contour plot of the function
+Path of gradient descent ball rolling downhill
+Current gradient vector at each step
+Iteration counter and loss value
+
+
+Save as GIF or MP4
+
+Project 3: Week Summary Document (1 hour)
+Create a comprehensive summary including:
+
+Key concepts learned
+All project results and visualizations
+Connections to neural networks
+Challenges faced and solutions
+Questions for further exploration
+
+Deliverable: Animation, optimization experiments, and week summary document

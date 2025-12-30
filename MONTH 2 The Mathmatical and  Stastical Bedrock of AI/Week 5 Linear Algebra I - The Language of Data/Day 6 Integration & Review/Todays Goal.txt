@@ -1,0 +1,36 @@
+Day 6: Integration & Review
+Theory (1-2 hours):
+
+Read: Mathematics for ML Chapter 2-3 summary sections
+Review all Coursera Week 1-4 key takeaways
+
+Practice (3-4 hours):
+
+Project 9 (Complete): Data Representation
+
+Load full dataset (100+ samples, 4-5 features)
+Represent as feature matrix X and target vector y
+Compute X^T X (Gram matrix)
+Calculate column-wise means using matrix operations
+Standardize features using broadcasting
+Compute correlation matrix
+Visualize data matrix as heatmap
+
+
+
+Consolidation:
+
+Revisit all 10 projects - ensure they run without errors
+Write a 1-page summary connecting projects to ML concepts:
+
+How matrix multiplication relates to neural network forward pass
+How linear systems appear in regression
+How transformations relate to data preprocessing
+
+
+Create a GitHub repository with all projects documented
+
+Exercise Set:
+
+Complete any remaining Chapter 2-3 exercises
+Take Coursera Week 1-4 quizzes/assignments

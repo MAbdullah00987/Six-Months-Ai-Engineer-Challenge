@@ -1,0 +1,30 @@
+Day 5: Advanced Applications
+Theory (1-2 hours):
+
+Read: Mathematics for ML Chapter 3 (Intro) - Eigenvalues preview
+Review Coursera Week 4 materials - Matrix inverses and special matrices
+
+Practice (3-4 hours):
+
+Project 10: Affine Transformations
+
+Implement translation + rotation + scaling
+Use homogeneous coordinates (3×3 matrices for 2D)
+Create animation of shape moving and rotating
+Apply to letter shapes or simple graphics
+
+
+Project 8: PageRank Algorithm (Simplified)
+
+Create 5-6 node web graph
+Build adjacency matrix
+Implement power iteration: vₖ₊₁ = M × vₖ
+Iterate until convergence
+Rank pages by final scores
+
+
+
+Exercise Set:
+
+Compute matrix inverses for 3×3 matrices
+Verify A × A⁻¹ = I for 5 examples

@@ -1,0 +1,134 @@
+Day 1: The Rate of Change (Derivatives)
+Objective: Stop seeing derivatives as formulas and start seeing them as "sensitivity." How much does the output wiggle if I wiggle the input?
+Concept: The derivative as the slope of the tangent line.
+Resource:
+Read: Chapter 5.1 of Mathematics for Machine Learning.
+Watch: 3Blue1Brown Essence of Calculus, Chapter 2 ("The Paradox of the Derivative").
+Task: Write a Python script using SymPy to find the derivative of complex functions (e.g., $f(x) = \sin(x)e^x$).
+Code Snippet (Run this):
+Pythonimport sympy as sp
+x = sp.symbols('x')
+f = sp.sin(x) * sp.exp(x)
+df = sp.diff(f, x)
+print(f"Function: {f}")
+print(f"Derivative: {df}")
+
+Day 2: The Multi-Dimensional World (Partial Derivatives)
+Objective: Learn to handle functions with multiple inputs (like a neural network with 1000 weights).
+Concept: Partial derivatives ($\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}$). Holding all variables constant except one.
+Resource:
+Read: Chapter 5.2 of Mathematics for Machine Learning.
+Watch: Khan Academy "Partial Derivatives" (first 2 videos).
+Task: Calculate partial derivatives by hand, then verify with SymPy.
+Code Snippet:
+Pythonx, y = sp.symbols('x y')
+f = x**2 + y**2  # A simple bowl shape
+df_dx = sp.diff(f, x) # Slope in x direction
+df_dy = sp.diff(f, y) # Slope in y direction
+
+Day 3: The Compass of AI (The Gradient)
+Objective: Understand that the Gradient ($\nabla f$) is just a vector containing all the partial derivatives. It always points in the direction of steepest ascent.
+Concept: Gradient vectors, Directional derivatives.
+Resource:
+Course: Imperial College Coursera (Week 2: "The Gradient").
+Task: Create a Quiver Plot in Matplotlib. This shows the "flow" of a function (arrows pointing uphill).
+Portfolio Element: Generate a plot showing a 3D surface (like a mountain) and the vector field below it showing which way is "up."
+
+Day 4: The Engine of Backpropagation (Chain Rule)
+Objective: Master the Chain Rule. This is exactly how deep neural networks learn (Backpropagation is just the chain rule applied 50 times in a row).
+Concept: $\frac{d}{dx}f(g(x)) = f'(g(x)) \cdot g'(x)$.
+Resource:
+Read: Chapter 5.3 of Mathematics for Machine Learning.
+Task: "Chain Rule by Hand" Project. Create a composite function in Python (e.g., sigmoid(linear(x))) and calculate its derivative step-by-step.
+
+Day 5: The Algorithm (Gradient Descent Implementation)
+Objective: Build the algorithm that trains almost every modern AI model.
+Concept: Update rule: $\theta_{new} = \theta_{old} - \alpha \nabla f(\theta)$.
+Task: Core Project: Gradient Descent from Scratch.
+Define a function (e.g., $y = x^2 + 5$).
+Start at a random $x$.
+Loop 100 times: calculate the gradient, subtract it (times a learning rate) from $x$.
+Visualize the ball rolling down the hill.
+
+Day 6: Matrix Calculus (The Jacobian)
+Objective: Scale up. What if you have a function that takes a vector and outputs a vector?
+Concept: The Jacobian Matrix. It's a matrix of all first-order partial derivatives.
+Resource:
+Read: Chapter 5.4 of Mathematics for Machine Learning.
+Task: Calculate the Jacobian of a simple transformation (like rotating a coordinate system) using SymPy.
+
+Day 7: Capstone & Portfolio Building
+Objective: Visualize your Gradient Descent algorithm to prove you understand the math.
+Project: "Visualizing Optimization".
+Tool: Use Matplotlib (easier) or Manim (flashier).
+The Deliverable: An animation showing a point starting high up on a 3D surface and zig-zagging its way down to the minimum (the bottom of the bowl).
+Why this wins: Recruiters don't check your math homework. They watch your 10-second GIF of an algorithm converging.
+
+Week 7 Capstone Code: The "Visualizer"
+Here is a complete script for Day 7. It creates a live animation of Gradient Descent finding the minimum of a 3D function.
+
+Python
+
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+# 1. The Cost Function (A simple bowl)
+def f(x, y):
+    return x**2 + y**2
+
+# 2. The Gradient (Derivative)
+def grad_f(x, y):
+    return np.array([2*x, 2*y])
+
+# 3. Gradient Descent Algorithm
+def gradient_descent(start_x, start_y, learning_rate, n_epochs):
+    path =
+    x, y = start_x, start_y
+    for _ in range(n_epochs):
+        path.append((x, y, f(x, y)))
+        grad = grad_f(x, y)
+        x = x - learning_rate * grad
+        y = y - learning_rate * grad[1]
+    return np.array(path)
+
+# Run the optimizer
+path = gradient_descent(start_x=8, start_y=8, learning_rate=0.1, n_epochs=20)
+
+# 4. Visualization
+fig = plt.figure(figsize=(10, 7))
+ax = fig.add_subplot(111, projection='3d')
+
+# Create the background surface
+X = np.linspace(-10, 10, 100)
+Y = np.linspace(-10, 10, 100)
+X, Y = np.meshgrid(X, Y)
+Z = f(X, Y)
+ax.plot_surface(X, Y, Z, cmap='viridis', alpha=0.6)
+
+# Animate the ball rolling down
+line, = ax.plot(,,, 'r-', label='Gradient Descent Path', lw=2)
+point, = ax.plot(,,, 'ro', ms=10)
+
+def update(i):
+    # Update the line and point data
+    line.set_data(path[:i, 0], path[:i, 1])
+    line.set_3d_properties(path[:i, 2])
+    point.set_data([path[i, 0]], [path[i, 1]])
+    point.set_3d_properties([path[i, 2]])
+    ax.set_title(f"Iteration: {i}")
+    return line, point
+
+ani = FuncAnimation(fig, update, frames=len(path), interval=200, blit=False)
+plt.legend()
+plt.show()
+Week 7 Checklist
+[ ] Understand why we subtract the gradient (to go downhill).
+
+[ ] Calculate a partial derivative by hand.
+
+[ ] Implement Gradient Descent without looking at a tutorial (eventually).
+
+[ ] Visualize the path of optimization.
+
+[ ] Post your animation to LinkedIn with the tag #6MonthAIChallenge.

@@ -1,0 +1,31 @@
+Day 6: Applied Optimization - Linear Regression
+Focus: Using calculus for real-world machine learning problems
+Learning Activities (2 hours)
+
+Review: Linear regression theory and loss functions
+Study: Deriving the gradient of mean squared error
+Read: Connection between calculus and machine learning
+
+Projects (4-5 hours)
+Project 1: Linear Regression with Gradient Descent (2.5 hours)
+
+Generate synthetic 2D data (y = 3x + 2 + noise)
+Implement gradient descent to find best-fit line
+Use MSE loss function: L = (1/n)Σ(y_pred - y_true)²
+Derive and implement gradients for slope and intercept
+Visualize:
+
+Data points and evolving fit line
+Loss over iterations
+Parameter convergence
+
+
+
+Project 2: Stochastic Gradient Descent (SGD) (1.5 hours)
+
+Implement basic SGD (update with single random sample per iteration)
+Compare with batch gradient descent on same dataset
+Visualize convergence paths side by side
+Analyze trade-offs (speed vs. stability)
+
+Deliverable: Two implementations with comparative analysis and visualizations

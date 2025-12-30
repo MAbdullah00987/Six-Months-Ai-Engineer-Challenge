@@ -1,0 +1,22 @@
+Day 4: Multivariable Calculus
+Focus: Partial derivatives and gradients in multiple dimensions
+Learning Activities (3-4 hours)
+
+Read: Mathematics for Machine Learning, Chapter 5 - Multivariate calculus sections
+Watch: Coursera lectures on partial derivatives and gradients
+Practice: Calculate partial derivatives by hand for 5-7 functions
+
+Project: Gradient of a Multivariable Function (2-3 hours)
+Calculate and visualize gradient vector fields
+
+Choose function: f(x,y) = x² + y² or f(x,y) = x² - y²
+Compute partial derivatives ∂f/∂x and ∂f/∂y
+Create visualizations:
+
+3D surface plot
+Contour plot with gradient vectors overlaid
+Quiver plot showing gradient direction and magnitude
+
+
+
+Deliverable: Interactive visualizations of gradient vector fields

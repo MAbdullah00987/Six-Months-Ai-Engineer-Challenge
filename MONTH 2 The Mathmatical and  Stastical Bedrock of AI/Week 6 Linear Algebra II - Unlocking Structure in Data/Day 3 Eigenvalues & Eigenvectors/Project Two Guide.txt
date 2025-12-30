@@ -1,0 +1,49 @@
+Linear Independence Check: Use matrix rank to determine if a set of vectors is linearly independent. Create test cases with dependent and independent vectors.
+
+Key Features:
+
+LinearIndependenceChecker Class:
+
+Uses matrix rank to determine linear independence
+Generates detailed reports
+2D and 3D vector visualizations
+
+
+8 Test Cases:
+
+Independent vectors: Standard basis, non-standard 2D/3D vectors
+Dependent vectors: Parallel vectors, coplanar vectors, linear combinations
+
+
+Visualizations:
+
+2D vector plots with arrows
+3D vector plots in 3D space
+Summary charts showing status distribution, rank comparison, and null space dimensions
+
+
+Comprehensive Output:
+
+Matrix representation
+Rank calculation
+Dependency status
+Null space dimension
+Summary table with pandas
+
+
+
+How to Run:
+
+Save the code to a file (e.g., linear_independence.py)
+Install required packages:
+
+bash   pip install numpy pandas matplotlib seaborn
+
+Run the script:
+
+bash   python linear_independence.py
+Key Concepts Demonstrated:
+
+Rank = Number of vectors → Linearly Independent
+Rank < Number of vectors → Linearly Dependent
+Null Space Dimension = Number of vectors - Rank

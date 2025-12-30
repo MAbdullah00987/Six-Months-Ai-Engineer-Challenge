@@ -1,0 +1,18 @@
+Day 2: Norms & Orthogonality
+Goal: Learn different ways to measure vectors and understand perpendicularity.
+Study (2-3 hours)
+
+Mathematics for Machine Learning, Chapter 4: Sections on norms and inner products
+BITS Pilani Course: Lectures on vector norms and orthogonality
+
+Practice Projects (2-3 hours)
+
+Check for Orthogonality: Write a function that checks if the columns of a matrix are orthogonal (using dot products). Visualize orthogonal vs non-orthogonal vectors.
+Linear Independence Check: Use matrix rank to determine if a set of vectors is linearly independent. Create test cases with dependent and independent vectors.
+
+Key Concepts to Master
+
+L1, L2, and infinity norms
+Orthogonal and orthonormal vectors
+Linear independence vs dependence
+Matrix rank

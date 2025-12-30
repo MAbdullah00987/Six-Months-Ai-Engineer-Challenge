@@ -1,0 +1,29 @@
+Day 2: Matrices & Matrix Operations
+Theory (2-3 hours):
+
+Read: Mathematics for ML Chapter 2 (Sections 2.4-2.5) - Matrices, matrix operations
+Watch: Coursera Week 1-2 - Matrix multiplication intuition
+Focus: Matrices as linear transformations, matrix multiplication mechanics
+
+Practice (2-3 hours):
+
+Project 2: Matrix Multiplication from Scratch
+
+Implement matrix_multiply() with proper dimension checking
+Test with identity matrix, zero matrix, and random matrices
+Verify associativity: (AB)C = A(BC)
+
+
+Project 5: Image as a Matrix
+
+Create a 10×10 black & white image matrix
+Perform transpose, flip (using slicing)
+Apply brightness adjustment (scalar multiplication)
+Visualize with matplotlib
+
+
+
+Exercise Set:
+
+15 matrix multiplication problems (by hand for small matrices)
+Verify properties: (AB)ᵀ = BᵀAᵀ

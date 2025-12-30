@@ -1,0 +1,18 @@
+Day 1: Determinants & Matrix Inverses
+Goal: Understand determinants and when/how matrices can be inverted.
+Study (2-3 hours)
+
+Mathematics for Machine Learning, Chapter 4: Sections on determinants and matrix inverses
+BITS Pilani Course: Lectures on determinants and invertibility
+
+Practice Projects (2-3 hours)
+
+Matrix Inverse Calculator: Write a script that checks if a matrix is invertible (det ≠ 0) and calculates its inverse if it exists. Test with various matrices.
+Determinant and Area: Create a visualization showing how the determinant of a 2×2 matrix relates to area transformation. Plot a unit square and its transformed version.
+
+Key Concepts to Master
+
+Computing determinants (2×2, 3×3, and general)
+Geometric interpretation of determinants
+Conditions for invertibility
+Computing matrix inverses

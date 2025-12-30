@@ -1,0 +1,18 @@
+Day 1: Foundations of Derivatives
+Focus: Understanding the concept of derivatives and their geometric interpretation
+Learning Activities (3-4 hours)
+
+Read: Mathematics for Machine Learning, Chapter 5 - Sections 5.1-5.2 (Derivatives basics)
+Watch: Coursera videos on derivative fundamentals and geometric interpretation
+Practice: Work through 5-10 derivative problems by hand (polynomials, exponentials, trig functions)
+
+Mini-Project: Numerical Differentiation (2-3 hours)
+Write a function that computes derivatives numerically using the limit definition:
+f'(x) ≈ [f(x + h) - f(x)] / h
+
+Test on various functions (x², sin(x), eˣ)
+Experiment with different values of h
+Compare numerical results with analytical derivatives
+Visualize the function and its derivative together
+
+Deliverable: Python script with numerical differentiation implementation and comparison plots

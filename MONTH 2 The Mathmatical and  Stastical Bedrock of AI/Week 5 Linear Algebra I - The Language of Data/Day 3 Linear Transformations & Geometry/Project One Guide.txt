@@ -1,7 +1,7 @@
 Project 3: Geometric Transformations - Complete Implementation
 
 Perfect! I've created a comprehensive geometric transformations project for you. Here's what the code includes:
- Project Features
+Project Features
 Part 1: Transformation Matrices 
 
 Rotation matrix: R(θ) = [[cos θ, -sin θ], [sin θ, cos θ]]

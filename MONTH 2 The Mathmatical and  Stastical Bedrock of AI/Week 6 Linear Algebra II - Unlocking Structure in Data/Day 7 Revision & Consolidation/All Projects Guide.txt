@@ -1,0 +1,2 @@
+1: Eigenvector Visualizer: For a given 2x2 matrix, calculate and plot its eigenvectors to see the directions of pure stretch/compression.
+

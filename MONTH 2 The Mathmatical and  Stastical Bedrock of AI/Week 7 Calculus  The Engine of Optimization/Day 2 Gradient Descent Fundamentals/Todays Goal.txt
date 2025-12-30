@@ -1,0 +1,17 @@
+Day 2: Gradient Descent Fundamentals
+Focus: Understanding optimization and implementing basic gradient descent
+Learning Activities (3-4 hours)
+
+Read: Mathematics for Machine Learning, Chapter 5 - Section on optimization
+Watch: Coursera lectures on gradient descent and optimization
+Theory: Study the gradient descent update rule: x_{n+1} = x_n - α∇f(x_n)
+
+Project: Gradient Descent from Scratch (2-3 hours)
+Implement gradient descent to find the minimum of f(x) = x²
+
+Write the algorithm from scratch (no ML libraries)
+Track the path of convergence
+Visualize the function and the optimization path
+Print iteration number, x value, and function value at each step
+
+Deliverable: Clean implementation with visualization showing convergence
