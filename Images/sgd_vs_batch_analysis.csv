@@ -1,0 +1,11 @@
+Metric,Batch GD,SGD
+Final Slope,2.9922,3.1563
+Final Intercept,2.1323,2.0785
+Slope Error,0.0078,0.1563
+Intercept Error,0.1323,0.0785
+Final Loss (MSE),3.7353,4.6784
+Avg Loss (last 100 iter),3.7353,5.5823
+Loss Std Dev (last 100),0.0000,2.4693
+R² Score,0.9881,0.9851
+Training Time (seconds),0.0129,0.0093
+Time per Iteration (ms),0.0129,0.0093
