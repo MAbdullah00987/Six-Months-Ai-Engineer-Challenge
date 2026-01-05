@@ -1,0 +1,36 @@
+Week 8: Probability & Statistics - Quantifying Uncertainty
+Weekly Objective: Learn the statistical concepts necessary for understanding data distributions, evaluating models, and working with probabilistic models.
+
+Core Concepts: Probability distributions (Normal, Binomial), conditional probability, Bayes' theorem, descriptive statistics (mean, median, variance), inferential statistics, hypothesis testing, p-values.
+
+Primary Resources:
+
+Book: The Hundred-Page Machine Learning Book by Andriy Burkov (Chapter 2).   
+
+Book: Pattern Recognition and Machine Learning by Christopher Bishop (Chapter 2 on Probability Distributions).   
+
+Weekly Project Ideas:
+
+Naive Bayes Classifier from Scratch: Implement the Naive Bayes algorithm for text classification (e.g., spam detection) based on Bayes' theorem.
+
+A/B Test Analyzer: Write a script to analyze the results of a simulated A/B test and determine statistical significance using a t-test.
+
+Central Limit Theorem Simulation: Visually demonstrate the Central Limit Theorem by sampling from a non-normal distribution.
+
+Probability Distribution Plotter: Create a tool to visualize different probability distributions and their parameters.
+
+Coin Flip Simulator: Simulate a large number of coin flips to show how the observed frequencies converge to the theoretical probabilities.
+
+Bayesian Inference: Use Bayes' theorem to solve a classic probability puzzle (e.g., the Monty Hall problem).
+
+Correlation vs. Causation: Find a dataset that shows a strong correlation between two variables and write an analysis explaining why this does not imply causation.
+
+Confidence Interval Calculator: Write a function to calculate the confidence interval for a sample mean.
+
+Dice Roll Probability: Calculate and plot the probability distribution of the sum of two dice rolls.
+
+Descriptive Statistics Report: Write a script that takes a dataset and generates a summary report with key descriptive statistics for each column.
+
+Portfolio & Brand Building:
+
+LinkedIn: Share your Central Limit Theorem simulation. It's a visually appealing and conceptually important topic that showcases your understanding of core statistical principles.
