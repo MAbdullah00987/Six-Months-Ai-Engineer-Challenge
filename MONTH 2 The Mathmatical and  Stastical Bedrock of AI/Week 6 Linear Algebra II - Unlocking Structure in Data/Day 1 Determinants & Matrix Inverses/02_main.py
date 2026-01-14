@@ -344,15 +344,3 @@ summary_points = """
    • Check condition number for numerical stability
 """
 
-print(summary_points)
-
-print("\n" + "="*70)
-print("✓ EXPLORATION COMPLETE!")
-print("="*70)
-print("\nYou now understand:")
-print("  ✓ How to compute determinants")
-print("  ✓ When matrices are invertible")
-print("  ✓ How to find matrix inverses")
-print("  ✓ Geometric meaning of determinants")
-print("  ✓ Different types of matrices and their properties")
-print("="*70)

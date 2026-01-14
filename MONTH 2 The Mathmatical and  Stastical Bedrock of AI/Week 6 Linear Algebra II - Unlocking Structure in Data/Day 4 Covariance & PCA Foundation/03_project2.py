@@ -35,12 +35,11 @@ print(f"Classes: {target_names}")
 print("\nFirst 5 rows:")
 print(df.head())
 
-# ============================================================================
+
 # STEP 1: STANDARDIZE THE DATA
-# ============================================================================
-print("\n" + "=" * 70)
+
+
 print("STEP 1: STANDARDIZE THE DATA")
-print("=" * 70)
 
 # Calculate mean and standard deviation
 mean = np.mean(X, axis=0)
@@ -57,12 +56,11 @@ print("\nStandardized Data Statistics:")
 print("Mean:", np.mean(X_standardized, axis=0))
 print("Std:", np.std(X_standardized, axis=0))
 
-# ============================================================================
+
 # STEP 2: CALCULATE COVARIANCE MATRIX
-# ============================================================================
-print("\n" + "=" * 70)
+
+
 print("STEP 2: CALCULATE COVARIANCE MATRIX")
-print("=" * 70)
 
 # Covariance matrix
 cov_matrix = np.cov(X_standardized.T)
@@ -71,12 +69,11 @@ print("\nCovariance Matrix:")
 print(cov_matrix)
 print(f"\nCovariance Matrix Shape: {cov_matrix.shape}")
 
-# ============================================================================
+
 # STEP 3: COMPUTE EIGENVALUES AND EIGENVECTORS
-# ============================================================================
-print("\n" + "=" * 70)
+
+
 print("STEP 3: COMPUTE EIGENVALUES AND EIGENVECTORS")
-print("=" * 70)
 
 # Calculate eigenvalues and eigenvectors
 eigenvalues, eigenvectors = np.linalg.eig(cov_matrix)
@@ -87,12 +84,12 @@ print(eigenvalues)
 print("\nEigenvectors (columns are eigenvectors):")
 print(eigenvectors)
 
-# ============================================================================
+
 # STEP 4: SORT EIGENVALUES AND EIGENVECTORS
-# ============================================================================
-print("\n" + "=" * 70)
+
+
 print("STEP 4: SORT EIGENVALUES IN DESCENDING ORDER")
-print("=" * 70)
+
 
 # Sort eigenvalues and eigenvectors in descending order
 idx = eigenvalues.argsort()[::-1]
@@ -103,12 +100,11 @@ print("\nSorted Eigenvalues:")
 for i, eigenval in enumerate(eigenvalues_sorted):
     print(f"PC{i+1}: {eigenval:.4f}")
 
-# ============================================================================
+
 # STEP 5: CALCULATE EXPLAINED VARIANCE
-# ============================================================================
-print("\n" + "=" * 70)
+
+
 print("STEP 5: CALCULATE EXPLAINED VARIANCE")
-print("=" * 70)
 
 # Calculate explained variance ratio
 total_variance = np.sum(eigenvalues_sorted)
@@ -119,12 +115,11 @@ print("\nExplained Variance Ratio:")
 for i, (var, cum_var) in enumerate(zip(explained_variance_ratio, cumulative_variance_ratio)):
     print(f"PC{i+1}: {var*100:.2f}% (Cumulative: {cum_var*100:.2f}%)")
 
-# ============================================================================
+
 # STEP 6: PROJECT DATA ONTO PRINCIPAL COMPONENTS
-# ============================================================================
-print("\n" + "=" * 70)
-print("STEP 6: PROJECT DATA ONTO PRINCIPAL COMPONENTS")
-print("=" * 70)
+
+
+print("STEP 6: PROJECT DATA ONTO PRINCIPAL COMPONENTS")                      
 
 # Select first 2 principal components
 n_components = 2
@@ -147,9 +142,9 @@ pca_df = pd.DataFrame(
 )
 pca_df['species'] = [target_names[i] for i in y]
 
-# ============================================================================
+
 # VISUALIZATION
-# ============================================================================
+
 print("\n" + "=" * 70)
 print("CREATING VISUALIZATIONS")
 print("=" * 70)
@@ -258,12 +253,9 @@ plt.savefig('pca_analysis_complete.png', dpi=300, bbox_inches='tight')
 print("\nVisualization saved as 'pca_analysis_complete.png'")
 plt.show()
 
-# ============================================================================
-# SUMMARY AND INTERPRETATION
-# ============================================================================
-print("\n" + "=" * 70)
-print("PCA SUMMARY AND INTERPRETATION")
-print("=" * 70)
+#Main Points
+print("PCA AND INTERPRETATION")
+
 
 print("\n1. DIMENSIONALITY REDUCTION:")
 print(f"   - Original dimensions: {X.shape[1]}")
@@ -292,14 +284,11 @@ X_reconstructed = np.dot(X_pca, principal_components.T) * std + mean
 reconstruction_error = np.mean((X - X_reconstructed) ** 2)
 print(f"   Mean Squared Error: {reconstruction_error:.6f}")
 
-print("\n" + "=" * 70)
 print("PCA ANALYSIS COMPLETE!")
-print("=" * 70)
+
 
 # Optional: Compare with sklearn's PCA
-print("\n" + "=" * 70)
 print("VERIFICATION WITH SKLEARN PCA")
-print("=" * 70)
 from sklearn.decomposition import PCA
 
 pca_sklearn = PCA(n_components=n_components)
@@ -309,4 +298,4 @@ print("\nOur PCA vs Sklearn PCA:")
 print(f"Our explained variance ratio: {explained_variance_ratio[:n_components]}")
 print(f"Sklearn explained variance ratio: {pca_sklearn.explained_variance_ratio_}")
 print(f"\nDifference: {np.abs(explained_variance_ratio[:n_components] - pca_sklearn.explained_variance_ratio_)}")
-print("\n✓ Results match! Our implementation is correct.")
+print("\nResults match! Our implementation is correct.")

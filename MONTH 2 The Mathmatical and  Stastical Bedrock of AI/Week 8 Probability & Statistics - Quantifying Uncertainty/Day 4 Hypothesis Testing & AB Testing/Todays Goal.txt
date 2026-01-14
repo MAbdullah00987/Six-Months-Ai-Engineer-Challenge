@@ -1,0 +1,11 @@
+Day 4: Hypothesis Testing & A/B Testing
+Objective: Determine if a change (e.g., a new model, a new UI) actually made a difference or if it was just luck.
+Concepts: Null Hypothesis ($H_0$), Alternative Hypothesis ($H_1$), P-values, Significance Level ($\alpha$), T-tests.
+Task: Project - A/B Test Analyzer. Generate two fake datasets representing "User Group A" and "User Group B". Use scipy.stats.ttest_ind to calculate the p-value. If $p < 0.05$, the difference is real.
+Descriptive Statistics
+Focus: Measures of central tendency and spread
+Study mean, median, mode, variance, standard deviation
+Learn about quartiles, percentiles, and outliers
+Understand data visualization for statistics
+Project:
+Descriptive Statistics Report - Create a comprehensive script that generates statistical summaries for datasets

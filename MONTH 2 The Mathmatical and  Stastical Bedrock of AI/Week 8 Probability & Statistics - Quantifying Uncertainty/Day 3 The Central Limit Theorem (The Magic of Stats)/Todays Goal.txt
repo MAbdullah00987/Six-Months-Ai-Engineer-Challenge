@@ -1,0 +1,8 @@
+Day 3: The Central Limit Theorem (The Magic of Stats)
+Objective: Understand why the Normal Distribution is everywhere. This is the most important concept in statistics.
+* Theory: No matter what the original distribution of data is (even if it's weird and lopsided), if you take enough sample means, those means will form a Normal Distribution.
+Bayes' Theorem & Conditional Probability
+Focus: Bayesian reasoning and applications
+* Study Bayes' theorem in depth
+* Review conditional probability examples
+* Understand prior, likelihood, and posterior

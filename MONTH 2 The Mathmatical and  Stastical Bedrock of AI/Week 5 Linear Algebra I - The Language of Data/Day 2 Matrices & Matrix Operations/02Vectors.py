@@ -335,3 +335,7 @@ recommendations, scores = recommend_items(user_pref, items)
 print(f"Recommended items: {recommendations}")
 print(f"Similarity scores: {scores}")
 
+#Key Takeaways
+#Vectors → Data representation, feature engineering
+#Norms → Measuring magnitude, normalization, regularization
+#Inner Products → Similarity, projections, transformations

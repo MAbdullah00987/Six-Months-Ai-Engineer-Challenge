@@ -1,6 +1,7 @@
 
-#3: Image Compression with SVD: Use SVD to compress an image by keeping only the top 'k' singular values and
-# reconstructing the image.
+#  Project 3:
+#  Image Compression with SVD: Use SVD to compress an image by keeping only the top 'k' singular values and
+#  reconstructing the image.
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -121,12 +122,11 @@ def calculate_psnr(original, compressed):
     psnr = 20 * np.log10(max_pixel / np.sqrt(mse))
     return psnr
 
-# ============================================================================
+
 # Load and Display Original Image
-# ============================================================================
-print("="*70)
+
 print("LOADING IMAGE")
-print("="*70)
+
 
 original_image = load_sample_image()
 print(f"Image shape: {original_image.shape}")
@@ -134,16 +134,14 @@ print(f"Image dtype: {original_image.dtype}")
 print(f"Value range: [{original_image.min()}, {original_image.max()}]")
 print()
 
-# ============================================================================
-# Compress with Different k values
-# ============================================================================
+# Compress with Different k value
 k_values = [5, 10, 20, 50, 100]
 compressed_images = {}
 metrics = {}
 
-print("="*70)
+
 print("COMPRESSING IMAGE WITH DIFFERENT k VALUES")
-print("="*70)
+
 
 for k in k_values:
     print(f"\nCompressing with k = {k}...")
@@ -166,9 +164,9 @@ for k in k_values:
     print(f"  MSE: {mse:.2f}")
     print(f"  PSNR: {psnr:.2f} dB")
 
-# ============================================================================
+
 # Visualizations
-# ============================================================================
+
 
 fig = plt.figure(figsize=(20, 14))
 
@@ -275,12 +273,10 @@ for i, k in enumerate(k_values):
 plt.tight_layout()
 plt.show()
 
-# ============================================================================
+
 # Summary Statistics
-# ============================================================================
-print("\n" + "="*70)
+
 print("COMPRESSION SUMMARY")
-print("="*70)
 
 summary_df = []
 for k in k_values:
@@ -298,12 +294,10 @@ import pandas as pd
 df = pd.DataFrame(summary_df)
 print(df.to_string(index=False))
 
-print("\n" + "="*70)
+
 print("KEY INSIGHTS")
-print("="*70)
 print("• SVD decomposes image matrix: A = U @ S @ Vt")
 print("• Keeping top k singular values compresses while preserving quality")
 print("• Larger k = better quality but less compression")
 print("• PSNR > 30 dB is generally considered good quality")
 print("• Red channel typically has most energy (natural images)")
-print("="*70)

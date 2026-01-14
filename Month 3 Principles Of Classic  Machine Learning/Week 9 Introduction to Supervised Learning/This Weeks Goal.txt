@@ -1,0 +1,32 @@
+Week 9: Introduction to Supervised Learning
+Weekly Objective: Build, train, and evaluate your first machine learning models for regression and classification using Scikit-Learn.
+
+Core Concepts: The machine learning pipeline, supervised vs. unsupervised learning, Scikit-Learn API, Linear Regression, Logistic Regression, train-test split.
+
+Primary Resources:
+
+Book: Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow, 3rd Edition by Aurélien Géron (Chapters 1-4).   
+
+Course: Andrew Ng's "Machine Learning Specialization" on Coursera (Course 1).   
+
+Weekly Project Ideas:
+
+Boston House Price Prediction: Build a Linear Regression model to predict house prices.
+
+Titanic Survival Prediction: Use Logistic Regression to predict passenger survival on the Titanic.
+
+Diabetes Prediction: Build a classifier to predict the onset of diabetes based on medical data.
+
+Salary Prediction: Use linear regression to predict salary based on years of experience.
+
+Customer Purchase Prediction: Use logistic regression to predict if a customer will buy a product based on their age and estimated salary.
+
+Fish Weight Prediction: Build a regression model to predict the weight of a fish based on its other measurements.
+
+Iris Flower Classification: Use logistic regression for a simple multi-class classification problem.
+
+Regularization Exploration: Compare the performance of Ridge and Lasso regression on a dataset with many features.
+
+Feature Scaling Impact: Show how feature scaling (e.g., StandardScaler) affects the performance of a logistic regression model.
+
+Implement Linear Regression from Scratch: Use your gradient descent code from Week 7 to implement linear regression.

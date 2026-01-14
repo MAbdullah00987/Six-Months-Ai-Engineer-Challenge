@@ -187,9 +187,9 @@ def visualize_3d_vectors(matrix, title="3D Vector Visualization"):
     plt.show()
 
 
-# ============================================================================
-# EXAMPLE 1: Orthogonal 2D vectors (perpendicular)
-# ============================================================================
+
+#Orthogonal 2D vectors (perpendicular)
+
 print("\n" + "="*70)
 print("EXAMPLE 1: ORTHOGONAL 2D VECTORS")
 print("="*70)
@@ -205,9 +205,9 @@ result1 = check_orthogonality(orthogonal_2d)
 visualize_2d_vectors(orthogonal_2d, "Example 1: Orthogonal Vectors (90° angle)")
 
 
-# ============================================================================
-# EXAMPLE 2: Non-orthogonal 2D vectors
-# ============================================================================
+
+#Non-orthogonal 2D vectors
+
 print("\n" + "="*70)
 print("EXAMPLE 2: NON-ORTHOGONAL 2D VECTORS")
 print("="*70)
@@ -223,9 +223,9 @@ result2 = check_orthogonality(non_orthogonal_2d)
 visualize_2d_vectors(non_orthogonal_2d, "Example 2: Non-Orthogonal Vectors (45° angle)")
 
 
-# ============================================================================
-# EXAMPLE 3: Orthonormal 3D vectors (standard basis)
-# ============================================================================
+
+#Orthonormal 3D vectors (standard basis)
+
 print("\n" + "="*70)
 print("EXAMPLE 3: ORTHONORMAL 3D VECTORS (Standard Basis)")
 print("="*70)
@@ -242,9 +242,9 @@ result3 = check_orthogonality(orthonormal_3d)
 visualize_3d_vectors(orthonormal_3d, "Example 3: Orthonormal 3D Vectors")
 
 
-# ============================================================================
-# EXAMPLE 4: Orthogonal but not orthonormal 3D vectors
-# ============================================================================
+
+#Orthogonal but not orthonormal 3D vectors
+
 print("\n" + "="*70)
 print("EXAMPLE 4: ORTHOGONAL BUT NOT ORTHONORMAL 3D VECTORS")
 print("="*70)
@@ -262,12 +262,10 @@ visualize_3d_vectors(orthogonal_not_normal_3d,
                      "Example 4: Orthogonal but NOT Orthonormal")
 
 
-# ============================================================================
-# EXAMPLE 5: Non-orthogonal 3D vectors
-# ============================================================================
-print("\n" + "="*70)
-print("EXAMPLE 5: NON-ORTHOGONAL 3D VECTORS")
-print("="*70)
+
+#Non-orthogonal 3D vectors
+
+
 
 non_orthogonal_3d = np.array([
     [1, 1, 1],

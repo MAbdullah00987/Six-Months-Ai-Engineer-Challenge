@@ -1,11 +1,6 @@
 
-"""
-CHAIN RULE PRACTICE EXERCISES
-==============================
-Hands-on problems to strengthen your understanding
 
-Complete Study Roadmap with Progressive Difficulty
-"""
+#CHAIN RULE PRACTICE EXERCISES
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -13,20 +8,14 @@ import sympy as sp
 import pandas as pd
 import seaborn as sns
 
-print("="*70)
+
 print("CHAIN RULE MASTERY: PRACTICE EXERCISES")
-print("="*70)
 
-# ============================================================================
-# LEVEL 1: BEGINNER EXERCISES
-# ============================================================================
 
-print("\n" + "="*70)
-print("LEVEL 1: BEGINNER EXERCISES")
-print("="*70)
+# EXERCISE No. 1 
 
 def exercise_1_1():
-    """Basic chain rule with polynomial"""
+    """Chain rule with polynomial"""
     print("\nExercise 1.1: Compute d/dx[(2x + 3)^4]")
     print("Solution steps:")
     
@@ -118,13 +107,9 @@ exercise_1_1()
 exercise_1_2()
 exercise_1_3()
 
-# ============================================================================
-# LEVEL 2: INTERMEDIATE EXERCISES
-# ============================================================================
 
-print("\n" + "="*70)
-print("LEVEL 2: INTERMEDIATE EXERCISES")
-print("="*70)
+#EXERCISE No. 2
+
 
 def exercise_2_1():
     """Multivariable chain rule"""
@@ -300,13 +285,10 @@ exercise_2_1()
 exercise_2_2()
 exercise_2_3()
 
-# ============================================================================
-# LEVEL 3: ADVANCED EXERCISES
-# ============================================================================
 
-print("\n" + "="*70)
+#ADVANCED No. 3
 print("LEVEL 3: ADVANCED EXERCISES")
-print("="*70)
+
 
 def exercise_3_1():
     """Analyze vanishing/exploding gradients"""
@@ -408,11 +390,8 @@ def exercise_3_2():
 exercise_3_1()
 exercise_3_2()
 
-# ============================================================================
-# STUDY ROADMAP
-# ============================================================================
 
-print("\n" + "="*70)
+# STUDY ROADMAP
 print("COMPLETE STUDY ROADMAP")
 print("="*70)
 
@@ -496,11 +475,6 @@ RESOURCES TO USE:
 """
 
 print(roadmap)
-
-# ============================================================================
-# PRACTICE TRACKER
-# ============================================================================
-
 print("\n" + "="*70)
 print("PRACTICE TRACKER")
 print("="*70)
@@ -529,6 +503,6 @@ print(practice_log.to_string(index=False))
 
 # Save to CSV
 practice_log.to_csv('chain_rule_practice_log.csv', index=False)
-print(f"\n✓ Practice log saved as 'chain_rule_practice_log.csv'")
+print(f"\nPractice log saved as 'chain_rule_practice_log.csv'")
 
 

@@ -8,7 +8,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sympy import symbols, Eq, solve, simplify, latex
+from sympy import symbols, Eq, solve, simplify, latex , binomial, summation,factorial
+from scipy.special import comb
 from IPython.display import display, Math
 
 '''
@@ -304,7 +305,7 @@ results = medical_test_example()'''
 
 
 #Bayes' Theorem - The Foundation
-
+'''
 # Bayes' Theorem Symbolic Derivation using SymPy
 def bayes_theorem_symbolic():
     """Derive Bayes' Theorem symbolically"""
@@ -492,4 +493,10 @@ def bayes_multiple_evidence():
     plt.tight_layout()
     plt.show()
 
-bayes_multiple_evidence()
+bayes_multiple_evidence()'''
+
+
+#Probability Distributions
+#Binomial Distribution
+
+

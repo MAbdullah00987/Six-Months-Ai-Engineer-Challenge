@@ -60,19 +60,17 @@ class LinearIndependenceChecker:
         self.is_independent = (self.rank == self.n_cols)
         
         if verbose:
-            print(f"\n{'='*80}")
             print("RANK ANALYSIS")
-            print("="*80)
             print(f"Matrix rank: {self.rank}")
             print(f"Number of vectors: {self.n_cols}")
             print(f"Expected rank for independence: {self.n_cols}")
             
             if self.is_independent:
-                print("\n✓ Vectors are LINEARLY INDEPENDENT")
+                print("\nVectors are LINEARLY INDEPENDENT")
                 print("  → No vector can be written as combination of others")
                 print("  → All vectors contribute unique information")
             else:
-                print("\n✗ Vectors are LINEARLY DEPENDENT")
+                print("\n Vectors are LINEARLY DEPENDENT")
                 print(f"  → {self.n_cols - self.rank} redundant vector(s)")
                 print("  → Some vectors can be written as combinations of others")
         
@@ -88,13 +86,11 @@ class LinearIndependenceChecker:
         
         if self.is_independent:
             if verbose:
-                print("\n✓ All vectors are independent")
+                print("\nAll vectors are independent")
             return []
         
         if verbose:
-            print("\n" + "="*80)
             print("IDENTIFYING DEPENDENT VECTORS")
-            print("="*80)
         
         # Use SVD to find dependent columns
         U, s, Vt = np.linalg.svd(self.matrix, full_matrices=False)
@@ -120,13 +116,12 @@ class LinearIndependenceChecker:
         """
         if self.is_independent:
             if verbose:
-                print("\n✓ No dependencies to find")
+                print("\n No dependencies to find")
             return []
         
         if verbose:
-            print("\n" + "="*80)
+            
             print("DEPENDENCY RELATIONSHIPS")
-            print("="*80)
         
         # Calculate null space (solutions to Ax = 0)
         self.null_space_basis = null_space(self.matrix)
@@ -163,9 +158,7 @@ class LinearIndependenceChecker:
         Find a maximal set of independent vectors
         """
         if verbose:
-            print("\n" + "="*80)
             print("MAXIMAL INDEPENDENT SUBSET")
-            print("="*80)
         
         # Use QR decomposition with column pivoting
         Q, R, P = scipy.linalg.qr(self.matrix, pivoting=True)
@@ -217,15 +210,13 @@ class LinearIndependenceChecker:
         in_span = (rank_augmented == self.rank)
         
         if verbose:
-            print("\n" + "="*80)
             print("TESTING VECTOR IN SPAN")
-            print("="*80)
             print(f"Test vector: {test_vector}")
             print(f"\nOriginal rank: {self.rank}")
             print(f"Augmented rank: {rank_augmented}")
             
             if in_span:
-                print("\n✓ Vector IS in the span")
+                print("Vector IS in the span")
                 print("  → Can be written as linear combination of given vectors")
                 
                 # Try to find coefficients
@@ -238,7 +229,7 @@ class LinearIndependenceChecker:
                 except:
                     pass
             else:
-                print("\n✗ Vector is NOT in the span")
+                print(" Vector is NOT in the span")
                 print("  → Cannot be written as linear combination")
         
         return in_span
@@ -459,23 +450,16 @@ def visualize_vectors(checker, title=""):
     plt.tight_layout()
     plt.show()
 
-# ============================================================================
+
 # IMPORT SCIPY
-# ============================================================================
+
 import scipy.linalg
 
-# ============================================================================
-# TEST CASES
-# ============================================================================
-
-print("="*80)
 print("LINEAR INDEPENDENCE CHECKER - TEST CASES")
-print("="*80)
 
 # Test Case 1: Independent vectors (standard basis)
-print("\n" + "="*80)
 print("TEST CASE 1: Independent Vectors (Standard Basis)")
-print("="*80)
+
 
 v1 = [1, 0, 0]
 v2 = [0, 1, 0]
@@ -573,13 +557,13 @@ checker7b = LinearIndependenceChecker([v1, v2], tolerance=1e-12)
 checker7b.check_independence()
 print("\nWith tolerance=1e-12, these are considered independent")
 
-# ============================================================================
-# KEY CONCEPTS AND FORMULAS
-# ============================================================================
 
-print("\n" + "="*80)
+# KEY CONCEPTS AND FORMULAS
+
+
+
 print("KEY CONCEPTS - LINEAR INDEPENDENCE")
-print("="*80)
+
 
 print("""
 1. DEFINITION:

@@ -1,0 +1,25 @@
+Day 1: The Scikit-Learn API & Simple Linear Regression
+
+Objective: Master the "Estimator" API. Every model in sklearn follows the same structure: fit() to train, predict() to test.
+
+Concept: Supervised Learning, Features ($X$) vs. Targets ($y$), Train/Test Split.
+
+Task: Project - Salary Prediction.
+Use a simple dataset (YearsExperience vs. Salary).
+Split data using train_test_split.
+Train a LinearRegression model.
+Visualize the "Best Fit Line" using Matplotlib.
+
+
+ML Fundamentals & Scikit-Learn Basics
+Learning Objectives:
+
+Understand the ML pipeline
+Differentiate supervised vs unsupervised learning
+Learn Scikit-Learn's consistent API
+
+Study Materials:
+
+Géron Chapter 1: "The Machine Learning Landscape" (pages 1-35)
+Andrew Ng Course 1, Week 1: "Introduction to Machine Learning"
+Scikit-Learn documentation: Getting Started tutorial

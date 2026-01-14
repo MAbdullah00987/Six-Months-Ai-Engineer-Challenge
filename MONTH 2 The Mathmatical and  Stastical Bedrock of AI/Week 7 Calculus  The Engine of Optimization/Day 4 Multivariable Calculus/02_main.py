@@ -7,6 +7,8 @@
 #Task: "Chain Rule by Hand" Project. Create a composite function in Python (e.g., sigmoid(linear(x))) 
 #and calculate its derivative step-by-step.
 
+import numpy as np
+import matplotlib.pyplot as plt
 
 #Phase 1: Understanding the Chain Rule Conceptually
 #What is the Chain Rule?
@@ -14,15 +16,7 @@
 #d/dx[f(g(x))] = f'(g(x)) · g'(x)
 #Intuition: The rate of change of the outer function multiplied by the rate of change of the inner function.
 
-"""
-Chain Rule Implementation - Phase 1
-Save this as: chain_rule_phase1.py
-Run: python chain_rule_phase1.py
-"""
-
-import numpy as np
-import matplotlib.pyplot as plt
-
+'''
 print("=" * 70)
 print("CHAIN RULE: PHASE 1 - BASIC IMPLEMENTATION")
 print("=" * 70)
@@ -149,4 +143,6 @@ ax4.grid(True, alpha=0.3)
 plt.tight_layout()
 print("\nShowing plot... (Close the window to continue)")
 plt.show()
+
+'''
 

@@ -12,9 +12,7 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error
 sns.set_style("whitegrid")
 plt.rcParams['figure.figsize'] = (18, 12)
 
-# ============================================================================
 # Create Synthetic Movie Rating Dataset
-# ============================================================================
 
 def create_movie_dataset():
     """Create a synthetic movie rating dataset"""
@@ -91,9 +89,9 @@ def create_movie_dataset():
     
     return ratings, movies_df
 
-# ============================================================================
+
 # SVD-based Recommender System
-# ============================================================================
+
 
 class SVDRecommender:
     """Movie Recommender System using SVD"""
@@ -204,13 +202,13 @@ class SVDRecommender:
         
         return rmse, mae
 
-# ============================================================================
-# Load Data and Train Model
-# ============================================================================
 
-print("="*80)
+# Load Data and Train Model
+
+
+
 print("MOVIE RECOMMENDER SYSTEM WITH SVD")
-print("="*80)
+
 
 # Create dataset
 ratings_matrix, movies_df = create_movie_dataset()
@@ -224,9 +222,8 @@ print(f"  Actual ratings: {np.sum(~np.isnan(ratings_matrix))}")
 print(f"  Sparsity: {np.sum(np.isnan(ratings_matrix)) / (n_users * n_movies) * 100:.1f}%")
 
 # Create DataFrame for better visualization
-print("\n" + "="*80)
+
 print("RATING MATRIX (NaN = Not Rated)")
-print("="*80)
 
 ratings_df = pd.DataFrame(
     ratings_matrix,
@@ -235,13 +232,10 @@ ratings_df = pd.DataFrame(
 )
 print(ratings_df.to_string())
 
-# ============================================================================
-# Train SVD Recommender
-# ============================================================================
 
-print("\n" + "="*80)
+# Train SVD Recommender
+
 print("TRAINING SVD RECOMMENDER")
-print("="*80)
 
 # Try different numbers of latent factors
 best_rmse = float('inf')
@@ -261,15 +255,11 @@ for k in [2, 3, 5, 8, 10]:
         best_k = k
         best_recommender = recommender
 
-print(f"\n✓ Best model: k={best_k} with RMSE={best_rmse:.4f}")
+print(f"\n Best model: k={best_k} with RMSE={best_rmse:.4f}")
 
-# ============================================================================
 # Generate Recommendations
-# ============================================================================
 
-print("\n" + "="*80)
 print("GENERATING RECOMMENDATIONS")
-print("="*80)
 
 # Select a user to get recommendations for
 test_user = 0  # User 1 (index 0)
@@ -295,9 +285,8 @@ recommendations = best_recommender.recommend_movies(
 )
 print(recommendations.to_string(index=False))
 
-# ============================================================================
-# Visualizations
-# ============================================================================
+# Visualization
+
 
 fig = plt.figure(figsize=(20, 14))
 
@@ -434,25 +423,22 @@ ax12.grid(True, alpha=0.3, axis='y')
 plt.tight_layout()
 plt.show()
 
-# ============================================================================
-# Summary
-# ============================================================================
 
-print("\n" + "="*80)
+# Summary
+
 print("SYSTEM SUMMARY")
-print("="*80)
 
 summary_df = pd.DataFrame(results)
 print("\nModel Performance:")
 print(summary_df.to_string(index=False))
 
-print(f"\n✓ Best Configuration: k={best_k} latent factors")
-print(f"✓ RMSE: {best_rmse:.4f}")
-print(f"✓ Predictions made for {np.sum(np.isnan(ratings_matrix))} missing ratings")
+print(f"\n Best Configuration: k={best_k} latent factors")
+print(f"RMSE: {best_rmse:.4f}")
+print(f" Predictions made for {np.sum(np.isnan(ratings_matrix))} missing ratings")
 
-print("\n" + "="*80)
+
 print("HOW SVD RECOMMENDER WORKS")
-print("="*80)
+
 print("""
 1. MATRIX FACTORIZATION:
    R ≈ U @ S @ V^T
@@ -481,5 +467,3 @@ print("""
    - Collaborative filtering
    - Scalable to large datasets
 """)
-
-print("="*80)

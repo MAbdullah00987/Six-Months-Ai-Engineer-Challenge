@@ -231,9 +231,9 @@ def visualize_3d_independence(vectors, title="3D Linear Independence"):
     plt.show()
 
 
-# ============================================================================
-# TEST CASE 1: Independent 2D vectors
-# ============================================================================
+
+#Independent 2D vectors
+
 print("\n" + "█"*70)
 print("TEST CASE 1: LINEARLY INDEPENDENT 2D VECTORS")
 print("█"*70)
@@ -249,9 +249,9 @@ visualize_2d_independence(independent_2d,
     "Test 1: Independent 2D Vectors (Basis for R²)")
 
 
-# ============================================================================
-# TEST CASE 2: Dependent 2D vectors (scalar multiple)
-# ============================================================================
+
+#Dependent 2D vectors (scalar multiple)
+
 print("\n" + "█"*70)
 print("TEST CASE 2: DEPENDENT 2D VECTORS (Scalar Multiple)")
 print("█"*70)
@@ -267,9 +267,9 @@ visualize_2d_independence(dependent_2d_scalar,
     "Test 2: Dependent Vectors (v1 = 2×v0)")
 
 
-# ============================================================================
-# TEST CASE 3: Dependent 2D vectors (linear combination)
-# ============================================================================
+
+#Dependent 2D vectors (linear combination)
+
 print("\n" + "█"*70)
 print("TEST CASE 3: DEPENDENT 2D VECTORS (Linear Combination)")
 print("█"*70)
@@ -285,9 +285,9 @@ visualize_2d_independence(dependent_2d_combo,
     "Test 3: Three Vectors in 2D (v2 = v0 + v1)")
 
 
-# ============================================================================
-# TEST CASE 4: Independent 3D vectors (standard basis)
-# ============================================================================
+
+#Independent 3D vectors (standard basis)
+
 print("\n" + "█"*70)
 print("TEST CASE 4: INDEPENDENT 3D VECTORS (Standard Basis)")
 print("█"*70)
@@ -304,9 +304,9 @@ visualize_3d_independence(independent_3d_basis,
     "Test 4: Independent 3D Basis Vectors")
 
 
-# ============================================================================
-# TEST CASE 5: Independent 3D vectors (non-standard)
-# ============================================================================
+
+#Independent 3D vectors (non-standard)
+
 print("\n" + "█"*70)
 print("TEST CASE 5: INDEPENDENT 3D VECTORS (Non-Standard)")
 print("█"*70)
@@ -323,9 +323,9 @@ visualize_3d_independence(independent_3d,
     "Test 5: Independent Non-Standard 3D Vectors")
 
 
-# ============================================================================
-# TEST CASE 6: Dependent 3D vectors (one in plane of others)
-# ============================================================================
+
+#Dependent 3D vectors (one in plane of others)
+
 print("\n" + "█"*70)
 print("TEST CASE 6: DEPENDENT 3D VECTORS (Planar)")
 print("█"*70)
@@ -342,9 +342,8 @@ visualize_3d_independence(dependent_3d_planar,
     "Test 6: Dependent Vectors (v2 = v0 + v1)")
 
 
-# ============================================================================
-# TEST CASE 7: Dependent 3D vectors (all collinear)
-# ============================================================================
+#Dependent 3D vectors (all collinear)
+
 print("\n" + "█"*70)
 print("TEST CASE 7: DEPENDENT 3D VECTORS (Collinear)")
 print("█"*70)
@@ -361,9 +360,9 @@ visualize_3d_independence(dependent_3d_collinear,
     "Test 7: Collinear Vectors (All on Same Line)")
 
 
-# ============================================================================
-# TEST CASE 8: Four vectors in 3D space
-# ============================================================================
+
+#Four vectors in 3D space
+
 print("\n" + "█"*70)
 print("TEST CASE 8: FOUR VECTORS IN 3D SPACE")
 print("█"*70)

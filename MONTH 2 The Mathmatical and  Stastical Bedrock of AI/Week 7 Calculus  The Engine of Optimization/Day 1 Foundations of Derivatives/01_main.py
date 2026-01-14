@@ -9,9 +9,7 @@ from sklearn.preprocessing import StandardScaler
 sns.set_style("whitegrid")
 plt.rcParams['figure.figsize'] = (18, 14)
 
-
 # LINEAR REGRESSION WITH GRADIENT DESCENT
-
 
 print("="*80)
 print("LINEAR REGRESSION: GRADIENT DESCENT FROM SCRATCH")
@@ -95,9 +93,9 @@ print(f"\nFinal parameters:")
 print(f"  Learned weight: {model.w[0,0]:.4f} (true: 3.0)")
 print(f"  Learned bias: {model.b:.4f} (true: 7.0)")
 
-# ============================================================================
+
 # VISUALIZATION 1: Training Progress
-# ============================================================================
+
 
 fig, axes = plt.subplots(2, 2, figsize=(18, 12))
 fig.suptitle('Linear Regression: Gradient Descent Training', fontsize=16, fontweight='bold')
@@ -185,9 +183,7 @@ plt.tight_layout()
 plt.savefig('linear_regression_gd.png', dpi=300, bbox_inches='tight')
 plt.show()
 
-# ============================================================================
 # LOGISTIC REGRESSION WITH GRADIENT DESCENT
-# ============================================================================
 
 print("\n" + "="*80)
 print("LOGISTIC REGRESSION: BINARY CLASSIFICATION")
@@ -271,9 +267,8 @@ class LogisticRegressionGD:
 log_model = LogisticRegressionGD(learning_rate=0.1, iterations=1000)
 log_model.fit(X_clf, y_clf)
 
-# ============================================================================
+
 # VISUALIZATION 2: Logistic Regression
-# ============================================================================
 
 fig, axes = plt.subplots(1, 3, figsize=(20, 6))
 fig.suptitle('Logistic Regression: Binary Classification', fontsize=16, fontweight='bold')
@@ -325,9 +320,7 @@ predictions = log_model.predict(X_clf)
 accuracy = np.mean(predictions.flatten() == y_clf) * 100
 print(f"\nModel Accuracy: {accuracy:.2f}%")
 
-# ============================================================================
 # NEURAL NETWORK GRADIENT VISUALIZATION
-# ============================================================================
 
 print("\n" + "="*80)
 print("NEURAL NETWORK: BACKPROPAGATION (Chain Rule of Derivatives)")

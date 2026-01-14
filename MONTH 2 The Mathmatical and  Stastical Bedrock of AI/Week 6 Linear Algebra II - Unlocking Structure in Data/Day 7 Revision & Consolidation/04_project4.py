@@ -1,5 +1,6 @@
 
-#4: Matrix Inverse Calculator: Write a script that checks if a matrix is invertible and calculates its inverse
+# Project 4:
+# Matrix Inverse Calculator: Write a script that checks if a matrix is invertible and calculates its inverse
 # if it is.
 
 import numpy as np
@@ -26,10 +27,10 @@ class MatrixInverseCalculator:
         """Check if matrix is square"""
         rows, cols = self.matrix.shape
         if rows != cols:
-            print(f"❌ Matrix is NOT square: {rows}x{cols}")
+            print(f" Matrix is NOT square: {rows}x{cols}")
             print("   Only square matrices can have inverses!")
             return False
-        print(f"✓ Matrix is square: {rows}x{cols}")
+        print(f"Matrix is square: {rows}x{cols}")
         return True
     
     def calculate_determinant(self):
@@ -38,11 +39,11 @@ class MatrixInverseCalculator:
         print(f"\nDeterminant: {self.determinant:.6f}")
         
         if abs(self.determinant) < 1e-10:
-            print("❌ Determinant ≈ 0: Matrix is SINGULAR (not invertible)")
+            print(" Determinant ≈ 0: Matrix is SINGULAR (not invertible)")
             self.is_invertible = False
             return False
         else:
-            print("✓ Determinant ≠ 0: Matrix is INVERTIBLE")
+            print("Determinant ≠ 0: Matrix is INVERTIBLE")
             self.is_invertible = True
             return True
     
@@ -53,10 +54,10 @@ class MatrixInverseCalculator:
         print(f"\nRank: {self.rank}/{n}")
         
         if self.rank == n:
-            print("✓ Full rank: Matrix is invertible")
+            print("Full rank: Matrix is invertible")
             return True
         else:
-            print(f"❌ Rank deficient: Matrix is singular")
+            print(f"Rank deficient: Matrix is singular")
             return False
     
     def calculate_condition_number(self):
@@ -65,26 +66,26 @@ class MatrixInverseCalculator:
         print(f"\nCondition Number: {self.condition_number:.2f}")
         
         if self.condition_number < 10:
-            print("✓ Well-conditioned: Numerically stable")
+            print("Well-conditioned: Numerically stable")
         elif self.condition_number < 100:
-            print("⚠ Moderately conditioned: Some numerical sensitivity")
+            print("Moderately conditioned: Some numerical sensitivity")
         elif self.condition_number < 1000:
-            print("⚠ Ill-conditioned: Numerically sensitive")
+            print("Ill-conditioned: Numerically sensitive")
         else:
-            print("❌ Very ill-conditioned: Numerical instability likely")
+            print("Very ill-conditioned: Numerical instability likely")
     
     def calculate_inverse(self):
         """Calculate matrix inverse"""
         if not self.is_invertible:
-            print("\n❌ Cannot calculate inverse: Matrix is not invertible")
+            print("\nCannot calculate inverse: Matrix is not invertible")
             return None
         
         try:
             self.inverse = np.linalg.inv(self.matrix)
-            print("\n✓ Inverse calculated successfully!")
+            print("\nInverse calculated successfully!")
             return self.inverse
         except np.linalg.LinAlgError as e:
-            print(f"\n❌ Error calculating inverse: {e}")
+            print(f"\nError calculating inverse: {e}")
             return None
     
     def verify_inverse(self):
@@ -99,26 +100,24 @@ class MatrixInverseCalculator:
         # Check if result is close to identity
         is_correct = np.allclose(product, identity, atol=1e-10)
         
-        print("\n" + "="*70)
+        
         print("VERIFICATION: A @ A⁻¹ = I")
-        print("="*70)
+        
         
         if is_correct:
-            print("✓ Verification PASSED: A @ A⁻¹ = I (within tolerance)")
+            print("Verification PASSED: A @ A⁻¹ = I (within tolerance)")
         else:
-            print("⚠ Verification shows numerical errors")
+            print("Verification shows numerical errors")
             max_error = np.max(np.abs(product - identity))
-            print(f"   Maximum error: {max_error:.2e}")
+            print(f"Maximum error: {max_error:.2e}")
         
         return is_correct, product
     
     def analyze(self):
         """Complete analysis of the matrix"""
-        print("="*70)
         print("MATRIX INVERSE ANALYSIS")
-        print("="*70)
         
-        print("\nOriginal Matrix A:")
+        print("Original Matrix A:")
         print(self.matrix)
         
         # Step 1: Check if square
@@ -165,7 +164,6 @@ def visualize_matrix_properties(calc):
         axes[1].axis('off')
         info_text = f"""
         MATRIX PROPERTIES
-        ═══════════════════════
         
         Shape: {calc.matrix.shape[0]}×{calc.matrix.shape[1]}
         
@@ -262,7 +260,7 @@ def visualize_matrix_properties(calc):
     
     info_text = f"""
     NUMERICAL PROPERTIES
-    ══════════════════════
+    
     
     Determinant: {calc.determinant:.6f}
     
@@ -328,17 +326,17 @@ def visualize_matrix_properties(calc):
     
     summary = f"""
     VERIFICATION SUMMARY
-    ═══════════════════════
+
     
-    ✓ Matrix is invertible
+     Matrix is invertible
     
-    ✓ Determinant ≠ 0
+     Determinant ≠ 0
+
+     Full rank
     
-    ✓ Full rank
+     Inverse calculated
     
-    ✓ Inverse calculated
-    
-    ✓ A @ A⁻¹ ≈ I
+     A @ A⁻¹ ≈ I
     
     Max verification error:
     {np.max(np.abs(error_matrix)):.2e}
@@ -354,18 +352,16 @@ def visualize_matrix_properties(calc):
     plt.tight_layout()
     plt.show()
 
-# ============================================================================
-# TEST CASES
-# ============================================================================
 
-print("="*70)
+
+
 print("MATRIX INVERSE CALCULATOR - TEST CASES")
-print("="*70)
+
 
 # Test Case 1: Simple 2x2 invertible matrix
-print("\n" + "="*70)
+
 print("TEST CASE 1: Simple 2×2 Invertible Matrix")
-print("="*70)
+
 
 A1 = [[4, 7],
       [2, 6]]
@@ -375,9 +371,9 @@ calc1.analyze()
 visualize_matrix_properties(calc1)
 
 # Test Case 2: 3x3 invertible matrix
-print("\n" + "="*70)
+
 print("TEST CASE 2: 3×3 Invertible Matrix")
-print("="*70)
+
 
 A2 = [[2, -1, 0],
       [-1, 2, -1],
@@ -388,9 +384,8 @@ calc2.analyze()
 visualize_matrix_properties(calc2)
 
 # Test Case 3: Singular matrix (not invertible)
-print("\n" + "="*70)
 print("TEST CASE 3: Singular Matrix (NOT Invertible)")
-print("="*70)
+
 
 A3 = [[1, 2, 3],
       [2, 4, 6],
@@ -401,9 +396,8 @@ calc3.analyze()
 visualize_matrix_properties(calc3)
 
 # Test Case 4: Identity matrix
-print("\n" + "="*70)
 print("TEST CASE 4: Identity Matrix (Self-Inverse)")
-print("="*70)
+
 
 A4 = np.eye(3)
 
@@ -412,9 +406,7 @@ calc4.analyze()
 visualize_matrix_properties(calc4)
 
 # Test Case 5: Nearly singular matrix (ill-conditioned)
-print("\n" + "="*70)
 print("TEST CASE 5: Ill-Conditioned Matrix")
-print("="*70)
 
 A5 = [[1, 1],
       [1, 1.0001]]
@@ -423,13 +415,11 @@ calc5 = MatrixInverseCalculator(A5)
 calc5.analyze()
 visualize_matrix_properties(calc5)
 
-# ============================================================================
 # SUMMARY
-# ============================================================================
 
-print("\n" + "="*70)
+
 print("KEY CONCEPTS - MATRIX INVERTIBILITY")
-print("="*70)
+
 print("""
 1. INVERTIBILITY CONDITIONS:
    • Matrix must be SQUARE (n×n)

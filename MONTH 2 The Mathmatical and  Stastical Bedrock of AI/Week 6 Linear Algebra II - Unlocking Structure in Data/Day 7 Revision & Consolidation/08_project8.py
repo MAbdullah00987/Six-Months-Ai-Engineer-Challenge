@@ -1,5 +1,6 @@
 
-#8: Check for Orthogonality: Write a function to check if the columns of a matrix are orthogonal.
+#  Project 8:
+#  Check for Orthogonality: Write a function to check if the columns of a matrix are orthogonal.
 
 import numpy as np
 import pandas as pd
@@ -58,16 +59,14 @@ class OrthogonalityChecker:
         self.is_orthogonal = max_off_diagonal < self.tolerance
         
         if verbose:
-            print(f"\n{'='*80}")
             print("ORTHOGONALITY TEST RESULTS")
-            print("="*80)
             print(f"Maximum off-diagonal value: {max_off_diagonal:.2e}")
             print(f"Tolerance: {self.tolerance:.2e}")
             
             if self.is_orthogonal:
-                print("✓ Columns ARE ORTHOGONAL")
+                print("Columns ARE ORTHOGONAL")
             else:
-                print("✗ Columns ARE NOT ORTHOGONAL")
+                print("Columns ARE NOT ORTHOGONAL")
         
         # Check each pair individually
         if verbose:
@@ -76,7 +75,7 @@ class OrthogonalityChecker:
                 for j in range(i+1, self.n_cols):
                     dot_product = self.gram_matrix[i, j]
                     is_ortho = abs(dot_product) < self.tolerance
-                    status = "✓ Orthogonal" if is_ortho else "✗ Not orthogonal"
+                    status = "Orthogonal" if is_ortho else "Not orthogonal"
                     print(f"  Column {i+1} · Column {j+1} = {dot_product:.6f} [{status}]")
         
         return self.is_orthogonal
@@ -93,9 +92,8 @@ class OrthogonalityChecker:
             self.check_orthogonality(verbose=False)
         
         if verbose:
-            print("\n" + "="*80)
             print("CHECKING ORTHONORMALITY")
-            print("="*80)
+            
         
         # Check if Gram matrix is identity
         identity = np.eye(self.n_cols)
@@ -108,26 +106,24 @@ class OrthogonalityChecker:
             for i in range(self.n_cols):
                 norm = np.linalg.norm(self.matrix[:, i])
                 is_unit = np.isclose(norm, 1.0, atol=self.tolerance)
-                status = "✓ Unit vector" if is_unit else "✗ Not unit"
+                status = "Unit vector" if is_unit else "Not unit"
                 print(f"  ||Column {i+1}|| = {norm:.6f} [{status}]")
-            
-            print(f"\n{'='*80}")
+        
             if self.is_orthonormal:
-                print("✓ Columns ARE ORTHONORMAL (orthogonal + unit vectors)")
+                print("Columns ARE ORTHONORMAL (orthogonal + unit vectors)")
             else:
                 if self.is_orthogonal:
-                    print("✗ Columns are ORTHOGONAL but NOT ORTHONORMAL")
+                    print("Columns are ORTHOGONAL but NOT ORTHONORMAL")
                     print("   (vectors are perpendicular but not unit length)")
                 else:
-                    print("✗ Columns are NOT ORTHONORMAL")
+                    print("Columns are NOT ORTHONORMAL")
         
         return self.is_orthonormal
     
     def normalize_columns(self):
         """Normalize columns to create orthonormal matrix"""
-        print("\n" + "="*80)
+
         print("NORMALIZING COLUMNS")
-        print("="*80)
         
         normalized = np.zeros_like(self.matrix)
         for i in range(self.n_cols):
@@ -324,8 +320,8 @@ def visualize_orthogonality(checker, title=""):
     
     Matrix Shape: {checker.n_rows} × {checker.n_cols}
     
-    Orthogonal: {'✓ YES' if checker.is_orthogonal else '✗ NO'}
-    Orthonormal: {'✓ YES' if checker.is_orthonormal else '✗ NO'}
+    Orthogonal: {'YES' if checker.is_orthogonal else 'NO'}
+    Orthonormal: {'YES' if checker.is_orthonormal else 'NO'}
     
     Column Norms:
     """
@@ -341,12 +337,12 @@ def visualize_orthogonality(checker, title=""):
             summary += f"\n    v{i+1}·v{j+1} = {dot:.4f}"
     
     if checker.is_orthogonal:
-        summary += "\n\n    ✓ All dot products ≈ 0"
+        summary += "\n\n    All dot products ≈ 0"
     
     if checker.is_orthonormal:
-        summary += "\n    ✓ All norms = 1"
-        summary += "\n    ✓ Matrix columns form"
-        summary += "\n      orthonormal basis"
+        summary += "\n     All norms = 1"
+        summary += "\n     Matrix columns form"
+        summary += "\n     orthonormal basis"
     
     ax8.text(0.1, 0.5, summary, fontsize=10, verticalalignment='center',
             family='monospace',
@@ -355,9 +351,8 @@ def visualize_orthogonality(checker, title=""):
     plt.tight_layout()
     plt.show()
 
-# ============================================================================
 # TEST CASES
-# ============================================================================
+
 
 print("="*80)
 print("ORTHOGONALITY CHECKER - TEST CASES")
@@ -462,9 +457,9 @@ checker5.check_orthogonality()
 checker5.check_orthonormality()
 visualize_orthogonality(checker5, "Rotation Matrix (Orthonormal)")
 
-# ============================================================================
+
 # SUMMARY AND KEY CONCEPTS
-# ============================================================================
+
 
 print("\n" + "="*80)
 print("KEY CONCEPTS - ORTHOGONALITY")
@@ -544,14 +539,9 @@ def quick_check_orthogonal(matrix, tolerance=1e-10):
     
     return is_orthogonal, is_orthonormal
 
-print("\n" + "="*80)
-print("QUICK CHECK FUNCTION EXAMPLE")
-print("="*80)
 
 test_matrix = np.array([[1, 0], [0, 1]])
 is_orth, is_orthonorm = quick_check_orthogonal(test_matrix)
 print(f"Matrix:\n{test_matrix}")
 print(f"Orthogonal: {is_orth}")
 print(f"Orthonormal: {is_orthonorm}")
-
-print("\n" + "="*80)

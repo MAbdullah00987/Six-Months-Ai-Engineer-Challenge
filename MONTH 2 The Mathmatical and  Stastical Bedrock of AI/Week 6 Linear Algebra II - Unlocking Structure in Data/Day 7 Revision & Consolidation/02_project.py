@@ -1,5 +1,6 @@
 
-#2:Principal Component Analysis (PCA) from Scratch: Implement PCA using NumPy's eigenvalue decomposition to perform
+# Project2:
+# Principal Component Analysis (PCA) from Scratch: Implement PCA using NumPy's eigenvalue decomposition to perform
 # dimensionality reduction on a dataset.
 
 
@@ -102,12 +103,11 @@ print("First 5 rows of data:")
 print(df.head())
 print()
 
-# ============================================================================
+
 # Perform PCA from Scratch
-# ============================================================================
-print("="*70)
+
 print("PERFORMING PCA FROM SCRATCH")
-print("="*70)
+
 
 pca = PCA_FromScratch(n_components=2)
 X_pca = pca.fit_transform(X)
@@ -115,9 +115,8 @@ X_pca = pca.fit_transform(X)
 print(f"\nTransformed data shape: {X_pca.shape}")
 print()
 
-# ============================================================================
+
 # Visualizations
-# ============================================================================
 
 fig = plt.figure(figsize=(18, 12))
 
@@ -248,12 +247,10 @@ if len(pca.explained_variance_ratio) >= 3:
 plt.tight_layout()
 plt.show()
 
-# ============================================================================
+
 # Reconstruction Error Analysis
-# ============================================================================
-print("="*70)
 print("RECONSTRUCTION ERROR ANALYSIS")
-print("="*70)
+
 
 X_reconstructed = pca.inverse_transform(X_pca)
 reconstruction_error = np.mean((X - X_reconstructed) ** 2)
@@ -268,11 +265,9 @@ print("Reconstructed:", np.round(X_reconstructed[0], 3))
 print("Difference:   ", np.round(X[0] - X_reconstructed[0], 3))
 print()
 
-print("="*70)
 print("PCA SUMMARY")
 print("="*70)
 print(f"Original dimensions: {X.shape[1]}")
 print(f"Reduced dimensions: {pca.n_components}")
 print(f"Variance retained: {np.sum(pca.explained_variance_ratio[:pca.n_components])*100:.2f}%")
 print(f"Dimensionality reduction: {(1 - pca.n_components/X.shape[1])*100:.1f}%")
-print("="*70)

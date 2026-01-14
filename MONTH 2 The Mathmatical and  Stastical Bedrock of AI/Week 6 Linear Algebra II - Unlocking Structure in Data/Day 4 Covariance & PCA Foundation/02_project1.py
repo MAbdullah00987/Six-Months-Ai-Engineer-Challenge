@@ -165,9 +165,6 @@ for i, val in enumerate(eigenvalues):
 print("\nEigenvectors:")
 print(eigenvectors)
 
-print("\n" + "=" * 60)
-print("ANALYSIS COMPLETE")
-print("=" * 60)
 print("\nKey Takeaways:")
 print("1. Petal measurements show strong positive correlation")
 print("2. Sepal width has weaker correlation with other features")

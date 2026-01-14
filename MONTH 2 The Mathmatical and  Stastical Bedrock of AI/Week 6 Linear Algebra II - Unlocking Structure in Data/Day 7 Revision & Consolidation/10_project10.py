@@ -182,9 +182,9 @@ def plot_2d_transformation(transformer, vector_old, figsize=(14, 6)):
 
 
 # Example 1: 2D Transformation
-print("\n" + "="*60)
+
 print("EXAMPLE 1: 2D Change of Basis")
-print("="*60)
+
 
 # Define standard basis
 standard_basis = np.array([[1, 0],
@@ -216,9 +216,8 @@ plot_2d_transformation(transformer_2d, vector_old_2d)
 
 
 # Example 2: 3D Transformation
-print("\n" + "="*60)
 print("EXAMPLE 2: 3D Change of Basis")
-print("="*60)
+
 
 # Standard 3D basis
 standard_basis_3d = np.eye(3)
@@ -300,6 +299,3 @@ ax3.grid(axis='y', alpha=0.3)
 plt.tight_layout()
 plt.show()
 
-print("\n" + "="*60)
-print("TRANSFORMATION COMPLETE!")
-print("="*60)

@@ -34,6 +34,7 @@
 #Questions for further exploration
 
 #Part 1: Core Concepts
+#Gradient Descent Fundamentals
 
 import numpy as np
 import matplotlib.pyplot as plt

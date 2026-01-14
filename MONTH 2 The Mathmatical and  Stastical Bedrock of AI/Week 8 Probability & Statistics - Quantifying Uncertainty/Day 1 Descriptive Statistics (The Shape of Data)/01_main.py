@@ -23,7 +23,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+from scipy import stats
 
 '''
 #Part 1: Descriptive Statistics - Understanding the Shape of Data
@@ -146,7 +146,7 @@ plt.tight_layout()
 plt.show()
 '''
 
-
+'''
 #Interquartile Range (IQR) - Robust Spread Measure
 
 # Dataset with outliers
@@ -201,3 +201,8 @@ ax.text(np.median(house_prices), 1.15, f'Median: ${np.median(house_prices):,.0f}
 ax.grid(axis='x', alpha=0.3)
 plt.tight_layout()
 plt.show()
+'''
+
+
+
+

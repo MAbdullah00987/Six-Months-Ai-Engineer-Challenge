@@ -16,7 +16,8 @@
 #9: Linear Independence Check: Use matrix rank to determine if a set of vectors is linearly independent.
 #10: Change of Basis: Write a script to transform the coordinates of a vector from one basis to another.
 
-#1: Eigenvector Visualizer: For a given 2x2 matrix, calculate and plot its eigenvectors to see the directions of
+#Project 1:
+# Eigenvector Visualizer: For a given 2x2 matrix, calculate and plot its eigenvectors to see the directions of
 # pure stretch/compression.
 
 import numpy as np

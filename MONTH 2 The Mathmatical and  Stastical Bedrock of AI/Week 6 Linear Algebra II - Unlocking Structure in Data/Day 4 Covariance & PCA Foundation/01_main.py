@@ -14,6 +14,7 @@
 #Eigendecomposition of covariance matrices
 #Variance explained by principal components
 #Dimensionality reduction intuition
+
 import numpy as np
 import pandas as pd
 import seaborn as sns

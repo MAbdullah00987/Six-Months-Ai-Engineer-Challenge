@@ -328,5 +328,5 @@ print("""
 7. To find inverse: A^(-1) exists only if det(A) ≠ 0
 """)
 
-print("\n✓ Tutorial Complete! Check the generated visualizations.")
+print("\n Tutorial Complete! Check the generated visualizations.")
 print("="*60)

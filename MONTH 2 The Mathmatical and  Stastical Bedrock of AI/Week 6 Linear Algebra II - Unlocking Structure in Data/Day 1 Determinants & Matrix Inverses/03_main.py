@@ -373,21 +373,3 @@ summary_table = pd.DataFrame({
     ]
 })
 
-print("\n📋 Quick Reference Table:")
-print(summary_table.to_string(index=False))
-
-print("\n✅ Key Skills Mastered:")
-print("  • Computing determinants (2×2, 3×3)")
-print("  • Checking invertibility")
-print("  • Finding matrix inverses")
-print("  • Understanding geometric meaning")
-print("  • Solving linear systems")
-print("  • Visualizing transformations")
-
-print("\n🎯 Next Steps:")
-print("  1. Review the BITS Pilani lectures on determinants")
-print("  2. Practice more problems from your textbook")
-print("  3. Move on to eigenvalues and eigenvectors")
-print("  4. Apply to real machine learning problems")
-
-print("\n" + "="*70)

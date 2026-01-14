@@ -814,9 +814,8 @@ summary_data = {
 summary_df = pd.DataFrame(summary_data)
 print("\n", summary_df.to_string(index=False))
 
-print("\n" + "="*80)
-print("PRACTICAL APPLICATIONS")
-print("="*80)
+
+#Important Points
 applications = """
 1. DETERMINANTS
    - Check if system of equations has unique solution
@@ -877,9 +876,6 @@ Array Operations:
 """
 print(operations)
 
-print("\n" + "="*80)
-print("PROJECT COMPLETED SUCCESSFULLY!")
-print("="*80)
 print("\nGenerated Visualizations:")
 print("  1. 1_determinants.png - Determinant as area scaling")
 print("  2. 2_invertibility.png - Invertible vs singular matrices")

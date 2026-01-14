@@ -1,152 +1,78 @@
-#Day 3: Linear Transformations & Geometry
 
-#Read: Mathematics for ML Chapter 2 (Section 2.7) - Linear mappings
-#Watch: Coursera Week 2-3 - Linear transformations
-#Focus: How matrices transform space, determinants, special matrices
+#Day 2: Norms & Orthogonality
+#Goal: Learn different ways to measure vectors and understand perpendicularity.
 
-#Project 3: Geometric Transformations
-#Create rotation matrix: R(θ) = [[cos θ, -sin θ], [sin θ, cos θ]]
-#Create scaling matrix: S = [[sx, 0], [0, sy]]
-#Create shearing matrix
-#Apply to a square/triangle and plot before/after
+#Mathematics for Machine Learning, Chapter 4: Sections on norms and inner products
+#BITS Pilani Course: Lectures on vector norms and orthogonality
 
-#Project 6: Linear Transformation Visualizer
-#Build interactive visualization showing grid transformation
-#Display eigenvectors if time permits
-#Show effect of different 2×2 matrices
+#Check for Orthogonality: Write a function that checks if the columns of a matrix are orthogonal (using dot products). Visualize orthogonal vs non-orthogonal vectors.
+#Linear Independence Check: Use matrix rank to determine if a set of vectors is linearly independent. Create test cases with dependent and independent vectors.
 
-#Exercise Set:
-#Apply 5 different transformations to unit square
-#Calculate determinants and interpret geometric meaning
+#Key Concepts to Master
+#L1, L2, and infinity norms
+#Orthogonal and orthonormal vectors
+#Linear independence vs dependence
+#Matrix rank
 
+#Vector Norms (Measuring Vectors)
+#A vector norm is a function that assigns a non-negative length or size to a vector. 
+#In data science, norms are primarily used as distance metrics to quantify how "far" apart 
+#two data points (vectors) are, which is fundamental to algorithms like clustering, regression,
+# and regularization.
 
+#Key Norms and their Use in NumPy
 
-#Part 1: Understanding Linear TransformationsLinear transformations are functions that map vectors from one space to another while preserving:
-#Addition: T(u + v) = T(u) + T(v)
-#Scalar multiplication: T(cv) = cT(v)
-#Every linear transformation can be represented by a matrix, and matrix multiplication IS applying that transformation.
+#Name	                     Formula (for vector x)   	NumPy Implementation	Logic Strengthening Use Case
+#L2 Norm (Euclidean Norm)	 $\sqrt{\sum_{i=1}^{n}	    x_i	                        ^2}$ 
+#L1 Norm (Manhattan Norm)	 $\sum_{i=1}^{n}            x_i	                          $
+#L-infinity Norm (Max Norm)	 $\max_{i}	                x_i	                          $  
+
+#Python/NumPy Logic Example (Feature Scaling)
+#When you scale data, you often want to normalize it so all features have a unit norm (a magnitude of 1), which prevents features with naturally larger values from dominating a model.
+
 
 import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-from mpl_toolkits.mplot3d.art3d import Poly3DCollection
-import seaborn as sns
+'''
+# A sample data point (e.g., age, income, spending)
+vector_a = np.array([25, 50000, 1500])
 
-# PART 1: 3D TRANSFORMATIONS
+# 1. Calculate the L2 Norm (magnitude)
+l2_norm = np.linalg.norm(vector_a, 2)
+print(f"L2 Norm: {l2_norm:.2f}")
 
-# Create a 3D cube
-def create_cube():
-    """Create vertices of a unit cube"""
-    vertices = np.array([
-        [0, 0, 0], [1, 0, 0], [1, 1, 0], [0, 1, 0],  # bottom
-        [0, 0, 1], [1, 0, 1], [1, 1, 1], [0, 1, 1]   # top
-    ]).T
-    return vertices
+# 2. Normalize the vector (Unit Vector)
+# Dividing the vector by its norm scales it to length 1.
+unit_vector = vector_a / l2_norm
+print(f"Unit Vector: {unit_vector}")
+print(f"New L2 Norm (should be 1): {np.linalg.norm(unit_vector, 2):.4f}")
+'''
+'''
+#2. Inner Products and Orthogonality
+#Inner Product
+#The inner product (or dot product) of two vectors, 
+#In data science, the inner product is directly related to similarity and correlation:
+#A large positive inner product means the vectors point in the same general direction (highly similar/correlated).
+#A large negative inner product means they point in opposite directions (highly dissimilar/negatively correlated).
+#Orthogonality
+#Two vectors, 
+#Orthogonality is critical because it means the two vectors convey completely independent information—changing one does not affect the projection of the other.
+#Python/NumPy Logic Example (Checking Independence)
+#In Principal Component Analysis (PCA), the goal is to find a new set of dimensions (principal components) that are orthogonal to each other, thus capturing the maximum variance with minimal redundant information.
 
-# Define faces for visualization
-faces = [
-    [0, 1, 2, 3],  # bottom
-    [4, 5, 6, 7],  # top
-    [0, 1, 5, 4],  # front
-    [2, 3, 7, 6],  # back
-    [0, 3, 7, 4],  # left
-    [1, 2, 6, 5]   # right
-]
 
-def plot_3d_transformation(ax, matrix, title, vertices):
-    """Plot 3D transformation"""
-    # Transform vertices
-    transformed = matrix @ vertices
-    
-    # Create faces
-    cube_faces = []
-    for face in faces:
-        cube_faces.append([transformed.T[face[i]] for i in range(4)])
-    
-    # Plot
-    poly = Poly3DCollection(cube_faces, alpha=0.3, facecolor='cyan', 
-                            edgecolor='black', linewidth=2)
-    ax.add_collection3d(poly)
-    
-    # Plot vertices
-    ax.scatter(transformed[0], transformed[1], transformed[2], 
-               c='red', s=50, marker='o')
-    
-    # Plot basis vectors
-    origin = np.zeros((3, 1))
-    colors = ['red', 'green', 'blue']
-    labels = ['x', 'y', 'z']
-    
-    for i in range(3):
-        direction = matrix[:, i]
-        ax.quiver(0, 0, 0, direction[0], direction[1], direction[2],
-                 color=colors[i], arrow_length_ratio=0.1, linewidth=2,
-                 label=f'{labels[i]}-axis')
-    
-    # Calculate determinant (volume scaling)
-    det = np.linalg.det(matrix)
-    
-    ax.set_xlabel('X')
-    ax.set_ylabel('Y')
-    ax.set_zlabel('Z')
-    ax.set_xlim(-2, 2)
-    ax.set_ylim(-2, 2)
-    ax.set_zlim(-2, 2)
-    ax.set_title(f'{title}\ndet = {det:.3f} (volume × {abs(det):.2f})', 
-                 fontsize=10, fontweight='bold')
-    ax.legend(fontsize=8)
+# Two vectors (representing two features in a dataset)
+v1 = np.array([3, 4])
+v2 = np.array([-4, 3])
+v3 = np.array([1, 1])
 
-# Create different 3D transformations
-fig = plt.figure(figsize=(18, 12))
+# Calculate the inner product (dot product)
+dot_product_1_2 = np.dot(v1, v2)
+dot_product_1_3 = np.dot(v1, v3)
 
-# Original cube
-ax1 = fig.add_subplot(2, 3, 1, projection='3d')
-plot_3d_transformation(ax1, np.eye(3), 'Original Cube', create_cube())
+print(f"Dot Product v1 and v2: {dot_product_1_2}")
+print(f"Are v1 and v2 orthogonal? {dot_product_1_2 == 0}")
 
-# 3D Rotation around z-axis
-angle = np.pi / 4
-rotation_z = np.array([
-    [np.cos(angle), -np.sin(angle), 0],
-    [np.sin(angle), np.cos(angle), 0],
-    [0, 0, 1]
-])
-ax2 = fig.add_subplot(2, 3, 2, projection='3d')
-plot_3d_transformation(ax2, rotation_z, 'Rotation (Z-axis, 45°)', create_cube())
+print(f"\nDot Product v1 and v3: {dot_product_1_3}")
+print(f"Are v1 and v3 orthogonal? {dot_product_1_3 == 0}")
+'''
 
-# 3D Scaling
-scaling_3d = np.array([
-    [2, 0, 0],
-    [0, 1, 0],
-    [0, 0, 0.5]
-])
-ax3 = fig.add_subplot(2, 3, 3, projection='3d')
-plot_3d_transformation(ax3, scaling_3d, 'Scaling (2x, 1x, 0.5x)', create_cube())
-
-# 3D Shear
-shear_3d = np.array([
-    [1, 0.5, 0],
-    [0, 1, 0],
-    [0, 0, 1]
-])
-ax4 = fig.add_subplot(2, 3, 4, projection='3d')
-plot_3d_transformation(ax4, shear_3d, 'Shear (XY)', create_cube())
-
-# Projection onto plane
-projection_3d = np.array([
-    [1, 0, 0],
-    [0, 1, 0],
-    [0, 0, 0]
-])
-ax5 = fig.add_subplot(2, 3, 5, projection='3d')
-plot_3d_transformation(ax5, projection_3d, 'Projection (onto XY)', create_cube())
-
-# Complex transformation
-complex_3d = rotation_z @ scaling_3d
-ax6 = fig.add_subplot(2, 3, 6, projection='3d')
-plot_3d_transformation(ax6, complex_3d, 'Composite: Scale→Rotate', create_cube())
-
-plt.tight_layout()
-plt.show()
-
-#3D DETERMINANT = VOLUME SCALING FACTOR
-#Just like 2D det = area scaling, 3D det = volume scaling!"

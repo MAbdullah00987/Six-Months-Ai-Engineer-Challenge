@@ -612,3 +612,5 @@ def section_7_properties():
         'Skew-Symmetric': np.array([[0, -1], [1, 0]]),
         'Orthogonal': np.array([[1/np.sqrt(2), 1/np.sqrt(2)], [-1/np.sqrt(2), 1/np.sqrt(2)]])
     }
+
+    

@@ -10,6 +10,7 @@
 #Path of gradient descent ball rolling downhill
 #Current gradient vector at each step
 #Iteration counter and loss value
+#Save as GIF or MP4
 
 import numpy as np
 import matplotlib.pyplot as plt

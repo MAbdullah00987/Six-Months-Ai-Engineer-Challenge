@@ -1,5 +1,6 @@
 
-#5:Determinant and Area: Show visually how the determinant of a 2x2 matrix relates to the change in area
+# Project 5:
+# Determinant and Area: Show visually how the determinant of a 2x2 matrix relates to the change in area
 # of a transformed shape.
 
 import numpy as np
@@ -111,9 +112,9 @@ def plot_transformation(ax, original, transformed, matrix, title):
     
     return det, original_area, transformed_area
 
-# ============================================================================
+
 # Create comprehensive visualizations
-# ============================================================================
+
 
 fig = plt.figure(figsize=(20, 16))
 
@@ -148,9 +149,8 @@ for idx, (name, matrix) in enumerate(matrices.items(), 1):
         'Area Ratio': new_area / orig_area if orig_area > 0 else 0
     })
 
-# ============================================================================
+
 # Additional analysis plots
-# ============================================================================
 
 # Plot 10: Determinant vs Area Ratio
 ax10 = plt.subplot(3, 4, 10)
@@ -273,13 +273,9 @@ ax12.text(0.02, 0.98, f'det = {det:.2f}\nEach square\nscales by {det:.2f}',
 plt.tight_layout()
 plt.show()
 
-# ============================================================================
-# Summary table
-# ============================================================================
 
-print("="*80)
-print("DETERMINANT AND AREA TRANSFORMATION - SUMMARY")
-print("="*80)
+# Summary table
+print("DETERMINANT AND AREA TRANSFORMATION")
 
 import pandas as pd
 df = pd.DataFrame(results)
@@ -288,9 +284,7 @@ df['Matches?'] = np.isclose(df['|det|'], df['Area Ratio'], atol=0.01)
 
 print("\n", df.to_string(index=False))
 
-print("\n" + "="*80)
 print("KEY INSIGHTS")
-print("="*80)
 print("""
 1. FUNDAMENTAL THEOREM:
    |det(A)| = Area Scaling Factor
@@ -321,15 +315,10 @@ print("""
    formed by column vectors of A
 """)
 
-print("="*80)
-
-# ============================================================================
 # Interactive example with step-by-step visualization
-# ============================================================================
 
-print("\n" + "="*80)
 print("STEP-BY-STEP EXAMPLE")
-print("="*80)
+
 
 matrix_example = np.array([[2, 1], [0, 2]])
 det_example = np.linalg.det(matrix_example)
@@ -351,5 +340,4 @@ for shape_type in test_shapes:
     
     print(f"  {shape_type.capitalize():10s}: {orig_area:.3f} → {new_area:.3f} "
           f"(ratio = {ratio:.3f}, matches det = {np.isclose(ratio, det_example)})")
-
-print("\n" + "="*80)
+          

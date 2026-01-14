@@ -430,13 +430,10 @@ def demonstrate_covariance_concepts():
     print("• Correlation normalizes covariance (always between -1 and 1)")
     print("• Non-linear relationships may have low correlation!")
 
-# ============================================================================
-# MAIN ANALYSIS
-# ============================================================================
 
-print("="*80)
+# MAIN ANALYSIS
+
 print("COVARIANCE MATRIX ANALYSIS")
-print("="*80)
 
 # Load Iris dataset
 data = load_iris()
@@ -460,13 +457,8 @@ create_visualizations(analyzer, eigenvalues, eigenvectors)
 # Demonstrate concepts
 demonstrate_covariance_concepts()
 
-# ============================================================================
-# KEY FORMULAS AND CONCEPTS
-# ============================================================================
 
-print("\n" + "="*80)
 print("KEY FORMULAS AND CONCEPTS")
-print("="*80)
 
 print("""
 1. COVARIANCE FORMULA:
@@ -513,4 +505,3 @@ print("""
    • Machine learning preprocessing
 """)
 
-print("="*80)

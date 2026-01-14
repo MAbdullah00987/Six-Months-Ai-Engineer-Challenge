@@ -662,11 +662,5 @@ KEY FINDINGS:
 - Algorithm converges quickly (< {len(changes)} iterations)
 - Damping factor significantly affects results
 
-PROJECT COMPLETE! 🎉
 """
 
-print(summary)
-
-print("\n" + "="*80)
-print("Thank you for running the PageRank analysis!")
-print("="*80)

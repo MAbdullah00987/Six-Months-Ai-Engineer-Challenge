@@ -656,6 +656,7 @@ plt.show()
 #9. Advanced: Multivariate Functions (3+ Variables)
 #Working with Higher Dimensions
 
+'''
 # Define variables
 x, y, z, w = sp.symbols('x y z w')
 
@@ -692,3 +693,6 @@ for var, deriv in zip([x, y, z, w], gradient_4d):
 gradient_values = [float(deriv.subs(point)) for deriv in gradient_4d]
 magnitude = np.sqrt(sum([v**2 for v in gradient_values]))
 print(f"\n|∇f| = {magnitude:.3f}")
+
+'''
+
