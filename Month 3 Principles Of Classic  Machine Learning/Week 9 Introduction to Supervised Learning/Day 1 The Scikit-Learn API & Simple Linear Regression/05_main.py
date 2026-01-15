@@ -1,10 +1,6 @@
 
 #Part 5: Scikit-Learn Complete ML Pipeline
 
-"""
-DAY 1 - PART 5: Scikit-Learn API - Complete ML Workflow
-Mastering the Estimator API: fit(), predict(), score()
-"""
 
 import numpy as np
 import pandas as pd

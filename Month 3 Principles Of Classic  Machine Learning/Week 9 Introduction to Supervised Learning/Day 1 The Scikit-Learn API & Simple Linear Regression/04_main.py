@@ -1,10 +1,6 @@
 
 #Part 4: SciPy & Statsmodels - Statistical Analysis
 
-"""
-DAY 1 - PART 4: SciPy & Statsmodels for Statistical Analysis
-Deep statistical understanding before machine learning
-"""
 
 import numpy as np
 import pandas as pd

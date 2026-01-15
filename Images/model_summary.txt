@@ -1,0 +1,15 @@
+LINEAR REGRESSION MODEL SUMMARY
+======================================================================
+
+Model Equation: Salary = 31039.65 + 4862.75 × Experience
+
+Training Set Metrics:
+  R² Score: 0.9578
+  RMSE: $4,542.61
+  MAE: $3,639.84
+
+Test Set Metrics:
+  R² Score: 0.9587
+  MSE: $18,336,751.43
+  RMSE: $4,282.14
+  MAE: $2,990.06

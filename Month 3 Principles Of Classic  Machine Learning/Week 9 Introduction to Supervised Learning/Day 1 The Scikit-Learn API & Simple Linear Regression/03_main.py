@@ -1,10 +1,6 @@
 
 #Part 3: SymPy - Mathematical Foundations of ML
 
-"""
-DAY 1 - PART 3: SymPy for ML Mathematics
-Understanding the mathematical foundations of linear regression
-"""
 
 import sympy as sp
 from sympy import symbols, Matrix, diff, simplify, solve, latex
@@ -218,10 +214,10 @@ print(f"SS_tot = {ss_tot_val:.3f}")
 print(f"R² = {r2_val:.3f}")
 print(f"Interpretation: Model explains {r2_val*100:.1f}% of variance")
 
-print("\n" + "="*70)
+
 print("KEY MATHEMATICAL CONCEPTS")
-print("="*70)
-print("""
+
+"""
 ✓ CORE FORMULAS DERIVED:
 1. Loss function: L = (y - ŷ)²
 2. Gradient: ∂L/∂w = -2(y - ŷ)x
@@ -238,4 +234,4 @@ INSIGHTS:
 - L2 (Ridge) shrinks weights; L1 (Lasso) can zero them
 - R² measures goodness of fit (0 to 1)
 - These formulas are implemented in sklearn!
-""")
+"""
