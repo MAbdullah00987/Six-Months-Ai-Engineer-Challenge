@@ -1,0 +1,33 @@
+Day 3: Polynomial Regression & The Bias-Variance Tradeoff
+Objective: What if a straight line doesn't fit the data? Learn to model curves.
+Concept: Underfitting (High Bias) vs. Overfitting (High Variance).
+Technique: PolynomialFeatures to generate powers of features ($x^2, x^3$).
+
+Advanced Regression & Regularization**
+
+Learning Objectives:
+ Understand overfitting and underfitting
+ Learn Ridge and Lasso regression
+ Explore polynomial features
+
+Study Materials:**
+ Géron Chapter 4: "Regularized Linear Models" (pages 132-145)
+ Andrew Ng Course 1, Week 3: "Regularization"
+ Article: "Ridge vs Lasso Regression"
+
+
+Task: Project - Feature Scaling Impact.
+Create a dataset with a curve. 
+Fit a Linear model (Underfit).Fit a Polynomial model degree 2 (Good fit).Fit a Polynomial model degree 20 (Overfit).
+Crucial: Apply StandardScaler before training to see why scaling matters for convergence.
+
+Project 2: Regularization Exploration**
+ Use a dataset with many features (e.g., California Housing)
+ Compare Linear, Ridge, and Lasso regression
+ Plot regularization paths
+ Analyze coefficient shrinkage
+
+Project 3: Fish Weight Prediction**
+ Apply polynomial features
+ Compare different degrees of polynomial
+ Use Ridge regression to prevent overfitting
