@@ -1,0 +1,38 @@
+Day 7: Capstone & Portfolio
+Objective: Build a robust, end-to-end pipeline.
+ Solidify understanding by implementing from scratch
+ Organize all week's work for portfolio
+ Create comprehensive documentation
+
+Project 1: Linear Regression from Scratch vs. Sklearn.
+
+Reuse your Gradient Descent code from Week 7.
+
+Wrap it in a Python Class MyLinearRegression with .fit() and .predict() methods.
+
+Compare your results (weights and accuracy) against sklearn.linear_model.LinearRegression.
+
+Why: This proves you understand the "Black Box."
+
+Project 2: Implement Linear Regression from Scratch**
+ Use your gradient descent from Week 7
+ Implement without Scikit-Learn
+ Compare with Scikit-Learn implementation
+ Visualize convergence
+
+Portfolio Tasks:
+ Create project structure:
+```
+week-9-supervised-learning/
+├── data/
+│   ├── raw/
+│   └── processed/
+├── notebooks/
+│   ├── 01_salary_prediction.ipynb
+│   ├── 02_titanic_survival.ipynb
+│   └── ...
+├── src/
+│   ├── preprocessing.py
+│   └── models.py
+├── requirements.txt
+└── README.md

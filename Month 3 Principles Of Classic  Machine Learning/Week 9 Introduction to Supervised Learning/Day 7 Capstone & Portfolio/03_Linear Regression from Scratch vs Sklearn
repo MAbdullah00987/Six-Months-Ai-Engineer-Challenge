@@ -1,0 +1,302 @@
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+from sklearn.datasets import make_regression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error, r2_score
+
+
+class MyLinearRegression:
+    """
+    Linear Regression implemented from scratch using Gradient Descent.
+    
+    Parameters:
+    -----------
+    learning_rate : float, default=0.01
+        Step size for gradient descent optimization
+    n_iterations : int, default=1000
+        Number of iterations for gradient descent
+    regularization : float, default=0.0
+        L2 regularization strength (Ridge regression)
+    verbose : bool, default=False
+        Print loss during training
+    """
+    
+    def __init__(self, learning_rate=0.01, n_iterations=1000, 
+                 regularization=0.0, verbose=False):
+        self.learning_rate = learning_rate
+        self.n_iterations = n_iterations
+        self.regularization = regularization
+        self.verbose = verbose
+        self.weights = None
+        self.bias = None
+        self.loss_history = []
+    
+    def fit(self, X, y):
+        """
+        Train the linear regression model using gradient descent.
+        
+        Parameters:
+        -----------
+        X : array-like, shape (n_samples, n_features)
+            Training data
+        y : array-like, shape (n_samples,)
+            Target values
+        
+        Returns:
+        --------
+        self : object
+            Returns self for method chaining
+        """
+        # Convert to numpy arrays
+        X = np.array(X)
+        y = np.array(y).reshape(-1, 1)
+        
+        n_samples, n_features = X.shape
+        
+        # Initialize weights and bias
+        self.weights = np.zeros((n_features, 1))
+        self.bias = 0
+        
+        # Gradient Descent
+        for i in range(self.n_iterations):
+            # Forward pass: compute predictions
+            y_pred = self._predict_internal(X)
+            
+            # Compute gradients
+            dw = (1 / n_samples) * np.dot(X.T, (y_pred - y))
+            db = (1 / n_samples) * np.sum(y_pred - y)
+            
+            # Add L2 regularization to weights gradient
+            if self.regularization > 0:
+                dw += (self.regularization / n_samples) * self.weights
+            
+            # Update parameters
+            self.weights -= self.learning_rate * dw
+            self.bias -= self.learning_rate * db
+            
+            # Compute and store loss (MSE)
+            loss = self._compute_loss(y, y_pred, n_samples)
+            self.loss_history.append(loss)
+            
+            # Print progress
+            if self.verbose and (i % 100 == 0 or i == self.n_iterations - 1):
+                print(f"Iteration {i}: Loss = {loss:.6f}")
+        
+        return self
+    
+    def _predict_internal(self, X):
+        """Internal prediction method that returns column vector."""
+        return np.dot(X, self.weights) + self.bias
+    
+    def predict(self, X):
+        """
+        Make predictions using the trained model.
+        
+        Parameters:
+        -----------
+        X : array-like, shape (n_samples, n_features)
+            Input data
+        
+        Returns:
+        --------
+        predictions : array, shape (n_samples,)
+            Predicted values
+        """
+        X = np.array(X)
+        return (np.dot(X, self.weights) + self.bias).flatten()
+    
+    def _compute_loss(self, y_true, y_pred, n_samples):
+        """Compute Mean Squared Error with optional L2 regularization."""
+        mse = np.mean((y_true - y_pred) ** 2)
+        
+        # Add regularization term to loss
+        if self.regularization > 0:
+            reg_term = (self.regularization / (2 * n_samples)) * np.sum(self.weights ** 2)
+            return mse + reg_term
+        
+        return mse
+    
+    def score(self, X, y):
+        """
+        Compute R² score (coefficient of determination).
+        
+        Parameters:
+        -----------
+        X : array-like, shape (n_samples, n_features)
+            Test data
+        y : array-like, shape (n_samples,)
+            True values
+        
+        Returns:
+        --------
+        score : float
+            R² score
+        """
+        y_pred = self.predict(X)
+        ss_res = np.sum((y - y_pred) ** 2)
+        ss_tot = np.sum((y - np.mean(y)) ** 2)
+        return 1 - (ss_res / ss_tot)
+
+
+def compare_models():
+    """
+    Compare MyLinearRegression with sklearn's LinearRegression.
+    """
+    print("=" * 70)
+    print("LINEAR REGRESSION: FROM SCRATCH VS SKLEARN")
+    print("=" * 70)
+    
+    # Generate synthetic dataset
+    X, y = make_regression(n_samples=500, n_features=3, noise=20, random_state=42)
+    
+    # Split data
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42
+    )
+    
+    print(f"\nDataset Info:")
+    print(f"  Training samples: {X_train.shape[0]}")
+    print(f"  Test samples: {X_test.shape[0]}")
+    print(f"  Features: {X_train.shape[1]}")
+    
+    # Train custom model
+    print("\n" + "-" * 70)
+    print("Training MyLinearRegression (Gradient Descent)...")
+    print("-" * 70)
+    
+    my_model = MyLinearRegression(
+        learning_rate=0.01,
+        n_iterations=1000,
+        verbose=True
+    )
+    my_model.fit(X_train, y_train)
+    
+    # Train sklearn model
+    print("\n" + "-" * 70)
+    print("Training sklearn.LinearRegression (Closed-form solution)...")
+    print("-" * 70)
+    
+    sklearn_model = LinearRegression()
+    sklearn_model.fit(X_train, y_train)
+    print("Training complete (analytical solution - instant)")
+    
+    # Make predictions
+    my_pred = my_model.predict(X_test)
+    sklearn_pred = sklearn_model.predict(X_test)
+    
+    # Compare weights
+    print("\n" + "=" * 70)
+    print("WEIGHT COMPARISON")
+    print("=" * 70)
+    
+    print("\nWeights (coefficients):")
+    print(f"  MyLinearRegression: {my_model.weights.flatten()}")
+    print(f"  sklearn:            {sklearn_model.coef_}")
+    print(f"  Difference:         {np.abs(my_model.weights.flatten() - sklearn_model.coef_)}")
+    
+    print("\nBias (intercept):")
+    print(f"  MyLinearRegression: {my_model.bias:.6f}")
+    print(f"  sklearn:            {sklearn_model.intercept_:.6f}")
+    print(f"  Difference:         {abs(my_model.bias - sklearn_model.intercept_):.6f}")
+    
+    # Compare performance
+    print("\n" + "=" * 70)
+    print("PERFORMANCE COMPARISON")
+    print("=" * 70)
+    
+    # Training set metrics
+    my_train_score = my_model.score(X_train, y_train)
+    sklearn_train_score = sklearn_model.score(X_train, y_train)
+    
+    print("\nTraining Set:")
+    print(f"  MyLinearRegression R²: {my_train_score:.6f}")
+    print(f"  sklearn R²:            {sklearn_train_score:.6f}")
+    
+    # Test set metrics
+    my_mse = mean_squared_error(y_test, my_pred)
+    sklearn_mse = mean_squared_error(y_test, sklearn_pred)
+    
+    my_r2 = r2_score(y_test, my_pred)
+    sklearn_r2 = r2_score(y_test, sklearn_pred)
+    
+    print("\nTest Set:")
+    print(f"  MyLinearRegression MSE: {my_mse:.6f}")
+    print(f"  sklearn MSE:            {sklearn_mse:.6f}")
+    print(f"  Difference:             {abs(my_mse - sklearn_mse):.6f}")
+    
+    print(f"\n  MyLinearRegression R²:  {my_r2:.6f}")
+    print(f"  sklearn R²:             {sklearn_r2:.6f}")
+    print(f"  Difference:             {abs(my_r2 - sklearn_r2):.6f}")
+    
+    # Visualization
+    fig, axes = plt.subplots(1, 3, figsize=(15, 4))
+    
+    # Plot 1: Loss history
+    axes[0].plot(my_model.loss_history, linewidth=2)
+    axes[0].set_xlabel('Iteration')
+    axes[0].set_ylabel('Loss (MSE)')
+    axes[0].set_title('Gradient Descent Convergence')
+    axes[0].grid(True, alpha=0.3)
+    
+    # Plot 2: Predictions comparison
+    axes[1].scatter(y_test, my_pred, alpha=0.6, label='MyLinearRegression')
+    axes[1].scatter(y_test, sklearn_pred, alpha=0.6, label='sklearn')
+    axes[1].plot([y_test.min(), y_test.max()], 
+                 [y_test.min(), y_test.max()], 
+                 'r--', linewidth=2, label='Perfect Prediction')
+    axes[1].set_xlabel('True Values')
+    axes[1].set_ylabel('Predictions')
+    axes[1].set_title('Predictions vs True Values')
+    axes[1].legend()
+    axes[1].grid(True, alpha=0.3)
+    
+    # Plot 3: Residuals
+    my_residuals = y_test - my_pred
+    sklearn_residuals = y_test - sklearn_pred
+    
+    axes[2].scatter(my_pred, my_residuals, alpha=0.6, label='MyLinearRegression')
+    axes[2].scatter(sklearn_pred, sklearn_residuals, alpha=0.6, label='sklearn')
+    axes[2].axhline(y=0, color='r', linestyle='--', linewidth=2)
+    axes[2].set_xlabel('Predicted Values')
+    axes[2].set_ylabel('Residuals')
+    axes[2].set_title('Residual Plot')
+    axes[2].legend()
+    axes[2].grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.show()
+    
+    # Key insights
+    print("\n" + "=" * 70)
+    print("KEY INSIGHTS: WHY THIS MATTERS")
+    print("=" * 70)
+    print("""
+1. UNDERSTANDING THE BLACK BOX:
+   - You now know EXACTLY what sklearn.LinearRegression does internally
+   - Gradient descent iteratively minimizes the loss function
+   - Sklearn uses closed-form solution (Normal Equation) for speed
+   
+2. MATHEMATICAL EQUIVALENCE:
+   - Both methods find the same optimal weights (within numerical precision)
+   - Your implementation validates the underlying mathematics
+   
+3. TRADE-OFFS:
+   - Gradient Descent: Flexible, works for large datasets, allows regularization
+   - Closed-form: Faster for small datasets, exact solution
+   
+4. REAL-WORLD APPLICATIONS:
+   - Deep learning uses gradient descent (no closed-form solution exists)
+   - Understanding this prepares you for neural networks
+   
+5. DEBUGGING SKILLS:
+   - When sklearn behaves unexpectedly, you can now debug it
+   - You understand hyperparameters like learning rate and iterations
+    """)
+
+
+# Run the comparison
+if __name__ == "__main__":
+    compare_models()
