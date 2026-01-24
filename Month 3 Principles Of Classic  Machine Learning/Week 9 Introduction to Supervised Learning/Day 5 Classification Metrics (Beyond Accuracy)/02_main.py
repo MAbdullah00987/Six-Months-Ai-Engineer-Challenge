@@ -21,9 +21,9 @@ print("="*80)
 print("TOPIC 2: CONFUSION MATRIX - THE FOUNDATION")
 print("="*80)
 
-# ============================================================================
+
 # PART 1: Understanding Confusion Matrix Components
-# ============================================================================
+
 print("\n PART 1: What is a Confusion Matrix?")
 print("-" * 80)
 
@@ -52,10 +52,10 @@ Real-World Examples:
 └─ FN: Patient has disease, we missed it  (CRITICAL!)
 """)
 
-# ============================================================================
+
 # PART 2: Build Confusion Matrix from Scratch
-# ============================================================================
-print("\n🔨 PART 2: Building Confusion Matrix from Scratch with NumPy")
+
+print("\n PART 2: Building Confusion Matrix from Scratch with NumPy")
 print("-" * 80)
 
 def confusion_matrix_from_scratch(y_true, y_pred):
@@ -128,9 +128,9 @@ print(f"\n Verification with sklearn:")
 print(cm_sklearn)
 print(f"Match: {np.array_equal(cm_scratch, cm_sklearn)}")
 
-# ============================================================================
+
 # PART 3: Visualize Confusion Matrix
-# ============================================================================
+
 print("\n PART 3: Visualizing Confusion Matrix")
 print("-" * 80)
 
@@ -186,9 +186,9 @@ plt.savefig('03_confusion_matrix_single.png', dpi=300, bbox_inches='tight')
 print(" Saved: 03_confusion_matrix_single.png")
 plt.show()
 
-# ============================================================================
+
 # PART 4: Interpret Each Quadrant with Real Examples
-# ============================================================================
+
 print("\n💡 PART 4: Real-World Interpretation")
 print("-" * 80)
 
@@ -230,9 +230,9 @@ print(f"  • Actual healthy cases: {total_actual_healthy}")
 print(f"  • Predicted disease: {total_predicted_disease}")
 print(f"  • Predicted healthy: {total_predicted_healthy}")
 
-# ============================================================================
+
 # PART 5: Compare Multiple Classifiers
-# ============================================================================
+
 print("\n PART 5: Comparing Multiple Classifiers")
 print("-" * 80)
 
@@ -286,9 +286,8 @@ plt.savefig('04_confusion_matrix_comparison.png', dpi=300, bbox_inches='tight')
 print("\n Saved: 04_confusion_matrix_comparison.png")
 plt.show()
 
-# ============================================================================
+
 # PART 6: Interactive Analysis
-# ============================================================================
 print("\n PART 6: Detailed Component Analysis")
 print("-" * 80)
 
@@ -315,7 +314,7 @@ for name, clf in classifiers.items():
     })
 
 comparison_df = pd.DataFrame(comparison_data)
-print("\n📊 Confusion Matrix Components Comparison:")
+print("\n Confusion Matrix Components Comparison:")
 print(comparison_df.to_string(index=False))
 
 # Visualize component comparison
@@ -351,9 +350,8 @@ plt.savefig('05_components_comparison.png', dpi=300, bbox_inches='tight')
 print("\n Saved: 05_components_comparison.png")
 plt.show()
 
-# ============================================================================
+
 # CONCLUSION
-# ============================================================================
 print("\n" + "="*80)
 print(" KEY TAKEAWAYS - CONFUSION MATRIX")
 print("="*80)

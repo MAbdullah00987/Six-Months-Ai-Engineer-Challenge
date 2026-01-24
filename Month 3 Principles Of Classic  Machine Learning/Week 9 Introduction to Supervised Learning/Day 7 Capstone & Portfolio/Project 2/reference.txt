@@ -1,0 +1,335 @@
+
+# Linear Regression - Quick Reference Guide
+
+## 🚀 Quick Start
+
+### Installation
+```bash
+# Clone/create project directory
+mkdir week-9-supervised-learning
+cd week-9-supervised-learning
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run setup script
+python setup_project.py
+```
+
+### Basic Usage
+```python
+from src.models import LinearRegressionScratch
+from sklearn.model_selection import train_test_split
+
+# Train model
+model = LinearRegressionScratch(learning_rate=0.01, n_iterations=1000)
+model.fit(X_train, y_train)
+
+# Make predictions
+predictions = model.predict(X_test)
+
+# Evaluate
+r2_score = model.score(X_test, y_test)
+```
+
+## 📊 Common Tasks
+
+### 1. Load and Prepare Data
+
+```python
+from src.preprocessing import DataPreprocessor
+import pandas as pd
+
+# Load data
+df = pd.read_csv('data/raw/salary_data.csv')
+
+# Preprocess
+preprocessor = DataPreprocessor(scaling_method='standard')
+X, y = preprocessor.prepare_features(df, target_column='Salary')
+
+# Split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+```
+
+### 2. Train Model with Custom Parameters
+
+```python
+model = LinearRegressionScratch(
+    learning_rate=0.01,      # Step size
+    n_iterations=2000,       # Max iterations
+    tolerance=1e-6,          # Convergence threshold
+    regularization='l2',     # 'l1', 'l2', or None
+    lambda_reg=0.1          # Regularization strength
+)
+
+model.fit(X_train, y_train, verbose=True)
+```
+
+### 3. Compare with Scikit-Learn
+
+```python
+from sklearn.linear_model import LinearRegression as SklearnLR
+
+# Train both
+model_custom = LinearRegressionScratch().fit(X_train, y_train)
+model_sklearn = SklearnLR().fit(X_train, y_train)
+
+# Compare
+print(f"Custom R²: {model_custom.score(X_test, y_test):.4f}")
+print(f"Sklearn R²: {model_sklearn.score(X_test, y_test):.4f}")
+```
+
+### 4. Visualize Results
+
+```python
+from src.models import ModelVisualizer
+
+visualizer = ModelVisualizer()
+
+# Convergence plot
+visualizer.plot_cost_history(model)
+
+# Predictions vs actual
+visualizer.plot_predictions(y_test, predictions)
+
+# Residual analysis
+visualizer.plot_residuals(y_test, predictions)
+```
+
+### 5. Calculate Metrics
+
+```python
+from src.models import calculate_metrics
+
+metrics = calculate_metrics(y_test, predictions)
+print(f"MSE: {metrics['MSE']:.4f}")
+print(f"RMSE: {metrics['RMSE']:.4f}")
+print(f"MAE: {metrics['MAE']:.4f}")
+print(f"R²: {metrics['R²']:.4f}")
+```
+
+### 6. Handle Missing Data
+
+```python
+preprocessor = DataPreprocessor()
+
+# Different strategies
+df_clean = preprocessor.handle_missing_values(df, strategy='mean')
+df_clean = preprocessor.handle_missing_values(df, strategy='median')
+df_clean = preprocessor.handle_missing_values(df, strategy='drop')
+```
+
+### 7. Encode Categorical Variables
+
+```python
+# Automatic encoding of object columns
+df_encoded = preprocessor.encode_categorical(df)
+
+# Specify columns
+df_encoded = preprocessor.encode_categorical(df, columns=['Location', 'Type'])
+```
+
+### 8. Remove Outliers
+
+```python
+# IQR method
+df_clean = preprocessor.remove_outliers(
+    df, 
+    columns=['Salary', 'Age'],
+    method='iqr',
+    threshold=1.5
+)
+
+# Z-score method
+df_clean = preprocessor.remove_outliers(
+    df,
+    columns=['Salary'],
+    method='zscore',
+    threshold=3
+)
+```
+
+### 9. Polynomial Features
+
+```python
+X_poly = preprocessor.create_polynomial_features(X, degree=2)
+model.fit(X_poly_train, y_train)
+```
+
+### 10. Statsmodels Analysis
+
+```python
+import statsmodels.api as sm
+
+X_train_sm = sm.add_constant(X_train)
+model_sm = sm.OLS(y_train, X_train_sm).fit()
+
+# Detailed summary
+print(model_sm.summary())
+
+# Confidence intervals
+print(model_sm.conf_int())
+```
+
+## 🎯 Hyperparameter Tuning
+
+### Learning Rate Selection
+```python
+# Too small: slow convergence
+model = LinearRegressionScratch(learning_rate=0.001)
+
+# Good balance
+model = LinearRegressionScratch(learning_rate=0.01)
+
+# Too large: may not converge
+model = LinearRegressionScratch(learning_rate=1.0)
+```
+
+### Regularization Strength
+```python
+# No regularization
+model = LinearRegressionScratch()
+
+# Light regularization
+model = LinearRegressionScratch(regularization='l2', lambda_reg=0.01)
+
+# Strong regularization
+model = LinearRegressionScratch(regularization='l2', lambda_reg=10.0)
+```
+
+## 📈 Performance Tips
+
+### 1. Feature Scaling
+Always scale features before training:
+```python
+preprocessor = DataPreprocessor(scaling_method='standard')  # or 'minmax'
+```
+
+### 2. Check Convergence
+Monitor cost history:
+```python
+plt.plot(model.cost_history)
+plt.yscale('log')
+plt.show()
+```
+
+### 3. Early Stopping
+Set appropriate tolerance:
+```python
+model = LinearRegressionScratch(tolerance=1e-6)
+```
+
+## 🐛 Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| Model not converging | Reduce learning rate |
+| Training too slow | Increase learning rate, reduce iterations |
+| Poor test performance | Add regularization, check for overfitting |
+| NaN values in weights | Reduce learning rate, check data scaling |
+| Negative R² | Model worse than baseline, retrain |
+
+## 📝 Cheat Sheet
+
+### Model Parameters
+```python
+LinearRegressionScratch(
+    learning_rate=0.01,      # Default: 0.01
+    n_iterations=1000,       # Default: 1000
+    tolerance=1e-6,          # Default: 1e-6
+    regularization=None,     # Options: None, 'l1', 'l2'
+    lambda_reg=0.1          # Default: 0.1
+)
+```
+
+### Preprocessing Options
+```python
+DataPreprocessor(
+    scaling_method='standard'  # Options: 'standard', 'minmax', 'none'
+)
+```
+
+### Common Methods
+```python
+# Training
+model.fit(X_train, y_train, verbose=True)
+
+# Prediction
+predictions = model.predict(X_test)
+
+# Evaluation
+r2_score = model.score(X_test, y_test)
+
+# Get parameters
+params = model.get_params()
+weights = model.weights
+bias = model.bias
+cost_history = model.cost_history
+```
+
+## 🔍 Evaluation Metrics
+
+### Regression Metrics
+- **MSE**: Mean Squared Error (lower is better)
+- **RMSE**: Root Mean Squared Error (same units as target)
+- **MAE**: Mean Absolute Error (robust to outliers)
+- **R²**: Coefficient of determination (0 to 1, higher is better)
+
+### Interpretation
+- **R² = 1.0**: Perfect fit
+- **R² = 0.8-0.9**: Very good fit
+- **R² = 0.6-0.8**: Good fit
+- **R² < 0.5**: Poor fit
+- **R² < 0**: Model worse than predicting mean
+
+## 📚 Additional Resources
+
+### Documentation
+- Scikit-learn: https://scikit-learn.org/stable/
+- Statsmodels: https://www.statsmodels.org/
+- NumPy: https://numpy.org/doc/
+- Pandas: https://pandas.pydata.org/docs/
+
+### Key Concepts
+1. **Gradient Descent**: Iterative optimization algorithm
+2. **Cost Function**: Measures model error (MSE)
+3. **Learning Rate**: Step size for weight updates
+4. **Regularization**: Prevents overfitting
+5. **Feature Scaling**: Normalizes input features
+
+### Mathematical Formulas
+
+**Cost Function (MSE)**:
+```
+J(θ) = (1/2m) Σ(h(x^(i)) - y^(i))²
+```
+
+**Gradient Update**:
+```
+θ_j := θ_j - α × (1/m) × Σ(h(x^(i)) - y^(i)) × x_j^(i)
+```
+
+**R² Score**:
+```
+R² = 1 - (SS_res / SS_tot)
+```
+
+## 💡 Best Practices
+
+1. ✅ Always split data (train/test)
+2. ✅ Scale features before training
+3. ✅ Check for missing values
+4. ✅ Visualize data before modeling
+5. ✅ Monitor convergence
+6. ✅ Analyze residuals
+7. ✅ Compare multiple models
+8. ✅ Use cross-validation
+9. ✅ Document your experiments
+10. ✅ Version control your code
+
+---
+
+**Need help? Check:**
+- README.md for full documentation
+- Notebooks for detailed examples
+- src/ folder for implementation details

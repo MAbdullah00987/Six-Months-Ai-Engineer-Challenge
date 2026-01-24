@@ -2,14 +2,6 @@
 
 #Part 3: Decision Trees - Practice Exercises
 
-"""
-DECISION TREES - PRACTICE EXERCISES
-Complete these challenges to master decision trees!
-
-Each exercise builds on the previous one.
-Solutions are provided at the bottom.
-"""
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -24,9 +16,8 @@ warnings.filterwarnings('ignore')
 # EXERCISE 1: Manual Gini Calculation (NumPy)
 
 
-print("\n" + "="*80)
+
 print("EXERCISE 1: Calculate Gini Impurity Manually")
-print("="*80)
 print("""
 Task: Calculate Gini impurity for the following datasets:
 1. [0, 0, 0, 1, 1, 1]

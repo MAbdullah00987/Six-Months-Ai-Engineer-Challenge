@@ -221,4 +221,3 @@ for metric, value in metrics_gd.items():
     print(f"  {metric}: {value:.6f}")
 
 
-print("Implementation complete!")

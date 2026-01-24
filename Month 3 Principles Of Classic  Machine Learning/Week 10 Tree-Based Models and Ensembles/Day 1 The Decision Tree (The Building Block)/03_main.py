@@ -1,5 +1,5 @@
 
-#Part 3: Manim Decision Tree Animation
+#Part 2: Manim Decision Tree Animation
 
 from manim import *
 import numpy as np

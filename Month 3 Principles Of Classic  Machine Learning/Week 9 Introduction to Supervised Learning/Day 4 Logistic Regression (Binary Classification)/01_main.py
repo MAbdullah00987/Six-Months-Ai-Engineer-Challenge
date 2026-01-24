@@ -982,7 +982,7 @@ plt.tight_layout()
 plt.savefig('regularization_comparison.png', dpi=300, bbox_inches='tight')
 plt.show()
 
-print("\n REGULARIZATION INSIGHTS:")
+print("\nREGULARIZATION INSIGHTS:")
 print("-" * 60)
 print("L1 (Lasso):")
 print("  • Performs feature selection (drives some coefficients to exactly 0)")

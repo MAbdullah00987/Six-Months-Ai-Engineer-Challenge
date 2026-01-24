@@ -20,7 +20,7 @@ print("HOUR 1: MATHEMATICAL FOUNDATION")
 print("="*80)
 
 # Exercise 1.1: Understand the loss functions
-print("\n📚 Exercise 1.1: Derive and visualize loss functions")
+print("\n Exercise 1.1: Derive and visualize loss functions")
 print("-" * 60)
 
 w = sp.Symbol('w')
@@ -47,13 +47,13 @@ mse_val = float(mse.subs([(w, w_val), (x, x_val), (y, y_val)]))
 ridge_val = float(ridge_loss.subs([(w, w_val), (x, x_val), (y, y_val), (alpha, alpha_val)]))
 lasso_val = float(lasso_loss.subs([(w, w_val), (x, x_val), (y, y_val), (alpha, alpha_val)]))
 
-print(f"\n✅ With w={w_val}, x={x_val}, y={y_val}, alpha={alpha_val}:")
+print(f"\n With w={w_val}, x={x_val}, y={y_val}, alpha={alpha_val}:")
 print(f"   MSE: {mse_val:.2f}")
 print(f"   Ridge: {ridge_val:.2f}")
 print(f"   Lasso: {lasso_val:.2f}")
 
 # Exercise 1.2: Visualize constraint regions
-print("\n📚 Exercise 1.2: Geometric intuition - Why Lasso creates sparsity")
+print("\n Exercise 1.2: Geometric intuition - Why Lasso creates sparsity")
 print("-" * 60)
 
 fig, axes = plt.subplots(1, 2, figsize=(14, 6))
@@ -106,7 +106,7 @@ ax.axvline(x=0, color='k', linewidth=0.5)
 
 plt.tight_layout()
 plt.savefig('hour1_geometric_intuition.png', dpi=150)
-print("✅ Saved: hour1_geometric_intuition.png")
+print(" Saved: hour1_geometric_intuition.png")
 plt.show()
 
 print("\n" + "="*80)
@@ -114,7 +114,7 @@ print("HOUR 2: BUILD FROM SCRATCH WITH NUMPY")
 print("="*80)
 
 # Exercise 2.1: Ridge from scratch
-print("\n📚 Exercise 2.1: Implement Ridge Regression from scratch")
+print("\n Exercise 2.1: Implement Ridge Regression from scratch")
 print("-" * 60)
 
 # Generate data
@@ -153,14 +153,14 @@ alpha_test = 1.0
 w_closed = ridge_closed_form(X, y, alpha_test)
 w_gradient = ridge_gradient_descent(X, y, alpha_test, lr=0.01, iterations=2000)
 
-print(f"\n✅ Ridge with α={alpha_test}:")
+print(f"\n Ridge with α={alpha_test}:")
 print(f"   True weights:    {true_weights}")
 print(f"   Closed form:     {w_closed}")
 print(f"   Gradient desc:   {w_gradient}")
 print(f"   Difference:      {np.linalg.norm(w_closed - w_gradient):.6f}")
 
 # TODO: YOUR TASK - Try different alpha values and see how weights change
-print("\n📝 YOUR TASK: Test α = 0.01, 0.1, 1.0, 10.0, 100.0")
+print("\n YOUR TASK: Test α = 0.01, 0.1, 1.0, 10.0, 100.0")
 alphas_test = [0.01, 0.1, 1.0, 10.0, 100.0]
 for a in alphas_test:
     w = ridge_closed_form(X, y, a)
@@ -171,7 +171,7 @@ print("HOUR 3: SKLEARN PROFESSIONAL IMPLEMENTATION")
 print("="*80)
 
 # Exercise 3.1: Create dataset with irrelevant features
-print("\n📚 Exercise 3.1: Feature selection with Lasso")
+print("\n Exercise 3.1: Feature selection with Lasso")
 print("-" * 60)
 
 np.random.seed(42)
@@ -216,7 +216,7 @@ for name, model in models.items():
         print(f"{name:<20} {train_r2:>10.4f} {test_r2:>10.4f} {n_nonzero:>10}/{n_features}")
 
 # TODO: YOUR TASK - Which model best identifies the 5 true features?
-print("\n📝 YOUR TASK: Compare coefficient patterns")
+print("\n YOUR TASK: Compare coefficient patterns")
 lasso = Lasso(alpha=0.5, max_iter=5000).fit(X_train_sc, y_train)
 print(f"\nTrue coefficients:  {true_coef}")
 print(f"Lasso found:        {lasso.coef_}")
@@ -227,7 +227,7 @@ print("HOUR 4: HYPERPARAMETER TUNING")
 print("="*80)
 
 # Exercise 4.1: Grid search for optimal alpha
-print("\n📚 Exercise 4.1: Find optimal alpha using cross-validation")
+print("\n Exercise 4.1: Find optimal alpha using cross-validation")
 print("-" * 60)
 
 alphas = np.logspace(-3, 2, 50)
@@ -278,7 +278,7 @@ plt.grid(True, alpha=0.3)
 
 plt.tight_layout()
 plt.savefig('hour4_hyperparameter_tuning.png', dpi=150)
-print("✅ Saved: hour4_hyperparameter_tuning.png")
+print(" Saved: hour4_hyperparameter_tuning.png")
 plt.show()
 
 print("\n" + "="*80)
@@ -286,7 +286,7 @@ print("HOUR 5: STATISTICAL ANALYSIS WITH STATSMODELS")
 print("="*80)
 
 # Exercise 5.1: Statistical inference
-print("\n📚 Exercise 5.1: Statistical analysis of regression")
+print("\n Exercise 5.1: Statistical analysis of regression")
 print("-" * 60)
 
 # OLS with statsmodels
@@ -302,7 +302,7 @@ residuals = y_test - ridge_optimal.predict(X_test_sc)
 
 # Normality test
 stat, p_val = stats.shapiro(residuals)
-print(f"\n✅ Shapiro-Wilk normality test: p-value = {p_val:.4f}")
+print(f"\n Shapiro-Wilk normality test: p-value = {p_val:.4f}")
 if p_val > 0.05:
     print("   → Residuals appear normally distributed ✓")
 else:
@@ -333,7 +333,7 @@ axes[2].grid(True, alpha=0.3)
 
 plt.tight_layout()
 plt.savefig('hour5_residual_analysis.png', dpi=150)
-print("✅ Saved: hour5_residual_analysis.png")
+print(" Saved: hour5_residual_analysis.png")
 plt.show()
 
 print("\n" + "="*80)
@@ -341,7 +341,7 @@ print("HOUR 6: COMPREHENSIVE VISUALIZATION")
 print("="*80)
 
 # Exercise 6.1: Regularization paths
-print("\n📚 Exercise 6.1: Visualize regularization paths")
+print("\n Exercise 6.1: Visualize regularization paths")
 print("-" * 60)
 
 alphas_path = np.logspace(-2, 2, 100)
@@ -459,7 +459,7 @@ ax.grid(True, alpha=0.3)
 
 plt.tight_layout()
 plt.savefig('hour6_comprehensive_analysis.png', dpi=150)
-print("✅ Saved: hour6_comprehensive_analysis.png")
+print(" Saved: hour6_comprehensive_analysis.png")
 plt.show()
 
 print("\n" + "="*80)
@@ -467,9 +467,9 @@ print("FINAL SUMMARY & NEXT STEPS")
 print("="*80)
 
 print("""
-🎉 CONGRATULATIONS! You've completed the regularization workshop!
+ CONGRATULATIONS! You've completed the regularization workshop!
 
-📊 What you learned today:
+ What you learned today:
    ✓ Mathematical foundation of L1 and L2 regularization
    ✓ Why Lasso creates sparsity (geometric interpretation)
    ✓ Implementation from scratch using numpy
@@ -478,31 +478,30 @@ print("""
    ✓ Statistical analysis with statsmodels
    ✓ Comprehensive visualization with matplotlib and seaborn
 
-🎯 Key insights:
+ Key insights:
    • Ridge (L2): Use when ALL features matter, prevents overfitting
    • Lasso (L1): Use for FEATURE SELECTION, creates sparse models
    • ElasticNet: Best of both worlds, handles correlated features
    • Always use cross-validation to choose α
    • Always standardize features before regularization
 
-📝 Homework for tomorrow:
+ Homework for tomorrow:
    1. Apply this to a real dataset (house prices, stocks, etc.)
    2. Implement coordinate descent for Lasso from scratch
    3. Try Group Lasso for categorical variables
    4. Explore Bayesian interpretation of Ridge regression
 
-🔗 Next topics to learn:
+ Next topics to learn:
    → Polynomial regression + regularization
    → Cross-validation strategies (k-fold, stratified, time-series)
    → Feature engineering techniques
    → Ensemble methods (Random Forest, Gradient Boosting)
 
-💪 Practice exercises:
+ Practice exercises:
    1. Create dataset where Ridge > Lasso (explain why)
    2. Create dataset where Lasso > Ridge (explain why)
    3. Build end-to-end pipeline with feature engineering
    4. Compare regularization vs. dropout in neural networks
 """)
 
-print("\n✅ All files saved! Review the visualizations and notes.")
-print("="*80)
+print("\n All files saved! Review the visualizations and notes.")
