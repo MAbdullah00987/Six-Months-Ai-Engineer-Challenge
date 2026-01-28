@@ -1,0 +1,12 @@
+Day 4: Gradient Boosting & XGBoost (The King)
+Objective: Master the algorithm that wins 80% of Tabular Kaggle competitions.
+
+Concept: Gradient Boosting Machines (GBM), Learning Rate, Residuals (predicting the error of the previous tree).
+
+Task: Project - Customer Churn Prediction.
+
+Use the Telco Customer Churn dataset.
+
+Train an XGBClassifier.
+
+Crucial: Learn to use the early_stopping_rounds parameter to prevent overfitting automatically.
